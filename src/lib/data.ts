@@ -281,28 +281,28 @@ export const servicios: Servicio[] = [
     metaDescription: "Fisioterapia especializada para bebés y niños. Estimulación temprana, neurodesarrollo y fisioterapia respiratoria infantil. Pide tu cita."
   },
   {
-    slug: "psicologia-infantil",
-    nombre: "Psicología Infantil",
-    descripcionCorta: "Acompañamiento psicológico especializado para niños y adolescentes, enfocado en su bienestar emocional y conductual.",
-    descripcionLarga: "Nuestro servicio de psicología infantil ofrece un espacio seguro y acogedor donde los niños y adolescentes pueden expresar sus emociones y superar dificultades. Abordamos problemas de conducta, ansiedad infantil, miedos, dificultades de aprendizaje, TDHA y problemas de adaptación. Trabajamos de la mano con los padres para brindarles herramientas de crianza positiva y asegurar un desarrollo emocional sano de sus hijos.",
+    slug: "terapia-psicopedagogica",
+    nombre: "Terapia Psicopedagógica",
+    descripcionCorta: "Apoyo especializado en dificultades de aprendizaje, desarrollo cognitivo y conductual para niños y adolescentes.",
+    descripcionLarga: "Nuestro servicio de terapia psicopedagógica está diseñado para niños y adolescentes que presentan dificultades en su proceso de aprendizaje, desarrollo cognitivo o conducta. A través de evaluaciones integrales y planes de intervención personalizados, ayudamos a identificar las barreras que impiden el desarrollo óptimo del niño. Trabajamos en estrecha colaboración con los padres y el entorno escolar para garantizar un abordaje integral que potencie las fortalezas de cada niño.",
     icono: "Brain",
     beneficios: [
-      "Gestión emocional para niños",
-      "Mejora de problemas de conducta",
-      "Tratamiento de ansiedad y miedos",
-      "Apoyo en dificultades de aprendizaje",
-      "Orientación a padres",
-      "Fomento de la autoestima infantil"
+      "Evaluación integral del aprendizaje",
+      "Intervención en dificultades de lectura y escritura",
+      "Apoyo en TDAH y déficit de atención",
+      "Desarrollo de habilidades cognitivas",
+      "Orientación y acompañamiento a padres",
+      "Coordinación con el entorno escolar"
     ],
-    tratamiento: "Utilizamos la terapia de juego, técnicas cognitivo-conductuales adaptadas a la edad y terapias expresivas. El tratamiento incluye sesiones individuales con el niño y sesiones periódicas de orientación y seguimiento con los padres.",
-    duracion: "Las sesiones tienen una duración de 45 a 50 minutos. La frecuencia suele ser semanal inicialmente, espaciándose según la evolución.",
+    tratamiento: "Realizamos una evaluación psicopedagógica completa para identificar las áreas de dificultad. El tratamiento incluye sesiones individuales con técnicas lúdicas y cognitivas, programas de estimulación cognitiva, estrategias de estudio personalizadas y sesiones periódicas de orientación a padres para reforzar el trabajo en casa.",
+    duracion: "Las sesiones tienen una duración de 45 a 50 minutos. La frecuencia recomendada es de 1 a 2 sesiones semanales, ajustándose según la evolución del niño.",
     faqs: [
-      { pregunta: "¿Cómo sé si mi hijo necesita un psicólogo?", respuesta: "Si observas cambios drásticos de comportamiento, miedos intensos, tristeza prolongada, dificultades en el colegio o problemas para relacionarse, es recomendable realizar una valoración." },
-      { pregunta: "¿Qué hacen en la primera cita?", respuesta: "La primera sesión suele ser solo con los padres para recoger información detallada sobre el desarrollo del niño, el motivo de consulta y la dinámica familiar." },
-      { pregunta: "¿La terapia infantil es solo jugar?", respuesta: "El juego es el lenguaje natural del niño y la herramienta principal que utilizamos para evaluar e intervenir, pero cada juego tiene un propósito terapéutico específico." }
+      { pregunta: "¿Cómo sé si mi hijo necesita terapia psicopedagógica?", respuesta: "Si notas que tu hijo tiene dificultades persistentes en el colegio, problemas para concentrarse, leer, escribir, o cambios bruscos de comportamiento, una evaluación psicopedagógica puede identificar el origen del problema." },
+      { pregunta: "¿Qué incluye la evaluación inicial?", respuesta: "La evaluación incluye entrevista con los padres, pruebas estandarizadas de aprendizaje y desarrollo cognitivo, observación del niño y, si es necesario, coordinación con el colegio para obtener una visión completa." },
+      { pregunta: "¿A partir de qué edad se puede iniciar la terapia?", respuesta: "Generalmente a partir de los 3-4 años, cuando ya se pueden evaluar hitos del desarrollo. Sin embargo, la detección temprana es clave para mejores resultados." }
     ],
-    metaTitle: "Psicología Infantil | Clínica FisioSphere - Bienestar Emocional para Niños",
-    metaDescription: "Psicólogos especialistas en niños y adolescentes. Tratamiento de ansiedad, conducta, miedos y aprendizaje. Orientación familiar. Reserva ahora."
+    metaTitle: "Terapia Psicopedagógica | Clínica FisioSphere - Apoyo en Aprendizaje Infantil",
+    metaDescription: "Terapia psicopedagógica para niños y adolescentes. Dificultades de aprendizaje, TDAH, desarrollo cognitivo y conductual. Evaluación integral. Reserva ahora."
   },
   {
     slug: "fisioterapia-geriatrica",
@@ -400,7 +400,7 @@ export const testimonios: Testimonio[] = [
     id: 7,
     nombre: "Carmen Villanueva",
     edad: 34,
-    servicio: "Psicología Infantil",
+    servicio: "Terapia Psicopedagógica",
     texto: "Llevamos a nuestro hijo de 8 años con la Lic. Laura porque tenía mucha ansiedad escolar. El cambio ha sido maravilloso. La terapia basada en juegos le encantó y a nosotros nos dieron herramientas de crianza invaluables. ¡Totalmente recomendada!",
     estrellas: 5,
     fecha: "2024-12-10"
@@ -436,10 +436,6 @@ export const faqsGenerales: FAQ[] = [
     respuesta: "El precio de la sesión varía según el tratamiento. Puedes consultar nuestras tarifas contactándonos por teléfono o WhatsApp. Ofrecemos bonos de sesiones con descuento."
   },
   {
-    pregunta: "¿Trabajáis con seguros médicos?",
-    respuesta: "Sí, trabajamos con las principales compañías de seguros médicos. Consulta con nosotros si tu seguro tiene cobertura de fisioterapia."
-  },
-  {
     pregunta: "¿Necesito prescripción médica para ir al fisioterapeuta?",
     respuesta: "No es necesaria una prescripción médica para acudir a fisioterapia. Los fisioterapeutas somos profesionales sanitarios con capacidad de diagnóstico y tratamiento autónomo."
   },
@@ -467,22 +463,22 @@ export interface MiembroEquipo {
 
 export const equipo: MiembroEquipo[] = [
   {
-    nombre: "Dr. Alejandro Ruiz",
-    cargo: "Director y Fisioterapeuta",
-    descripcion: "Con más de 15 años de experiencia en fisioterapia. Especialista en terapia manual ortopédica y fisioterapia pediátrica. Formado en las mejores universidades y enfocado en el desarrollo psicomotor infantil.",
-    especialidades: ["Fisioterapia Pediátrica", "Terapia Manual Ortopédica", "Rehabilitación"]
+    nombre: "Lic. Ivon Ahime Serrano",
+    cargo: "Fisioterapeuta Especialista",
+    descripcion: "Con 5 años de experiencia en fisioterapia pediátrica y rehabilitación infantil. Especialista en estimulación temprana, desarrollo psicomotor y tratamiento de alteraciones posturales en niños. Comprometida con el bienestar de los más pequeños.",
+    especialidades: ["Fisioterapia Pediátrica", "Estimulación Temprana", "Rehabilitación Infantil"]
   },
   {
-    nombre: "Dra. Sofía Martínez",
-    cargo: "Fisioterapeuta Senior",
-    descripcion: "Especialista en fisioterapia geriátrica y dolor crónico. Apasionada por ayudar a los adultos mayores a recuperar su movilidad, independencia y calidad de vida a través de tratamientos especializados.",
-    especialidades: ["Fisioterapia Geriátrica", "Dolor Crónico", "Ejercicio Terapéutico"]
+    nombre: "Lic. Miguel",
+    cargo: "Fisioterapeuta Especialista",
+    descripcion: "Con 5 años de experiencia en fisioterapia geriátrica y rehabilitación del adulto mayor. Especialista en prevención de caídas, tratamiento de artrosis y programas de envejecimiento activo. Dedicado a mejorar la calidad de vida de nuestros mayores.",
+    especialidades: ["Fisioterapia Geriátrica", "Rehabilitación", "Ejercicio Terapéutico"]
   },
   {
-    nombre: "Lic. Laura Gómez",
-    cargo: "Psicóloga Infantil",
-    descripcion: "Profesional en psicología clínica con especialización en atención infantil. Experta en evaluación, diagnóstico y tratamiento de dificultades emocionales, conductuales y de aprendizaje en niños y adolescentes.",
-    especialidades: ["Psicología Infantil", "Terapia Conductual", "Desarrollo Emocional"]
+    nombre: "Lic. Andrea Ramos",
+    cargo: "Psicopedagoga",
+    descripcion: "Con 5 años de experiencia en terapia psicopedagógica infantil. Especialista en evaluación, diagnóstico e intervención de dificultades de aprendizaje, TDAH, problemas de conducta y desarrollo cognitivo en niños y adolescentes.",
+    especialidades: ["Terapia Psicopedagógica", "Dificultades de Aprendizaje", "Desarrollo Cognitivo"]
   }
 ];
 
@@ -491,20 +487,21 @@ export const empresaInfo = {
   nombre: "FisioSphere",
   nombreCompleto: "Clínica de Fisioterapia FisioSphere",
   eslogan: "Tu bienestar, nuestra prioridad",
-  telefono: "+51 987 654 321",
-  telefonoDisplay: "987 654 321",
+  telefono: "+51 950 332 639",
+  telefonoDisplay: "950 332 639",
   email: "info@fisiosphere.pe",
   direccion: "Av. Javier Prado Este 1234, San Isidro",
   ciudad: "Lima",
   cp: "15036",
   pais: "Perú",
   horario: "Lunes a Viernes: 8:00 - 21:00 | Sábados: 9:00 - 14:00",
-  whatsapp: "51987654321",
-  whatsappLink: "https://wa.me/51987654321?text=Hola%2C%20me%20gustaría%20pedir%20una%20cita",
+  whatsapp: "51950332639",
+  whatsappLink: "https://wa.me/51950332639?text=Hola%2C%20me%20gustaría%20pedir%20una%20cita",
   googleMapsEmbed: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3037.2!2d-3.7038!3d40.4168!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNDDCsDI1JzAwLjUiTiAzwrA0MicxMy43Ilc!5e0!3m2!1ses!2ses!4v1",
   redesSociales: {
     instagram: "https://instagram.com/fisiosphere.peru",
-    facebook: "https://facebook.com/fisiosphere",
+    facebook: "https://www.facebook.com/profile.php?id=61578955297624",
+    tiktok: "https://www.tiktok.com/@fisiosphere.peru",
     linkedin: "https://linkedin.com/company/fisiosphere",
     youtube: "https://youtube.com/@fisiosphere"
   },

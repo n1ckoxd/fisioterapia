@@ -6,7 +6,7 @@ import NosotrosContent from "@/components/nosotros/NosotrosContent";
 export const metadata: Metadata = {
   title: "Sobre Nosotros",
   description:
-    "Conoce al equipo de fisioterapeutas de FisioSphere. Más de 15 años de experiencia en fisioterapia y rehabilitación en Lima. Profesionales certificados.",
+    "Conoce al equipo de fisioterapeutas y profesionales de FisioSphere. + 5 años de experiencia en fisioterapia y rehabilitación en Lima. Profesionales certificados.",
   openGraph: {
     title: "Sobre Nosotros | Clínica FisioSphere",
     description:

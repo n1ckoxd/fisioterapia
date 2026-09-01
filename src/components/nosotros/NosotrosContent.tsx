@@ -95,7 +95,7 @@ export default function NosotrosContent({
             </h1>
             <p className="text-lg text-neutral-600 max-w-3xl mx-auto">
               Somos un equipo de fisioterapeutas apasionados por la salud y el
-              bienestar. Con más de 15 años de experiencia, nos dedicamos a
+              bienestar. Con  +5 años de experiencia, nos dedicamos a
               ayudar a nuestros pacientes a recuperar su calidad de vida
               mediante tratamientos personalizados y basados en la evidencia.
             </p>
@@ -118,7 +118,7 @@ export default function NosotrosContent({
               </h2>
               <div className="space-y-4 text-neutral-600 leading-relaxed">
                 <p>
-                  {empresaInfo.nombreCompleto} nació en 2009 con una misión
+                  {empresaInfo.nombreCompleto} nació con una misión
                   clara: ofrecer fisioterapia de calidad, personalizada y
                   basada en la última evidencia científica.
                 </p>
@@ -152,7 +152,7 @@ export default function NosotrosContent({
               </div>
               <div className="bg-primary-50 rounded-2xl p-8 text-center">
                 <div className="text-4xl font-bold text-primary-600 mb-2">
-                  +15
+                  5
                 </div>
                 <div className="text-neutral-600 font-medium">
                   Años de experiencia

@@ -24,7 +24,7 @@ export const categoriasBlog = [
   "Lesiones deportivas",
   "Consejos",
   "Noticias",
-  "Psicología",
+  "Psicopedagogía",
 ];
 
 export const articulos: Articulo[] = [
@@ -938,9 +938,9 @@ Los niños ansiosos se benefician enormemente de las rutinas. Saber qué va a pa
 ## ¿Cuándo buscar ayuda profesional?
 
 Si la ansiedad está afectando significativamente la calidad de vida de tu hijo, su rendimiento escolar o sus relaciones familiares, es el momento de consultar con un psicólogo infantil. La terapia (especialmente a través del juego y el enfoque cognitivo-conductual) proporciona herramientas excelentes tanto para el niño como para los padres.`,
-    autor: "Lic. Laura Gómez",
+    autor: "Lic. Andrea Ramos",
     fecha: "2024-12-15",
-    categoria: "Psicología",
+    categoria: "Psicopedagogía",
     tiempoLectura: "6 min",
     tags: ["psicología infantil", "ansiedad", "emociones", "padres", "crianza"],
     publicado: true,
@@ -979,9 +979,9 @@ Los niños con TDAH reciben muchas más críticas a lo largo del día que los ni
 El diagnóstico debe ser realizado por profesionales (neurólogo, psiquiatra o psicólogo clínico). Una vez diagnosticado, la terapia psicológica infantil ayuda al niño a desarrollar habilidades de autorregulación emocional, habilidades sociales y autoestima, mientras proporciona psicoeducación y estrategias a los padres.
 
 En FisioSphere, entendemos la importancia de un abordaje integral, apoyando tanto al niño como a su familia en este proceso.`,
-    autor: "Lic. Laura Gómez",
+    autor: "Lic. Andrea Ramos",
     fecha: "2024-12-05",
-    categoria: "Psicología",
+    categoria: "Psicopedagogía",
     tiempoLectura: "7 min",
     tags: ["TDAH", "psicología infantil", "atención", "crianza", "desarrollo"],
     publicado: true,

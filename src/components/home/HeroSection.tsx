@@ -8,7 +8,7 @@ import { empresaInfo } from '@/lib/data';
 export default function HeroSection() {
   const stats = [
     { value: '+2000', label: 'Pacientes' },
-    { value: '+15', label: 'Años de Experiencia' },
+    { value: '+5', label: 'Años de Experiencia' },
     { value: '+98%', label: 'Satisfacción' },
     { value: '10', label: 'Servicios' }
   ];
