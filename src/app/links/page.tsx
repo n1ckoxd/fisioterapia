@@ -1,9 +1,31 @@
 import Link from 'next/link';
+import { Metadata } from 'next';
+
+// Forzamos los metadatos con la dirección URL directa y completa de la imagen
+export const metadata: Metadata = {
+  title: 'FisioSphere | Reserva tu cita',
+  description: 'Atención en consultorio y a domicilio. Fisioterapia y Rehabilitación.',
+  openGraph: {
+    title: 'FisioSphere | Reserva tu cita',
+    description: 'Atención en consultorio y a domicilio. Fisioterapia y Rehabilitación.',
+    url: 'https://fisiosphere.netlify.app/links',
+    siteName: 'FisioSphere',
+    images: [
+      {
+        url: 'https://fisiosphere.netlify.app/portadalinks.png', // URL absoluta directa
+        width: 1200,
+        height: 630,
+        alt: 'FisioSphere Portada',
+      },
+    ],
+    locale: 'es_PE',
+    type: 'website',
+  },
+};
 
 export default function LinksPage() {
   return (
     <>
-      {/* Oculta la cabecera (Navbar) y el pie de página (Footer) solo en esta ruta */}
       <style>{`
         header, footer, nav { display: none !important; }
       `}</style>
@@ -11,7 +33,7 @@ export default function LinksPage() {
       <div className="min-h-screen bg-black text-white flex justify-center pb-12 w-full pt-6">
         <div className="w-full max-w-md text-center px-4">
           
-          {/* 1. Portada Superior */}
+          {/* Portada */}
           <div className="relative w-full h-44 rounded-2xl overflow-hidden bg-zinc-800 border border-zinc-800">
             <img 
               src="/portadalinks.png" 
@@ -20,18 +42,18 @@ export default function LinksPage() {
             />
           </div>
 
-          {/* 2. Logo Circular */}
+          {/* Logo */}
           <div className="-mt-12 mb-4 flex justify-center relative z-10">
             <div className="w-24 h-24 rounded-full border-4 border-black overflow-hidden bg-zinc-900 shadow-xl">
               <img 
-                src="/perfillinks.jpg" 
+                src="/logo.jpg" 
                 alt="FisioSphere Logo" 
                 className="w-full h-full object-cover"
               />
             </div>
           </div>
 
-          {/* 3. Información / Bio */}
+          {/* Información */}
           <h1 className="text-2xl font-bold tracking-tight mb-2">FisioSphere</h1>
           
           <p className="text-sm text-zinc-300 px-4 leading-relaxed mb-3">
@@ -46,9 +68,8 @@ export default function LinksPage() {
             .Whatsapp 📲 950336239
           </p>
 
-          {/* 4. Botones Cápsula Blancos */}
+          {/* Botones */}
           <div className="space-y-3">
-            
             <a
               href="https://wa.me/51950336239"
               target="_blank"
@@ -82,18 +103,10 @@ export default function LinksPage() {
             >
               TERAPIA A DOMICILIO
             </a>
-
           </div>
 
         </div>
       </div>
     </>
   );
-
-  
 }
-
-export const metadata = {
-  title: 'FisioSphere - Enlaces',
-  description: 'Terapia Física & Rehabilitación Integral',
-};
