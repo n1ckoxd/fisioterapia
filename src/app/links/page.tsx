@@ -12,7 +12,7 @@ export const metadata: Metadata = {
     siteName: 'FisioSphere',
     images: [
       {
-        url: 'https://fisiosphere.netlify.app/portadalinks.png', // URL absoluta directa
+        url: 'https://fisiosphere.netlify.app/1200.png', // URL absoluta directa
         width: 1200,
         height: 630,
         alt: 'FisioSphere Portada',
@@ -46,7 +46,7 @@ export default function LinksPage() {
           <div className="-mt-12 mb-4 flex justify-center relative z-10">
             <div className="w-24 h-24 rounded-full border-4 border-black overflow-hidden bg-zinc-900 shadow-xl">
               <img 
-                src="/logo.jpg" 
+                src="/perfillinks.jpg" 
                 alt="FisioSphere Logo" 
                 className="w-full h-full object-cover"
               />
