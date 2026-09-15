@@ -14,7 +14,7 @@ export default function LinksPage() {
           {/* 1. Portada Superior */}
           <div className="relative w-full h-44 rounded-2xl overflow-hidden bg-zinc-800 border border-zinc-800">
             <img 
-              src="/banner.jpg" 
+              src="/portadalinks.png" 
               alt="FisioSphere Portada" 
               className="w-full h-full object-cover"
             />
@@ -24,7 +24,7 @@ export default function LinksPage() {
           <div className="-mt-12 mb-4 flex justify-center relative z-10">
             <div className="w-24 h-24 rounded-full border-4 border-black overflow-hidden bg-zinc-900 shadow-xl">
               <img 
-                src="/logo.jpg" 
+                src="/perfillinks.jpg" 
                 alt="FisioSphere Logo" 
                 className="w-full h-full object-cover"
               />
@@ -89,4 +89,11 @@ export default function LinksPage() {
       </div>
     </>
   );
+
+  
 }
+
+export const metadata = {
+  title: 'FisioSphere - Enlaces',
+  description: 'Terapia Física & Rehabilitación Integral',
+};
