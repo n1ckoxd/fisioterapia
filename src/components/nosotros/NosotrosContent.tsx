@@ -95,7 +95,7 @@ export default function NosotrosContent({
             </h1>
             <p className="text-lg text-neutral-600 max-w-3xl mx-auto">
               Somos un equipo de fisioterapeutas apasionados por la salud y el
-              bienestar. Con  +5 años de experiencia, nos dedicamos a
+              bienestar. Con  5 años de experiencia, nos dedicamos a
               ayudar a nuestros pacientes a recuperar su calidad de vida
               mediante tratamientos personalizados y basados en la evidencia.
             </p>
