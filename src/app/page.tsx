@@ -9,6 +9,9 @@ import MapaSection from '@/components/home/MapaSection';
 import { LocalBusinessSchema, FAQSchema } from '@/components/seo/JsonLd';
 import { faqsGenerales } from '@/lib/data';
 
+import SocialVideosSection from '@/components/home/SocialVideosSection';
+import WelcomeFlyerModal from '@/components/ui/WelcomeFlyerModal';
+
 export const metadata: Metadata = {
   title: 'Fisioterapia en Lima | Clínica FisioSphere - San Isidro',
   description: 'Clínica de fisioterapia y rehabilitación en Lima (San Isidro). Especialistas en fisioterapia pediátrica, geriátrica, terapia psicopedagógica y alivio del dolor.',
@@ -35,10 +38,12 @@ export default function Home() {
       <HeroSection />
       <BeneficiosSection />
       <ServiciosSection />
+      <SocialVideosSection />
       <TestimoniosSection />
       <FAQSection />
       <CTASection />
       <MapaSection />
+      <WelcomeFlyerModal />
     </main>
   );
 }

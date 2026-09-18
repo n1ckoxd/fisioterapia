@@ -77,9 +77,9 @@ export default function ContactoContent() {
                 <MapPin className="w-6 h-6" />
               </div>
               <div>
-                <h3 className="font-semibold text-neutral-900">Dirección</h3>
-                <p className="text-neutral-600">{empresaInfo.direccion}</p>
-                <p className="text-neutral-600">{empresaInfo.ciudad}</p>
+                <h3 className="font-semibold text-neutral-900">Modalidad de Atención</h3>
+                <p className="text-neutral-700 font-medium">{empresaInfo.direccion}</p>
+                <p className="text-neutral-500 text-sm mt-0.5">Cobertura en distritos de {empresaInfo.ciudad}</p>
               </div>
             </div>
 
@@ -88,7 +88,7 @@ export default function ContactoContent() {
                 <Phone className="w-6 h-6" />
               </div>
               <div>
-                <h3 className="font-semibold text-neutral-900">Teléfono</h3>
+                <h3 className="font-semibold text-neutral-900">Teléfono / WhatsApp</h3>
                 <p className="text-neutral-600">{empresaInfo.telefonoDisplay}</p>
               </div>
             </div>
@@ -111,6 +111,17 @@ export default function ContactoContent() {
                 <h3 className="font-semibold text-neutral-900">Horario</h3>
                 <p className="text-neutral-600">{empresaInfo.horario}</p>
               </div>
+            </div>
+
+            <div className="pt-4 border-t border-neutral-100">
+              <a
+                href={empresaInfo.whatsappLink}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="btn-whatsapp w-full flex items-center justify-center gap-2 py-3 rounded-xl font-semibold text-white text-center shadow-sm hover:shadow transition-all"
+              >
+                Escribir al WhatsApp
+              </a>
             </div>
           </div>
         </div>

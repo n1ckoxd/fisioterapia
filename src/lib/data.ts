@@ -455,30 +455,130 @@ export const faqsGenerales: FAQ[] = [
 
 /* ===== DATA: Equipo ===== */
 export interface MiembroEquipo {
+  slug: string;
   nombre: string;
+  tituloProfesional: string;
   cargo: string;
   descripcion: string;
+  enfoqueLargo: string;
   especialidades: string[];
+  foto?: string;
+  frase?: string;
+  modalidades?: string[];
+  publicoObjetivo: string;
+  razonesParaElegir: string[];
+  areasTratamiento: string[];
+  colorTema: 'rosa' | 'verde' | 'violeta';
+  bgPattern: 'infantil' | 'vitalidad' | 'calma';
 }
 
 export const equipo: MiembroEquipo[] = [
   {
-    nombre: "Lic. Ivon Ahime Serrano",
-    cargo: "Fisioterapeuta Especialista",
-    descripcion: "Con 5 años de experiencia en fisioterapia pediátrica y rehabilitación infantil. Especialista en estimulación temprana, desarrollo psicomotor y tratamiento de alteraciones posturales en niños. Comprometida con el bienestar de los más pequeños.",
-    especialidades: ["Fisioterapia Pediátrica", "Estimulación Temprana", "Rehabilitación Infantil"]
+    slug: "ivon-serrano",
+    nombre: "TF. Ivon Serrano",
+    tituloProfesional: "Fisioterapeuta Colegiada",
+    cargo: "Especialista en Fisioterapia Pediátrica y Terapia Física Integral",
+    frase: "Tu bienestar, nuestro propósito",
+    descripcion: "Fisioterapeuta especializada en estimulación temprana, neurodesarrollo infantil, corrección postural y rehabilitación física integral. Brinda un acompañamiento empático y lúdico para que los niños crezcan fuertes y seguros.",
+    enfoqueLargo: "Cada niño se comunica y aprende a través del movimiento. En nuestras sesiones combinamos el juego estructurado y la estimulación sensorimotora para que los pequeños alcancen sus hitos del desarrollo sin miedo ni frustración. Además, brindamos pautas claras a los padres para continuar el estímulo en casa, ofreciendo la máxima comodidad con nuestro servicio a domicilio en Lima.",
+    publicoObjetivo: "Bebés, Niños, Adolescentes y Adultos con Dolor Muscular",
+    colorTema: "rosa",
+    bgPattern: "infantil",
+    especialidades: [
+      "Fisioterapia Pediátrica",
+      "Estimulación Temprana",
+      "Neurodesarrollo Infantil",
+      "Corrección Postural",
+      "Dolor de Espalda",
+      "Rehabilitación Motora"
+    ],
+    razonesParaElegir: [
+      "Terapia lúdica y sin dolor adaptada a la edad del niño",
+      "Evaluación integral de hitos motores y reflejos",
+      "Acompañamiento cercano y orientación constante a padres",
+      "Atención a domicilio para evitar el tráfico y estrés del pequeño"
+    ],
+    areasTratamiento: [
+      "Retraso en el gateo o marcha independiente",
+      "Estimulación temprana para bebés y prematuros",
+      "Caminata de puntitas y alteraciones del equilibrio",
+      "Pie plano, escoliosis y vicios posturales",
+      "Rehabilitación motora y fortalecimiento",
+      "Dolor de espalda y cuello en adultos"
+    ],
+    foto: "/equipo/ivon-serrano.png",
+    modalidades: ["A Domicilio VIP", "En Sede"]
   },
   {
-    nombre: "Lic. Miguel",
-    cargo: "Fisioterapeuta Especialista",
-    descripcion: "Con 5 años de experiencia en fisioterapia geriátrica y rehabilitación del adulto mayor. Especialista en prevención de caídas, tratamiento de artrosis y programas de envejecimiento activo. Dedicado a mejorar la calidad de vida de nuestros mayores.",
-    especialidades: ["Fisioterapia Geriátrica", "Rehabilitación", "Ejercicio Terapéutico"]
+    slug: "miguel-alvarez",
+    nombre: "TF. Miguel Alvarez",
+    tituloProfesional: "Fisioterapeuta Colegiado",
+    cargo: "Especialista en Fisioterapia Geriátrica y Rehabilitación Funcional",
+    frase: "Movimiento que transforma, bienestar que perdura",
+    descripcion: "Fisioterapeuta dedicado a devolver la movilidad, independencia y alivio del dolor a los adultos mayores y pacientes en recuperación de lesiones o cirugías. Trato respetuoso, cálido y paciente.",
+    enfoqueLargo: "Envejecer no debe ser sinónimo de dolor o pérdida de independencia. Mi método de trabajo se basa en ejercicios terapéuticos suaves, progresivos y adaptados a la condición de cada adulto mayor. Nos enfocamos en fortalecer las piernas, recuperar el equilibrio para evitar caídas y aliviar los dolores de artrosis, llevando toda la atención a la comodidad del hogar del paciente.",
+    publicoObjetivo: "Adultos Mayores, Personas con Artrosis y Pacientes Postoperados",
+    colorTema: "verde",
+    bgPattern: "vitalidad",
+    especialidades: [
+      "Fisioterapia Geriátrica",
+      "Prevención de Caídas",
+      "Rehabilitación Postquirúrgica",
+      "Dolor de Espalda y Articulaciones",
+      "Reeducación de la Marcha"
+    ],
+    razonesParaElegir: [
+      "Atención con paciencia, empatía y respeto al ritmo del paciente",
+      "Programas probados de reentrenamiento del equilibrio y fuerza",
+      "Tratamiento no invasivo para el dolor de artrosis y columna",
+      "Servicio a domicilio que ahorra traslados difíciles y dolorosos"
+    ],
+    areasTratamiento: [
+      "Artrosis de rodilla, cadera y columna",
+      "Prevención de caídas y pérdida del equilibrio",
+      "Recuperación tras prótesis de cadera o rodilla",
+      "Rehabilitación tras hospitalizaciones prolongadas",
+      "Dolor lumbar crónico y rigidez articular",
+      "Mantenimiento de la autonomía funcional diaria"
+    ],
+    foto: "/equipo/miguel-alvarez.png",
+    modalidades: ["A Domicilio VIP", "En Sede"]
   },
   {
-    nombre: "Lic. Andrea Ramos",
-    cargo: "Psicopedagoga",
-    descripcion: "Con 5 años de experiencia en terapia psicopedagógica infantil. Especialista en evaluación, diagnóstico e intervención de dificultades de aprendizaje, TDAH, problemas de conducta y desarrollo cognitivo en niños y adolescentes.",
-    especialidades: ["Terapia Psicopedagógica", "Dificultades de Aprendizaje", "Desarrollo Cognitivo"]
+    slug: "shirley-wong",
+    nombre: "Lic. Shirley Wong",
+    tituloProfesional: "Psicóloga Clínica Colegiada",
+    cargo: "Psicóloga Clínica y Especialista en Psicopedagogía Infantil",
+    frase: "Escuchamos, comprendemos y caminamos contigo",
+    descripcion: "Psicóloga clínica con amplia experiencia en dificultades de aprendizaje infantil, manejo de la ansiedad, gestión de emociones en niños y adolescentes, y terapia de apoyo familiar.",
+    enfoqueLargo: "Pedir ayuda psicológica es un acto de valentía y amor propio. En consulta creo un ambiente 100% seguro, confidencial y sin juicios, donde niños y jóvenes aprenden a entender sus emociones a través del juego y la palabra. Trabajamos de la mano con los padres y el colegio para potenciar las capacidades de aprendizaje, superar miedos y construir una autoestima sólida.",
+    publicoObjetivo: "Niños, Adolescentes, Padres de Familia y Jóvenes Adultos",
+    colorTema: "violeta",
+    bgPattern: "calma",
+    especialidades: [
+      "Psicología Clínica",
+      "Terapia Psicopedagógica",
+      "Manejo de Ansiedad y Miedos",
+      "Dificultades de Aprendizaje y TDAH",
+      "Autoestima",
+      "Orientación a Padres"
+    ],
+    razonesParaElegir: [
+      "Espacio seguro, cálido y confidencial para expresarse libremente",
+      "Terapia lúdica y técnicas cognitivo-conductuales efectivas",
+      "Coordinación con el entorno escolar si el caso lo requiere",
+      "Modalidad virtual desde casa o presencial a domicilio y en sede"
+    ],
+    areasTratamiento: [
+      "Problemas de concentración, lectura, escritura y TDAH",
+      "Ansiedad infantil, miedos escolares y estrés",
+      "Rabietas frecuentes, desregulación y cambios de conducta",
+      "Baja autoestima e inseguridad en adolescentes",
+      "Problemas de adaptación y habilidades sociales",
+      "Talleres y orientación de crianza positiva para padres"
+    ],
+    foto: "/equipo/shirley-wong.png",
+    modalidades: ["Virtual (Online)", "A Domicilio VIP", "En Sede"]
   }
 ];
 
@@ -490,14 +590,14 @@ export const empresaInfo = {
   telefono: "+51 950 332 639",
   telefonoDisplay: "950 332 639",
   email: "info@fisiosphere.pe",
-  direccion: "Av. Javier Prado Este 1234, San Isidro",
-  ciudad: "Lima",
+  direccion: "Atención a domicilio y consultorios acondicionados previa cita",
+  ciudad: "Lima Metropolitana",
   cp: "15036",
   pais: "Perú",
   horario: "Lunes a Viernes: 8:00 - 21:00 | Sábados: 9:00 - 14:00",
   whatsapp: "51950332639",
-  whatsappLink: "https://wa.me/51950332639?text=Hola%2C%20me%20gustaría%20pedir%20una%20cita",
-  googleMapsEmbed: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3037.2!2d-3.7038!3d40.4168!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNDDCsDI1JzAwLjUiTiAzwrA0MicxMy43Ilc!5e0!3m2!1ses!2ses!4v1",
+  whatsappLink: "https://wa.me/51950332639?text=Hola%2C%20me%20gustar%C3%ADa%20pedir%20una%20cita",
+  googleMapsEmbed: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d124857.26084128038!2d-77.08502573212891!3d-12.083398939634935!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9105c8651a54fb1d%3A0x33446bfd92d4f24d!2sSan%20Isidro%2C%20Per%C3%BA!5e0!3m2!1ses!2spe!4v1700000000000",
   redesSociales: {
     instagram: "https://instagram.com/fisiosphere.peru",
     facebook: "https://www.facebook.com/profile.php?id=61578955297624",

@@ -1,7 +1,7 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { Award, UserCheck, Cpu, TrendingUp, Heart, MapPin } from 'lucide-react';
+import { Award, UserCheck, Cpu, TrendingUp, Heart, Home as HomeIcon } from 'lucide-react';
 
 const beneficios = [
   {
@@ -30,9 +30,9 @@ const beneficios = [
     description: 'Nos preocupamos por tu bienestar general, no solo por el síntoma.'
   },
   {
-    icon: MapPin,
-    title: 'Ubicación Céntrica',
-    description: 'Instalaciones modernas y accesibles en el corazón de Lima.'
+    icon: HomeIcon,
+    title: 'Servicio a Domicilio VIP',
+    description: 'Evita el tráfico pesado de Lima y el estrés de traslados a niños y adultos mayores. Llevamos la terapia a tu hogar o en consultorios acondicionados previa cita.'
   }
 ];
 

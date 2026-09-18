@@ -1,5 +1,5 @@
 import type { MetadataRoute } from "next";
-import { servicios } from "@/lib/data";
+import { servicios, equipo } from "@/lib/data";
 import { articulos } from "@/lib/blog-data";
 
 export default function sitemap(): MetadataRoute.Sitemap {
@@ -77,6 +77,14 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.8,
   }));
 
+  // Páginas de especialistas
+  const equipoPages: MetadataRoute.Sitemap = equipo.map((miembro) => ({
+    url: `${baseUrl}/nosotros/${miembro.slug}`,
+    lastModified: new Date(),
+    changeFrequency: "monthly" as const,
+    priority: 0.8,
+  }));
+
   // Artículos del blog
   const blogPages: MetadataRoute.Sitemap = articulos.map((articulo) => ({
     url: `${baseUrl}/blog/${articulo.slug}`,
@@ -85,5 +93,5 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.7,
   }));
 
-  return [...staticPages, ...servicePages, ...blogPages];
+  return [...staticPages, ...servicePages, ...equipoPages, ...blogPages];
 }

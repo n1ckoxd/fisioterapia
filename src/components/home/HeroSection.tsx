@@ -21,11 +21,21 @@ export default function HeroSection() {
       
       <div className="container mx-auto px-4 z-10">
         <div className="max-w-4xl mx-auto text-center">
+          <motion.div
+            initial={{ opacity: 0, y: -10 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5 }}
+            className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary-100 text-primary-800 text-sm font-semibold mb-6 border border-primary-200 shadow-sm"
+          >
+            <span className="flex h-2 w-2 rounded-full bg-primary-500 animate-pulse"></span>
+            🏡 Servicio a Domicilio VIP & Consultorios Acondicionados en Lima
+          </motion.div>
+
           <motion.h1 
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
-            className="text-5xl md:text-6xl font-bold text-gray-900 mb-6 tracking-tight"
+            className="text-4xl sm:text-5xl md:text-6xl font-bold text-gray-900 mb-6 tracking-tight"
           >
             Fisioterapia Profesional en <span className="gradient-text">Lima</span>
           </motion.h1>
@@ -34,9 +44,9 @@ export default function HeroSection() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="text-xl md:text-2xl text-gray-700 mb-10"
+            className="text-lg md:text-xl text-gray-700 mb-10 max-w-3xl mx-auto leading-relaxed"
           >
-            Recupera tu movilidad y dile adiós al dolor con nuestros tratamientos personalizados y tecnología de vanguardia.
+            Especialistas en <strong>fisioterapia pediátrica, geriátrica y terapia psicopedagógica</strong>. Llevamos la atención terapéutica directamente a tu hogar para evitarte el tráfico y estrés de traslados, o te atendemos en consultorios acondicionados en puntos céntricos previa cita.
           </motion.p>
           
           <motion.div 
