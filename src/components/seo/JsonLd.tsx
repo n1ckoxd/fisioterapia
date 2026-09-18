@@ -9,12 +9,19 @@ export function LocalBusinessSchema() {
     "@id": empresaInfo.url,
     "url": empresaInfo.url,
     "telephone": empresaInfo.telefono,
+    "priceRange": "$$",
+    "medicalSpecialty": [
+      "Physiotherapy",
+      "Pediatrics",
+      "Geriatrics",
+      "Sports Medicine"
+    ],
     "address": {
       "@type": "PostalAddress",
       "streetAddress": empresaInfo.direccion,
       "addressLocality": empresaInfo.ciudad,
       "postalCode": empresaInfo.cp,
-      "addressCountry": "ES"
+      "addressCountry": "PE"
     },
     "openingHoursSpecification": {
       "@type": "OpeningHoursSpecification",
@@ -32,6 +39,7 @@ export function LocalBusinessSchema() {
     "sameAs": [
       empresaInfo.redesSociales?.instagram,
       empresaInfo.redesSociales?.facebook,
+      empresaInfo.redesSociales?.tiktok,
       empresaInfo.redesSociales?.linkedin,
       empresaInfo.redesSociales?.youtube
     ].filter(Boolean)
@@ -77,6 +85,51 @@ export function BreadcrumbSchema({ items }: { items: { name: string; url: string
       "name": item.name,
       "item": item.url
     }))
+  };
+
+  return (
+    <script
+      type="application/ld+json"
+      dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
+    />
+  );
+}
+
+export function ArticleSchema({
+  article,
+}: {
+  article: {
+    titulo: string;
+    descripcion: string;
+    fecha: string;
+    autor: string;
+    slug: string;
+  };
+}) {
+  const schema = {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "headline": article.titulo,
+    "description": article.descripcion,
+    "datePublished": article.fecha,
+    "dateModified": article.fecha,
+    "author": {
+      "@type": "Person",
+      "name": article.autor,
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": empresaInfo.nombreCompleto,
+      "url": empresaInfo.url,
+      "logo": {
+        "@type": "ImageObject",
+        "url": `${empresaInfo.url}/logo.png`,
+      },
+    },
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": `${empresaInfo.url}/blog/${article.slug}`,
+    },
   };
 
   return (

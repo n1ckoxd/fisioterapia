@@ -4,6 +4,7 @@ import Link from "next/link";
 import { ChevronLeft, Calendar, User, Clock, Tag } from "lucide-react";
 import { articulos } from "@/lib/blog-data";
 import { Breadcrumbs } from "@/components/seo/Breadcrumbs";
+import { ArticleSchema } from "@/components/seo/JsonLd";
 
 type Props = {
   params: Promise<{ slug: string }>;
@@ -117,6 +118,7 @@ export default async function BlogPostPage({ params }: Props) {
 
   return (
     <>
+      <ArticleSchema article={articulo} />
       <div className="bg-neutral-50 pt-8 pb-12">
         <Breadcrumbs
           items={[

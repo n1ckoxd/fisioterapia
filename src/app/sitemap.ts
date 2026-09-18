@@ -1,5 +1,6 @@
 import type { MetadataRoute } from "next";
 import { servicios } from "@/lib/data";
+import { articulos } from "@/lib/blog-data";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = "https://www.fisiosphere.pe";
@@ -76,5 +77,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.8,
   }));
 
-  return [...staticPages, ...servicePages];
+  // Artículos del blog
+  const blogPages: MetadataRoute.Sitemap = articulos.map((articulo) => ({
+    url: `${baseUrl}/blog/${articulo.slug}`,
+    lastModified: new Date(articulo.fecha),
+    changeFrequency: "monthly" as const,
+    priority: 0.7,
+  }));
+
+  return [...staticPages, ...servicePages, ...blogPages];
 }

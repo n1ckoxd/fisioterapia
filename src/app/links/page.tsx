@@ -55,17 +55,22 @@ export default function LinksPage() {
 
           {/* Información */}
           <h1 className="text-2xl font-bold tracking-tight mb-2">FisioSphere</h1>
-          
-          <p className="text-sm text-zinc-300 px-4 leading-relaxed mb-3">
-            Servicio de Fisioterapia y Terapia Física Integral. Atención profesional para tu salud y bienestar físico: rehabilitación, terapia del dolor y recuperación motora.
+
+          <p className="text-[13px] text-zinc-300 leading-relaxed mb-3">
+            FisioSphere | Terapia Integral 💙<br />
+            <span className="whitespace-nowrap">Salud física y mental con atención profesional a tu medida:</span><br />
+            Terapia Física y Rehabilitación<br />
+            Psicología Clínica<br />
+            🏡 A domicilio | 📍 En consultorio<br />
+            Tu bienestar en las mejores manos. Fisiosphere te acompaña 💙 ¡Contáctanos!
           </p>
-          
+
           <p className="text-xs text-zinc-400 mb-2">
             📍 Atención en consultorio y a domicilio.
           </p>
 
           <p className="text-sm font-semibold text-white mb-6 flex items-center justify-center gap-1">
-            .Whatsapp 📲 950336239
+            Whatsapp 📲 950336239
           </p>
 
           {/* Botones */}
