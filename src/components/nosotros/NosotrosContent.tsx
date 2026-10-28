@@ -14,6 +14,7 @@ import {
   Sparkles,
   ArrowRight,
 } from "lucide-react";
+import PageHeaderBanner from "@/components/ui/PageHeaderBanner";
 import type { MiembroEquipo } from "@/lib/data";
 
 interface NosotrosContentProps {
@@ -88,27 +89,21 @@ export default function NosotrosContent({
 }: NosotrosContentProps) {
   return (
     <>
-      {/* Hero */}
-      <section className="gradient-hero py-20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-          >
-            <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-primary-100 text-primary-800 text-sm font-semibold mb-4 shadow-sm">
-              <Sparkles size={16} className="text-primary-600" />
-              <span>Vocación, Ciencia y Amor</span>
-            </span>
-            <h1 className="text-4xl md:text-5xl font-bold text-neutral-900 mb-6">
-              Conoce a <span className="gradient-text">{empresaInfo.nombre}</span>
-            </h1>
-            <p className="text-lg text-neutral-600 max-w-3xl mx-auto leading-relaxed">
-              Somos un equipo multidisciplinario de fisioterapeutas y psicólogos comprometidos con el bienestar de tu familia. Brindamos atención personalizada a domicilio y en consultorios acondicionados en Lima.
-            </p>
-          </motion.div>
-        </div>
-      </section>
+      {/* Banner Oficial Fisiosphere te acompaña */}
+      <PageHeaderBanner
+        bannerImage="/te-acompana-2.png"
+        badge="Vocación, Ciencia y Amor"
+        title={
+          <>
+            Conoce a <span className="gradient-text">{empresaInfo.nombre}</span>
+          </>
+        }
+        subtitle="Somos un equipo multidisciplinario de fisioterapeutas y psicólogos comprometidos con el bienestar de tu familia. Brindamos atención personalizada a domicilio y en consultorios acondicionados en Lima."
+        breadcrumbs={[
+          { label: "Inicio", href: "/" },
+          { label: "Nosotros", href: "/nosotros" },
+        ]}
+      />
 
       {/* NUEVO: Equipo Destacado al Principio */}
       <section className="py-20 bg-white border-b border-neutral-100" id="especialistas">

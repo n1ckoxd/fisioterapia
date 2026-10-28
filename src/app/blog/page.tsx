@@ -1,7 +1,8 @@
 import type { Metadata } from "next";
-import { Breadcrumbs } from "@/components/seo/Breadcrumbs";
 import { Search } from "lucide-react";
 import BlogList from "@/components/blog/BlogList";
+import PageHeaderBanner from "@/components/ui/PageHeaderBanner";
+import { articulos, categoriasBlog } from "@/lib/blog-data";
 
 export const metadata: Metadata = {
   title: "Blog de Fisioterapia",
@@ -14,39 +15,34 @@ export const metadata: Metadata = {
   },
 };
 
-import { articulos, categoriasBlog } from "@/lib/blog-data";
-
 export default function BlogPage() {
   return (
     <>
-      <Breadcrumbs
-        items={[
+      {/* Banner Oficial Fisiosphere te acompaña */}
+      <PageHeaderBanner
+        bannerImage="/te-acompana-1.png"
+        badge="Consejos, Salud & Rehabilitación"
+        title={
+          <>
+            Blog de <span className="gradient-text">Fisioterapia y Bienestar</span>
+          </>
+        }
+        subtitle="Artículos profesionales sobre fisioterapia, rehabilitación, ejercicio y salud. Información actualizada para cuidar de tu bienestar."
+        breadcrumbs={[
           { label: "Inicio", href: "/" },
           { label: "Blog", href: "/blog" },
         ]}
-      />
-
-      {/* Hero */}
-      <section className="gradient-hero py-20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h1 className="text-4xl md:text-5xl font-bold text-neutral-900 mb-6">
-            Blog de <span className="gradient-text">Fisioterapia</span>
-          </h1>
-          <p className="text-lg text-neutral-600 max-w-3xl mx-auto mb-8">
-            Artículos profesionales sobre fisioterapia, rehabilitación, ejercicio
-            y salud. Información actualizada para cuidar de tu bienestar.
-          </p>
-          {/* Buscador placeholder */}
-          <div className="max-w-xl mx-auto relative">
-            <Search className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-neutral-400" />
-            <input
-              type="text"
-              placeholder="Buscar artículos..."
-              className="w-full pl-12 pr-4 py-3 rounded-xl border border-neutral-200 bg-white focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent text-neutral-700"
-            />
-          </div>
+      >
+        {/* Buscador de artículos */}
+        <div className="max-w-xl mx-auto relative mt-6">
+          <Search className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-neutral-400" />
+          <input
+            type="text"
+            placeholder="Buscar artículos..."
+            className="w-full pl-12 pr-4 py-3 rounded-xl border border-neutral-200 bg-white shadow-sm focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent text-neutral-700"
+          />
         </div>
-      </section>
+      </PageHeaderBanner>
 
       <BlogList articulos={articulos} categoriasBlog={categoriasBlog} />
 

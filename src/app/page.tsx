@@ -1,5 +1,6 @@
 import { Metadata } from 'next';
 import HeroSection from '@/components/home/HeroSection';
+import EspecialidadesCircularesSection from '@/components/home/EspecialidadesCircularesSection';
 import BeneficiosSection from '@/components/home/BeneficiosSection';
 import ServiciosSection from '@/components/home/ServiciosSection';
 import TestimoniosSection from '@/components/home/TestimoniosSection';
@@ -36,6 +37,7 @@ export default function Home() {
       <FAQSchema faqs={faqsGenerales} />
       
       <HeroSection />
+      <EspecialidadesCircularesSection />
       <BeneficiosSection />
       <ServiciosSection />
       <SocialVideosSection />

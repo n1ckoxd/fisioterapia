@@ -15,15 +15,5 @@ export const metadata: Metadata = {
 };
 
 export default function NosotrosPage() {
-  return (
-    <>
-      <Breadcrumbs
-        items={[
-          { label: "Inicio", href: "/" },
-          { label: "Nosotros", href: "/nosotros" },
-        ]}
-      />
-      <NosotrosContent equipo={equipo} empresaInfo={empresaInfo} />
-    </>
-  );
+  return <NosotrosContent equipo={equipo} empresaInfo={empresaInfo} />;
 }

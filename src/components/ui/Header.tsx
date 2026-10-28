@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { usePathname } from 'next/navigation';
 import { Menu, X, Calendar } from 'lucide-react';
 
@@ -30,13 +31,26 @@ export default function Header() {
   return (
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        isScrolled ? 'glass-strong shadow-md py-3' : 'bg-transparent py-5'
+        isScrolled ? 'glass-strong shadow-md py-2' : 'bg-white/95 backdrop-blur-md shadow-sm py-2.5'
       }`}
     >
       <div className="container mx-auto px-4 lg:px-8">
         <div className="flex items-center justify-between">
-          <Link href="/" className="text-2xl font-bold gradient-text">
-            FisioSphere
+          {/* Logo Presionable (redirige al Home) */}
+          <Link
+            href="/"
+            className="flex items-center gap-2 group transition-transform hover:scale-[1.02] focus:outline-none focus:ring-2 focus:ring-primary-500 rounded-lg p-1"
+            title="FisioSphere Centro Integral - Ir al inicio"
+            aria-label="FisioSphere Centro Integral - Ir al inicio"
+          >
+            <Image
+              src="/logo-fisiosphere.png"
+              alt="FisioSphere Centro Integral - Fisioterapia en Lima"
+              width={180}
+              height={50}
+              priority
+              className="h-10 sm:h-12 w-auto object-contain"
+            />
           </Link>
 
           {/* Navegación Desktop */}

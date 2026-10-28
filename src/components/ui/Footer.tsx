@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import Image from 'next/image';
 import { MapPin, Phone, Mail, Clock } from 'lucide-react';
 import { empresaInfo, servicios } from '@/lib/data';
 
@@ -9,11 +10,17 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
           {/* Información de la Empresa */}
           <div>
-            <Link href="/" className="text-2xl font-bold text-white mb-6 block">
-              {empresaInfo.nombre}
+            <Link href="/" className="inline-block mb-5 bg-white/95 rounded-xl px-3 py-2 shadow-sm hover:opacity-90 transition-opacity">
+              <Image
+                src="/logo-fisiosphere.png"
+                alt="FisioSphere Centro Integral"
+                width={160}
+                height={42}
+                className="h-9 w-auto object-contain"
+              />
             </Link>
-            <p className="mb-6 leading-relaxed text-neutral-400">
-              Recupera tu movilidad y vive sin dolor. Somos especialistas en fisioterapia deportiva y traumatológica, brindando atención personalizada y de calidad.
+            <p className="mb-6 leading-relaxed text-neutral-400 text-sm">
+              Atención personalizada a domicilio en todo Lima y en consultorios acondicionados en puntos céntricos previa cita. Especialistas en fisioterapia pediátrica, geriátrica y terapia psicopedagógica.
             </p>
             <div className="flex space-x-4">
               {empresaInfo.redesSociales?.facebook && (

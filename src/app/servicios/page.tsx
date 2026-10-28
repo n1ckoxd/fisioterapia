@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { servicios } from "@/lib/data";
-import { Breadcrumbs } from "@/components/seo/Breadcrumbs";
+import PageHeaderBanner from "@/components/ui/PageHeaderBanner";
 import ServiciosGrid from "@/components/servicios/ServiciosGrid";
 
 export const metadata: Metadata = {
@@ -18,27 +18,21 @@ export const metadata: Metadata = {
 export default function ServiciosPage() {
   return (
     <>
-      <Breadcrumbs
-        items={[
+      {/* Banner Oficial Fisiosphere te acompaña */}
+      <PageHeaderBanner
+        bannerImage="/te-acompana-1.png"
+        badge="Atención a Domicilio VIP & Consultorios Acondicionados"
+        title={
+          <>
+            Nuestros <span className="gradient-text">Servicios de Fisioterapia</span>
+          </>
+        }
+        subtitle="Ofrecemos una amplia gama de tratamientos especializados para ayudarte a recuperar tu bienestar. Cada servicio está diseñado para abordar tus necesidades específicas con las técnicas más avanzadas."
+        breadcrumbs={[
           { label: "Inicio", href: "/" },
           { label: "Servicios", href: "/servicios" },
         ]}
       />
-
-      {/* Hero */}
-      <section className="gradient-hero py-20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h1 className="text-4xl md:text-5xl font-bold text-neutral-900 mb-6">
-            Nuestros{" "}
-            <span className="gradient-text">Servicios de Fisioterapia</span>
-          </h1>
-          <p className="text-lg text-neutral-600 max-w-3xl mx-auto">
-            Ofrecemos una amplia gama de tratamientos especializados para
-            ayudarte a recuperar tu bienestar. Cada servicio está diseñado para
-            abordar tus necesidades específicas con las técnicas más avanzadas.
-          </p>
-        </div>
-      </section>
 
       {/* Grid de servicios */}
       <section className="py-20">
