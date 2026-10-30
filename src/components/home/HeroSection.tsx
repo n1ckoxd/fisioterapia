@@ -154,8 +154,8 @@ export default function HeroSection() {
               fisioterapia pediátrica, geriátrica y terapia psicopedagógica
             </strong>
             . Llevamos la atención terapéutica personalizada a la comodidad de tu hogar para
-            evitarte el tráfico y estrés de Lima, o te atendemos en consultorios acondicionados en
-            puntos céntricos previa cita.
+            evitarte el tráfico y estrés de Lima, o atendemos en consultorios acondicionados en
+            puntos céntricos previa cita; tambien nos encuentras en Av general garzón 2318 Jesús maria.
           </motion.p>
 
           {/* =========================================================================

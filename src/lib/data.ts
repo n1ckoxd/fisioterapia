@@ -127,7 +127,7 @@ export const servicios: Servicio[] = [
       "Resultados desde la primera sesión"
     ],
     tratamiento: "Tras localizar los puntos gatillo mediante palpación, se inserta una aguja fina en el punto gatillo para provocar una respuesta de espasmo local que desactiva el punto. Se complementa con estiramientos y terapia manual.",
-    duracion: "Las sesiones de punción seca duran entre 30 y 45 minutos. Normalmente se necesitan entre 3 y 6 sesiones.",
+    duracion: "Las sesiones de punción seca duran entre 45 y 60 minutos. Normalmente se necesitan entre 3 y 6 sesiones.",
     faqs: [
       { pregunta: "¿La punción seca duele?", respuesta: "Puedes sentir una pequeña molestia al insertar la aguja, similar a un pinchazo. La respuesta de espasmo local puede ser incómoda pero breve. La mayoría de pacientes toleran bien la técnica." },
       { pregunta: "¿Es lo mismo que acupuntura?", respuesta: "No, aunque se utilizan agujas similares, la punción seca se basa en la anatomía y fisiología occidental, mientras que la acupuntura se basa en la medicina tradicional china." },
@@ -271,7 +271,7 @@ export const servicios: Servicio[] = [
       "Acompañamiento a las familias"
     ],
     tratamiento: "El tratamiento se realiza siempre a través del juego para asegurar la colaboración y motivación del niño. Utilizamos técnicas de neurodesarrollo, terapia manual adaptada, ejercicios terapéuticos lúdicos y proporcionamos pautas esenciales para que los padres continúen el trabajo en casa.",
-    duracion: "Las sesiones duran entre 30 y 45 minutos, adaptándonos siempre al ritmo, la tolerancia y el estado de ánimo del niño.",
+    duracion: "Las sesiones duran entre 45 y 60 minutos, adaptándonos siempre al ritmo, la tolerancia y el estado de ánimo del niño.",
     faqs: [
       { pregunta: "¿A qué edad puede empezar un niño la fisioterapia?", respuesta: "Desde los primeros días de vida. La intervención temprana es fundamental, especialmente en bebés prematuros o con riesgo de alteraciones en el desarrollo." },
       { pregunta: "¿Los padres pueden estar presentes en la sesión?", respuesta: "No solo pueden, sino que es muy recomendable. Es fundamental que los padres aprendan las pautas y ejercicios para continuar el estímulo en casa." },
