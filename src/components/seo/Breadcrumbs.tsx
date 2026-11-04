@@ -1,5 +1,7 @@
 import Link from 'next/link';
 import { ChevronRight } from 'lucide-react';
+import { empresaInfo } from '@/lib/data';
+import { BreadcrumbSchema } from './JsonLd';
 
 interface BreadcrumbItem {
   label: string;
@@ -12,6 +14,10 @@ interface BreadcrumbsProps {
 
 export function Breadcrumbs({ items }: BreadcrumbsProps) {
   return (
+    <>
+    <BreadcrumbSchema
+      items={items.map((item) => ({ name: item.label, url: `${empresaInfo.url}${item.href === '/' ? '' : item.href}` }))}
+    />
     <nav aria-label="Breadcrumb" className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-28 md:pt-32 pb-2 overflow-hidden">
       <ol className="flex items-center flex-wrap gap-2 text-sm text-neutral-500">
         {items.map((item, index) => {
@@ -34,5 +40,6 @@ export function Breadcrumbs({ items }: BreadcrumbsProps) {
         })}
       </ol>
     </nav>
+    </>
   );
 }

@@ -1,13 +1,14 @@
 import type { Metadata } from "next";
-import { Search } from "lucide-react";
 import BlogList from "@/components/blog/BlogList";
 import PageHeaderBanner from "@/components/ui/PageHeaderBanner";
 import { articulos, categoriasBlog } from "@/lib/blog-data";
+import { empresaInfo } from "@/lib/data";
 
 export const metadata: Metadata = {
-  title: "Blog de Fisioterapia",
+  title: "Blog de Fisioterapia, Bebés y Adulto Mayor",
   description:
-    "Blog de fisioterapia con artículos sobre dolor lumbar, cervical, lesiones deportivas, ejercicios, consejos de salud y más. Información profesional y actualizada.",
+    "Guías prácticas sobre el desarrollo del bebé de 0 a 12 meses, estimulación temprana, tortícolis, plagiocefalia, adulto mayor, psicología infantil y dolor de espalda. Escrito por el equipo de FisioSphere.",
+  alternates: { canonical: "/blog" },
   openGraph: {
     title: "Blog de Fisioterapia | Clínica FisioSphere",
     description:
@@ -27,45 +28,33 @@ export default function BlogPage() {
             Blog de <span className="gradient-text">Fisioterapia y Bienestar</span>
           </>
         }
-        subtitle="Artículos profesionales sobre fisioterapia, rehabilitación, ejercicio y salud. Información actualizada para cuidar de tu bienestar."
+        subtitle="Guías prácticas sobre el desarrollo de tu bebé, el cuidado del adulto mayor, la psicología infantil y el alivio del dolor."
         breadcrumbs={[
           { label: "Inicio", href: "/" },
           { label: "Blog", href: "/blog" },
         ]}
       >
-        {/* Buscador de artículos */}
-        <div className="max-w-xl mx-auto relative mt-6">
-          <Search className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-neutral-400" />
-          <input
-            type="text"
-            placeholder="Buscar artículos..."
-            className="w-full pl-12 pr-4 py-3 rounded-xl border border-neutral-200 bg-white shadow-sm focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent text-neutral-700"
-          />
-        </div>
       </PageHeaderBanner>
 
       <BlogList articulos={articulos} categoriasBlog={categoriasBlog} />
 
-      {/* CTA Suscripción */}
+      {/* CTA consulta */}
       <section className="gradient-cta py-16">
         <div className="max-w-4xl mx-auto px-4 text-center text-white">
           <h2 className="text-3xl font-bold mb-4">
-            Mantente informado
+            ¿Tienes una duda sobre tu caso?
           </h2>
           <p className="text-lg text-primary-100 mb-8">
-            Suscríbete a nuestro blog y recibe los últimos artículos sobre
-            fisioterapia y salud directamente en tu correo.
+            Escríbenos por WhatsApp y un especialista te orienta sin compromiso.
           </p>
-          <div className="flex flex-col sm:flex-row gap-4 max-w-md mx-auto">
-            <input
-              type="email"
-              placeholder="Tu correo electrónico"
-              className="flex-1 px-4 py-3 rounded-xl text-neutral-700 focus:outline-none focus:ring-2 focus:ring-primary-300"
-            />
-            <button className="bg-white text-primary-700 font-semibold px-6 py-3 rounded-xl hover:bg-primary-50 transition-all">
-              Suscribirse
-            </button>
-          </div>
+          <a
+            href={empresaInfo.whatsappLink}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center justify-center gap-2 bg-white text-primary-700 font-semibold px-8 py-3 rounded-xl hover:bg-primary-50 transition-all"
+          >
+            Escribir por WhatsApp
+          </a>
         </div>
       </section>
     </>

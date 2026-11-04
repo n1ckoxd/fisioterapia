@@ -9,19 +9,47 @@ export default function WelcomeFlyerModal() {
   const [isOpen, setIsOpen] = useState(false);
 
   useEffect(() => {
-    // Solo mostrar una vez por sesión de navegación
-    const hasSeenModal = sessionStorage.getItem('fisiosphere_flyer_seen_v2');
-    if (!hasSeenModal) {
-      const timer = setTimeout(() => {
+    // Solo una vez por sesión, y nunca al entrar: Google penaliza los popups que tapan
+    // el contenido al llegar desde el buscador. Se muestra cuando la persona ya leyó
+    // parte de la página (40% de scroll) y lleva al menos 10 segundos en ella.
+    let hasSeenModal = false;
+    try {
+      hasSeenModal = sessionStorage.getItem('fisiosphere_flyer_seen_v2') === 'true';
+    } catch {}
+    if (hasSeenModal) return;
+
+    let tiempoCumplido = false;
+    let scrollCumplido = false;
+    const intentarAbrir = () => {
+      if (tiempoCumplido && scrollCumplido) {
         setIsOpen(true);
-      }, 2000); // 2 segundos
-      return () => clearTimeout(timer);
-    }
+        window.removeEventListener('scroll', onScroll);
+      }
+    };
+    const onScroll = () => {
+      const max = document.documentElement.scrollHeight - window.innerHeight;
+      if (max > 0 && window.scrollY / max >= 0.4) {
+        scrollCumplido = true;
+        intentarAbrir();
+      }
+    };
+    const timer = setTimeout(() => {
+      tiempoCumplido = true;
+      intentarAbrir();
+    }, 10000);
+
+    window.addEventListener('scroll', onScroll, { passive: true });
+    return () => {
+      clearTimeout(timer);
+      window.removeEventListener('scroll', onScroll);
+    };
   }, []);
 
   const handleClose = () => {
     setIsOpen(false);
-    sessionStorage.setItem('fisiosphere_flyer_seen_v2', 'true');
+    try {
+      sessionStorage.setItem('fisiosphere_flyer_seen_v2', 'true');
+    } catch {}
   };
 
   if (!isOpen) return null;

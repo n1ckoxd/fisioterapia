@@ -3,6 +3,16 @@ import Image from 'next/image';
 import { MapPin, Phone, Mail, Clock } from 'lucide-react';
 import { empresaInfo, servicios } from '@/lib/data';
 
+// Guías más útiles del blog, enlazadas desde todas las páginas.
+const guiasPopulares = [
+  { href: '/blog/hitos-desarrollo-motor-bebe-0-12-meses', label: 'Hitos del bebé de 0 a 12 meses' },
+  { href: '/blog/torticolis-congenita-bebe', label: 'Tortícolis congénita' },
+  { href: '/blog/plagiocefalia-cabeza-plana-bebe', label: 'Plagiocefalia' },
+  { href: '/blog/tummy-time-bebe-boca-abajo', label: 'Tummy time' },
+  { href: '/blog/prevencion-caidas-adulto-mayor', label: 'Prevención de caídas' },
+  { href: '/blog/rabietas-ninos-que-hacer', label: 'Rabietas en niños' },
+];
+
 export default function Footer() {
   return (
     <footer className="bg-neutral-900 text-neutral-300 pt-16 pb-8">
@@ -20,7 +30,7 @@ export default function Footer() {
               />
             </Link>
             <p className="mb-6 leading-relaxed text-neutral-400 text-sm">
-              Atención personalizada a domicilio en todo Lima y en consultorios acondicionados en puntos céntricos previa cita. Especialistas en fisioterapia pediátrica, geriátrica y terapia psicopedagógica.
+              Fisioterapia a domicilio en Lima y sede en {empresaInfo.distrito}. Especialistas en estimulación temprana para bebés de 0 a 12 meses, fisioterapia pediátrica, geriátrica y psicología infantil.
             </p>
             <div className="flex space-x-4">
               {empresaInfo.redesSociales?.facebook && (
@@ -53,6 +63,8 @@ export default function Footer() {
               <li><Link href="/nosotros" className="hover:text-primary-400 transition-colors">Nosotros</Link></li>
               <li><Link href="/testimonios" className="hover:text-primary-400 transition-colors">Testimonios</Link></li>
               <li><Link href="/blog" className="hover:text-primary-400 transition-colors">Blog</Link></li>
+              <li><Link href="/preguntas-frecuentes" className="hover:text-primary-400 transition-colors">Preguntas frecuentes</Link></li>
+              <li><Link href="/citas" className="hover:text-primary-400 transition-colors">Reservar cita</Link></li>
               <li><Link href="/contacto" className="hover:text-primary-400 transition-colors">Contacto</Link></li>
             </ul>
           </div>
@@ -61,7 +73,7 @@ export default function Footer() {
           <div>
             <h3 className="text-white font-semibold text-lg mb-6">Servicios</h3>
             <ul className="space-y-4">
-              {servicios.slice(0, 6).map((servicio) => (
+              {servicios.filter((s) => s.imagen).map((servicio) => (
                 <li key={servicio.slug}>
                   <Link href={`/servicios/${servicio.slug}`} className="hover:text-primary-400 transition-colors">
                     {servicio.nombre}
@@ -77,11 +89,15 @@ export default function Footer() {
             <ul className="space-y-4">
               <li className="flex items-start">
                 <MapPin className="w-5 h-5 mr-3 mt-1 text-primary-500 shrink-0" />
-                <span>{empresaInfo.direccion}, {empresaInfo.ciudad}</span>
+                <address className="not-italic">
+                  <a href={empresaInfo.googleMapsLink} target="_blank" rel="noopener noreferrer" className="hover:text-primary-400 transition-colors">
+                    {empresaInfo.direccion}, {empresaInfo.ciudad}
+                  </a>
+                </address>
               </li>
               <li className="flex items-center">
                 <Phone className="w-5 h-5 mr-3 text-primary-500 shrink-0" />
-                <a href={`tel:${empresaInfo.telefono}`} className="hover:text-primary-400 transition-colors">
+                <a href={`tel:${empresaInfo.telefonoTel}`} className="hover:text-primary-400 transition-colors">
                   {empresaInfo.telefonoDisplay}
                 </a>
               </li>
@@ -98,6 +114,23 @@ export default function Footer() {
             </ul>
           </div>
         </div>
+
+        {/* Guías populares */}
+        <nav aria-label="Guías populares" className="border-t border-neutral-800 pt-8 pb-8">
+          <p className="text-white font-semibold mb-4">Guías populares</p>
+          <ul className="flex flex-wrap gap-2">
+            {guiasPopulares.map((g) => (
+              <li key={g.href}>
+                <Link
+                  href={g.href}
+                  className="inline-block text-sm px-3 py-1.5 rounded-full bg-neutral-800 hover:bg-primary-700 hover:text-white transition-colors"
+                >
+                  {g.label}
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </nav>
 
         <div className="border-t border-neutral-800 pt-8 flex flex-col md:flex-row items-center justify-between">
           <p className="text-sm mb-4 md:mb-0">

@@ -82,7 +82,16 @@ html {
   scroll-behavior: smooth;
 }
 
+@layer base {
+  h1, h2, h3, h4 {
+    font-family: var(--font-outfit), var(--font-inter), system-ui, sans-serif;
+    letter-spacing: -0.01em;
+  }
+}
+
 body {
+  /* Evita el scroll lateral en móvil cuando algo entra animado desde un costado. */
+  overflow-x: clip;
   background: var(--background);
   color: var(--foreground);
   font-family: var(--font-inter, 'Inter', system-ui, sans-serif);
@@ -90,7 +99,9 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-/* ===== UTILITY CLASSES ===== */
+/* ===== COMPONENT CLASSES ===== */
+/* En @layer components para que las utilidades de Tailwind puedan sobrescribirlas. */
+@layer components {
 
 /* Glassmorphism */
 .glass {
@@ -199,6 +210,24 @@ body {
   box-shadow: 0 8px 25px -5px rgba(37, 211, 102, 0.4);
 }
 
+.skip-link {
+  position: absolute;
+  left: 1rem;
+  top: -100px;
+  z-index: 100;
+  background: var(--primary-600);
+  color: white;
+  padding: 0.75rem 1.25rem;
+  border-radius: 0.75rem;
+  font-weight: 600;
+  transition: top 0.2s ease;
+}
+.skip-link:focus {
+  top: 1rem;
+}
+
+} /* fin @layer components */
+
 /* Animations */
 @keyframes float {
   0%, 100% { transform: translateY(0px); }
@@ -213,6 +242,50 @@ body {
 @keyframes slide-up {
   from { transform: translateY(20px); opacity: 0; }
   to { transform: translateY(0); opacity: 1; }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes scaleUp {
+  from { opacity: 0; transform: scale(0.94) translateY(12px); }
+  to { opacity: 1; transform: scale(1) translateY(0); }
+}
+
+.animate-fadeIn {
+  animation: fadeIn 0.3s ease-out;
+}
+
+.animate-scaleUp {
+  animation: scaleUp 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+@keyframes fab-ring {
+  0% { transform: scale(1); opacity: 0.6; }
+  70%, 100% { transform: scale(1.6); opacity: 0; }
+}
+
+.fab-ring {
+  animation: fab-ring 2.8s cubic-bezier(0, 0, 0.2, 1) infinite;
+}
+
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to { transform: translateX(calc(-50% - 1rem)); }
+}
+
+.marquee-track {
+  animation: marquee 40s linear infinite;
+}
+
+.marquee-mask:hover .marquee-track {
+  animation-play-state: paused;
+}
+
+.marquee-mask {
+  mask-image: linear-gradient(to right, transparent, black 6%, black 94%, transparent);
 }
 
 .animate-float {
@@ -248,4 +321,87 @@ body {
 ::selection {
   background: var(--primary-200);
   color: var(--primary-900);
+}
+
+/* ===== TRANSICIONES ENTRE PÁGINAS (View Transitions API) ===== */
+/* La página anterior sale rápido y la nueva entra con suavidad (ver PageTransition.tsx). */
+::view-transition {
+  pointer-events: none;
+}
+
+/* El resto de la ventana no hace fundido: solo se anima el contenido de la página. */
+::view-transition-old(root),
+::view-transition-new(root) {
+  animation: none;
+}
+
+::view-transition-old(.page-exit) {
+  animation: page-out 180ms cubic-bezier(0.4, 0, 1, 1) both;
+}
+
+::view-transition-new(.page-enter) {
+  animation: page-in 420ms cubic-bezier(0.22, 1, 0.36, 1) 120ms both;
+}
+
+@keyframes page-out {
+  to {
+    opacity: 0;
+    transform: translateY(-12px);
+    filter: blur(2px);
+  }
+}
+
+@keyframes page-in {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+    filter: blur(4px);
+  }
+}
+
+/* El menú y el botón de WhatsApp quedan fijos durante la transición. */
+::view-transition-group(site-header),
+::view-transition-group(whatsapp-fab) {
+  animation: none;
+  z-index: 100;
+}
+::view-transition-old(site-header),
+::view-transition-old(whatsapp-fab) {
+  display: none;
+}
+::view-transition-new(site-header),
+::view-transition-new(whatsapp-fab) {
+  animation: none;
+}
+
+/* ===== MOVIMIENTO REDUCIDO ===== */
+/* Respeta a quienes desactivan las animaciones en su sistema (va al final para ganar prioridad). */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+
+  ::view-transition-old(*),
+  ::view-transition-new(*),
+  ::view-transition-group(*) {
+    animation-duration: 0s !important;
+    animation-delay: 0s !important;
+  }
+}
+
+/* Brillo que recorre el texto con degradado del hero */
+.hero-shine {
+  background-size: 200% auto;
+  animation: hero-shine 6s linear infinite;
+}
+
+@keyframes hero-shine {
+  to {
+    background-position: 200% center;
+  }
 }

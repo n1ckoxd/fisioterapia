@@ -16,6 +16,13 @@ interface EspecialidadItem {
 
 const especialidades: EspecialidadItem[] = [
   {
+    titulo: 'Bebés de 0 a 12 meses',
+    subtitulo: 'Estimulación temprana, tortícolis, plagiocefalia y prematuros',
+    imagen: '/3.png',
+    link: '/servicios/fisioterapia-bebes-estimulacion-temprana',
+    slug: 'fisioterapia-bebes-estimulacion-temprana',
+  },
+  {
     titulo: 'Fisioterapia Pediátrica',
     subtitulo: 'Neurodesarrollo, estimulación temprana y psicomotricidad',
     imagen: '/pediatrico.png',
@@ -77,47 +84,53 @@ export default function EspecialidadesCircularesSection() {
           </div>
 
           <p className="text-neutral-600 text-base sm:text-lg mt-2">
-            Tratamientos personalizados en la comodidad de tu hogar y en consultorios acondicionados en puntos céntricos de Lima.
+            Tratamientos personalizados en la comodidad de tu hogar o en nuestra sede de {empresaInfo.distrito}, Lima.
           </p>
         </div>
 
-        {/* 5 Círculos de especialidades perfectamente centrados y balanceados */}
-        <div className="flex flex-wrap justify-center gap-10 md:gap-14 max-w-6xl mx-auto">
+        {/* Círculos de especialidades centrados y balanceados */}
+        <div className="flex flex-wrap justify-center gap-x-4 gap-y-10 sm:gap-10 md:gap-14 max-w-6xl mx-auto">
           {especialidades.map((item, index) => (
             <motion.div
               key={item.titulo}
-              initial={{ opacity: 0, y: 25 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: index * 0.08 }}
-              className="flex flex-col items-center text-center group w-full sm:w-[calc(50%-1.5rem)] lg:w-[calc(33.333%-2.5rem)] max-w-xs"
+              initial={{ opacity: 0, y: 40, scale: 0.85 }}
+              whileInView={{ opacity: 1, y: 0, scale: 1 }}
+              viewport={{ once: true, margin: '-40px' }}
+              transition={{ type: 'spring', stiffness: 180, damping: 20, delay: (index % 3) * 0.1 }}
+              className="flex flex-col items-center text-center group w-[calc(50%-0.5rem)] sm:w-[calc(50%-1.5rem)] lg:w-[calc(33.333%-2.5rem)] max-w-xs"
             >
-              {/* Círculo con imagen propia y borde celeste/cyan */}
+              {/* Círculo con imagen propia, borde celeste y anillo que gira al pasar el mouse */}
+              <div className="relative">
+              <span
+                aria-hidden
+                className="absolute -inset-3 rounded-full border-2 border-dashed border-[#00A8E8]/50 opacity-0 scale-90 group-hover:opacity-100 group-hover:scale-100 transition-all duration-500 animate-[spin_14s_linear_infinite]"
+              />
               <Link
                 href={item.link}
-                className="relative w-48 h-48 sm:w-56 sm:h-56 rounded-full p-1.5 border-4 border-[#00A8E8] shadow-lg group-hover:border-primary-500 group-hover:shadow-cyan-400/40 group-hover:scale-105 transition-all duration-300 block overflow-hidden bg-white"
+                className="relative w-36 h-36 sm:w-56 sm:h-56 rounded-full p-1 sm:p-1.5 border-[3px] sm:border-4 border-[#00A8E8] shadow-lg group-hover:border-primary-500 group-hover:shadow-cyan-400/40 group-hover:scale-105 transition-all duration-300 block overflow-hidden bg-white"
                 title={`Ver detalles de ${item.titulo}`}
               >
                 <div className="w-full h-full rounded-full overflow-hidden relative">
                   <Image
                     src={item.imagen}
-                    alt={item.titulo}
+                    alt={`${item.titulo} a domicilio en Lima - FisioSphere`}
                     fill
-                    sizes="(max-width: 640px) 192px, 224px"
-                    className="object-cover object-center group-hover:scale-110 transition-transform duration-500"
+                    sizes="(max-width: 640px) 144px, 224px"
+                    className="object-cover object-[60%_center] group-hover:scale-110 transition-transform duration-500"
                   />
                   {/* Overlay sutil al pasar el mouse */}
                   <div className="absolute inset-0 bg-[#00A8E8]/10 opacity-0 group-hover:opacity-100 transition-opacity" />
                 </div>
               </Link>
+              </div>
 
               {/* Título de la especialidad */}
-              <h3 className="mt-5 text-lg sm:text-xl font-bold text-gray-900 group-hover:text-[#00A8E8] transition-colors leading-snug">
+              <h3 className="mt-4 sm:mt-5 text-base sm:text-xl font-bold text-gray-900 group-hover:text-[#00A8E8] transition-colors leading-snug">
                 {item.titulo}
               </h3>
 
               {/* Subtítulo / Descripción breve */}
-              <p className="text-sm text-neutral-500 mt-1 max-w-xs leading-relaxed">
+              <p className="text-xs sm:text-sm text-neutral-500 mt-1 max-w-xs leading-relaxed">
                 {item.subtitulo}
               </p>
 

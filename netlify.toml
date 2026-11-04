@@ -4,3 +4,10 @@
 
 [[plugins]]
   package = "@netlify/plugin-nextjs"
+
+# El subdominio de Netlify redirige siempre al dominio principal (301 = permanente, bueno para SEO)
+[[redirects]]
+  from = "https://fisiosphere.netlify.app/*"
+  to = "https://fisiosphereperu.com.pe/:splat"
+  status = 301
+  force = true

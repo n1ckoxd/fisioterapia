@@ -5,11 +5,12 @@ import PageHeaderBanner from "@/components/ui/PageHeaderBanner";
 import ServiciosGrid from "@/components/servicios/ServiciosGrid";
 
 export const metadata: Metadata = {
-  title: "Servicios de Fisioterapia",
+  alternates: { canonical: "/servicios" },
+  title: "Servicios de Fisioterapia a Domicilio en Lima",
   description:
-    "Descubre todos nuestros servicios de fisioterapia: deportiva, rehabilitación, dolor lumbar, cervical, punción seca, masoterapia, electroterapia y más.",
+    "Servicios de fisioterapia a domicilio en Lima: estimulación temprana para bebés de 0 a 12 meses, fisioterapia pediátrica, geriátrica, neurológica, traumatológica, psicología infantil y más.",
   openGraph: {
-    title: "Servicios de Fisioterapia | Clínica FisioSphere",
+    title: "Servicios de Fisioterapia a Domicilio en Lima | FisioSphere",
     description:
       "Descubre todos nuestros servicios de fisioterapia especializados en Lima.",
   },

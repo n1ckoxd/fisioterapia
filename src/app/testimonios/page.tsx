@@ -3,13 +3,14 @@ import PageHeaderBanner from '@/components/ui/PageHeaderBanner';
 import TestimoniosContent from '@/components/testimonios/TestimoniosContent';
 
 export const metadata: Metadata = {
-  title: 'Testimonios | Clínica FisioSphere',
-  description: 'Descubre lo que nuestros pacientes dicen sobre nuestros tratamientos y servicios de fisioterapia.',
+  alternates: { canonical: "/testimonios" },
+  title: 'Testimonios de Pacientes y Familias',
+  description: 'Opiniones de familias que confiaron en FisioSphere: fisioterapia para bebés, niños, adulto mayor y psicología infantil a domicilio en Lima.',
 };
 
 export default function TestimoniosPage() {
   return (
-    <main className="min-h-screen bg-neutral-50 pb-20">
+    <div className="min-h-screen bg-neutral-50 pb-20">
       {/* Banner Oficial Fisiosphere te acompaña */}
       <PageHeaderBanner
         bannerImage="/te-acompana-2.png"
@@ -29,6 +30,6 @@ export default function TestimoniosPage() {
       <div className="pt-8">
         <TestimoniosContent />
       </div>
-    </main>
+    </div>
   );
 }

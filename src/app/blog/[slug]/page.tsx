@@ -1,15 +1,15 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import Link from "next/link";
-import { ChevronLeft, Calendar, User, Clock, Tag } from "lucide-react";
-import { articulos } from "@/lib/blog-data";
+import Image from "next/image";
+import { ChevronLeft, Calendar, User, Clock, Tag, ArrowRight, BadgeCheck, ListOrdered } from "lucide-react";
+import { articulos, imagenArticulo, formatearFecha, revisorArticulo } from "@/lib/blog-data";
+import { servicios, empresaInfo } from "@/lib/data";
 import { Breadcrumbs } from "@/components/seo/Breadcrumbs";
 import { ArticleSchema } from "@/components/seo/JsonLd";
-
-type Props = {
-  params: Promise<{ slug: string }>;
-  searchParams: Promise<{ [key: string]: string | string[] | undefined }>;
-};
+import MarkdownContent, { indiceArticulo } from "@/components/blog/MarkdownContent";
+import ReadingProgress from "@/components/blog/ReadingProgress";
+import { Reveal } from "@/components/ui/Reveal";
 
 // Generar rutas estáticas en build time (SSG)
 export async function generateStaticParams() {
@@ -19,106 +19,61 @@ export async function generateStaticParams() {
 }
 
 // Generar metadatos dinámicos para SEO
-export async function generateMetadata({ params }: Props): Promise<Metadata> {
-  const { slug } = await params;
+export async function generateMetadata(
+  props: PageProps<"/blog/[slug]">
+): Promise<Metadata> {
+  const { slug } = await props.params;
   const articulo = articulos.find((a) => a.slug === slug);
 
   if (!articulo) {
     return {
-      title: "Artículo no encontrado | Clínica FisioSphere",
+      title: "Artículo no encontrado",
     };
   }
 
+  const imagen = imagenArticulo(articulo);
+
   return {
-    title: `${articulo.titulo} | Blog FisioSphere`,
+    title: articulo.titulo,
     description: articulo.descripcion,
+    keywords: articulo.tags,
+    alternates: {
+      canonical: `/blog/${articulo.slug}`,
+    },
     openGraph: {
       title: articulo.titulo,
       description: articulo.descripcion,
       type: "article",
+      url: `${empresaInfo.url}/blog/${articulo.slug}`,
       publishedTime: articulo.fecha,
       authors: [articulo.autor],
       tags: articulo.tags,
+      images: [{ url: imagen, alt: articulo.titulo }],
     },
   };
 }
 
-export default async function BlogPostPage({ params }: Props) {
-  const { slug } = await params;
+export default async function BlogPostPage(props: PageProps<"/blog/[slug]">) {
+  const { slug } = await props.params;
   const articulo = articulos.find((a) => a.slug === slug);
 
   if (!articulo) {
     notFound();
   }
 
-  // Parsear markdown simple (simulación para contenido con ## y viñetas)
-  // En una app real usaríamos react-markdown o marked
-  const renderContent = (content: string) => {
-    const paragraphs = content.split('\n\n');
-    return paragraphs.map((paragraph, index) => {
-      if (paragraph.startsWith('## ')) {
-        return <h2 key={index} className="text-2xl font-bold text-neutral-800 mt-8 mb-4">{paragraph.replace('## ', '')}</h2>;
-      }
-      if (paragraph.startsWith('### ')) {
-        return <h3 key={index} className="text-xl font-bold text-neutral-800 mt-6 mb-3">{paragraph.replace('### ', '')}</h3>;
-      }
-      if (paragraph.includes('**')) {
-        // Simple bold parser
-        const parts = paragraph.split(/(\*\*.*?\*\*)/g);
-        return (
-          <p key={index} className="text-neutral-600 mb-4 leading-relaxed">
-            {parts.map((part, i) => {
-              if (part.startsWith('**') && part.endsWith('**')) {
-                return <strong key={i} className="text-neutral-900 font-semibold">{part.slice(2, -2)}</strong>;
-              }
-              return part;
-            })}
-          </p>
-        );
-      }
-      if (paragraph.startsWith('- ')) {
-        const items = paragraph.split('\n').filter(i => i.trim());
-        return (
-          <ul key={index} className="list-disc pl-5 mb-4 text-neutral-600 space-y-2">
-            {items.map((item, i) => (
-              <li key={i}>{item.replace('- ', '')}</li>
-            ))}
-          </ul>
-        );
-      }
-      if (paragraph.startsWith('1. ')) {
-        const items = paragraph.split('\n').filter(i => i.trim());
-        return (
-          <ol key={index} className="list-decimal pl-5 mb-4 text-neutral-600 space-y-2">
-            {items.map((item, i) => {
-               // Remove numbers and dot at start
-               const text = item.replace(/^\d+\.\s/, '');
-               return <li key={i}>{text}</li>;
-            })}
-          </ol>
-        );
-      }
-      if (paragraph.startsWith('|')) {
-        // Simple table rendering placeholder
-         return (
-            <div key={index} className="overflow-x-auto mb-6">
-              <table className="w-full text-left border-collapse">
-                 <tbody className="divide-y divide-neutral-200">
-                    <tr className="bg-neutral-50"><td className="p-3 text-neutral-600 text-sm">Tabla ilustrativa</td></tr>
-                 </tbody>
-              </table>
-            </div>
-         );
-      }
-      
-      // Default paragraph
-      return <p key={index} className="text-neutral-600 mb-4 leading-relaxed">{paragraph}</p>;
-    });
-  };
+  const imagen = imagenArticulo(articulo);
+  const revisor = revisorArticulo(articulo);
+  const indice = indiceArticulo(articulo.contenido);
+  const servicio = servicios.find((s) => s.slug === articulo.servicioRelacionado);
+  const relacionados = [
+    ...articulos.filter((a) => a.slug !== articulo.slug && a.categoria === articulo.categoria),
+    ...articulos.filter((a) => a.slug !== articulo.slug && a.categoria !== articulo.categoria),
+  ].slice(0, 3);
 
   return (
     <>
-      <ArticleSchema article={articulo} />
+      <ReadingProgress />
+      <ArticleSchema article={{ ...articulo, imagen }} revisor={revisor} />
       <div className="bg-neutral-50 pt-8 pb-12">
         <Breadcrumbs
           items={[
@@ -138,17 +93,17 @@ export default async function BlogPostPage({ params }: Props) {
           </Link>
 
           {/* Header del artículo */}
-          <header className="mb-12">
+          <header className="mb-10">
             <div className="flex items-center gap-3 mb-6 flex-wrap">
               <span className="bg-primary-100 text-primary-700 px-3 py-1 rounded-full text-sm font-semibold">
                 {articulo.categoria}
               </span>
             </div>
-            
+
             <h1 className="text-3xl md:text-5xl font-bold text-neutral-900 mb-6 leading-tight">
               {articulo.titulo}
             </h1>
-            
+
             <p className="text-xl text-neutral-500 mb-8 leading-relaxed">
               {articulo.descripcion}
             </p>
@@ -160,28 +115,93 @@ export default async function BlogPostPage({ params }: Props) {
               </div>
               <div className="flex items-center gap-2">
                 <Calendar className="w-4 h-4" />
-                <time dateTime={articulo.fecha}>
-                  {new Date(articulo.fecha).toLocaleDateString("es-ES", {
-                    day: "numeric",
-                    month: "long",
-                    year: "numeric",
-                  })}
-                </time>
+                <time dateTime={articulo.fecha}>{formatearFecha(articulo.fecha)}</time>
               </div>
               <div className="flex items-center gap-2">
                 <Clock className="w-4 h-4" />
                 <span>{articulo.tiempoLectura}</span>
               </div>
             </div>
+
+            {revisor && (
+              <Link
+                href={`/nosotros/${revisor.slug}`}
+                className="mt-5 flex items-center gap-4 rounded-2xl bg-white border border-neutral-200 p-4 hover:border-primary-300 transition-colors group"
+              >
+                {revisor.foto && (
+                  <span className="relative w-14 h-14 rounded-full overflow-hidden shrink-0 ring-2 ring-primary-100">
+                    <Image src={revisor.foto} alt={revisor.nombre} fill sizes="56px" className="object-cover object-top" />
+                  </span>
+                )}
+                <span className="text-sm leading-snug">
+                  <span className="flex items-center gap-1.5 text-neutral-500">
+                    <BadgeCheck className="w-4 h-4 text-success" /> Contenido revisado por
+                  </span>
+                  <span className="block font-bold text-neutral-900 group-hover:text-primary-600 transition-colors">{revisor.nombre}</span>
+                  <span className="block text-neutral-500">{revisor.tituloProfesional}</span>
+                </span>
+              </Link>
+            )}
           </header>
 
-          {/* Contenido principal */}
-          <div className="prose prose-lg max-w-none">
-            {renderContent(articulo.contenido)}
+          <div className="relative aspect-[16/9] rounded-3xl overflow-hidden shadow-lg mb-10">
+            <Image
+              src={imagen}
+              alt={articulo.titulo}
+              fill
+              priority
+              sizes="(max-width: 896px) 100vw, 896px"
+              className="object-cover"
+            />
           </div>
 
+          {/* Índice del artículo */}
+          {indice.length > 2 && (
+            <nav aria-label="En este artículo" className="mb-10 rounded-2xl bg-white border border-neutral-200 p-6">
+              <p className="flex items-center gap-2 font-bold text-neutral-900 mb-3">
+                <ListOrdered className="w-5 h-5 text-primary-600" /> En este artículo
+              </p>
+              <ol className="grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-2 text-sm">
+                {indice.map((h, n) => (
+                  <li key={h.id}>
+                    <a href={`#${h.id}`} className="flex gap-2 text-neutral-600 hover:text-primary-600 transition-colors">
+                      <span className="text-primary-500 font-semibold">{n + 1}.</span>
+                      {h.texto}
+                    </a>
+                  </li>
+                ))}
+              </ol>
+            </nav>
+          )}
+
+          {/* Contenido principal */}
+          <div className="text-lg">
+            <MarkdownContent content={articulo.contenido} />
+          </div>
+
+          {/* Servicio relacionado */}
+          {servicio && (
+            <Reveal>
+            <aside className="mt-12 rounded-3xl overflow-hidden bg-white border border-primary-100 shadow-sm grid grid-cols-1 sm:grid-cols-3">
+              {servicio.imagen && (
+                <div className="relative h-48 sm:h-auto">
+                  <Image src={servicio.imagen} alt={servicio.imagenAlt ?? servicio.nombre} fill sizes="(max-width: 640px) 100vw, 300px" className="object-cover" />
+                </div>
+              )}
+              <div className={`p-6 sm:p-8 ${servicio.imagen ? "sm:col-span-2" : "sm:col-span-3"}`}>
+                <p className="text-sm font-semibold text-primary-600 mb-1">Servicio relacionado</p>
+                <h2 className="text-2xl font-bold text-neutral-900 mb-2">{servicio.nombre}</h2>
+                <p className="text-neutral-600 mb-5">{servicio.descripcionCorta}</p>
+                <Link href={`/servicios/${servicio.slug}`} className="btn-primary">
+                  Conocer el servicio <ArrowRight className="w-4 h-4" />
+                </Link>
+              </div>
+            </aside>
+            </Reveal>
+          )}
+
           {/* Footer del artículo - Tags */}
-          <footer className="mt-16 pt-8 border-t border-neutral-200">
+          <footer className="mt-12 pt-8 border-t border-neutral-200">
             <div className="flex items-center gap-4 flex-wrap">
               <span className="font-semibold text-neutral-900 flex items-center gap-2">
                 <Tag className="w-4 h-4" /> Etiquetas:
@@ -199,20 +219,40 @@ export default async function BlogPostPage({ params }: Props) {
         </article>
       </div>
 
+      {/* Artículos relacionados */}
+      <section className="py-16">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 className="text-2xl md:text-3xl font-bold text-neutral-900 mb-8 text-center">También te puede interesar</h2>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {relacionados.map((a) => (
+              <Link key={a.slug} href={`/blog/${a.slug}`} className="group bg-white rounded-2xl overflow-hidden shadow-sm border border-neutral-100 card-hover">
+                <div className="relative h-40 overflow-hidden">
+                  <Image src={imagenArticulo(a)} alt="" fill sizes="(max-width: 768px) 100vw, 33vw" className="object-cover transition-transform duration-700 group-hover:scale-110" />
+                </div>
+                <div className="p-5">
+                  <span className="text-xs text-primary-600 font-semibold">{a.categoria}</span>
+                  <h3 className="font-bold text-neutral-800 mt-1 group-hover:text-primary-600 transition-colors line-clamp-2">{a.titulo}</h3>
+                </div>
+              </Link>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* CTA Section */}
-      <section className="bg-primary-50 py-16 mt-12">
+      <section className="bg-primary-50 py-16">
         <div className="max-w-4xl mx-auto px-4 text-center">
-          <h2 className="text-3xl font-bold text-neutral-900 mb-4">¿Necesitas ayuda con tu recuperación?</h2>
+          <h2 className="text-3xl font-bold text-neutral-900 mb-4">¿Necesitas ayuda con tu caso?</h2>
           <p className="text-lg text-neutral-600 mb-8">
-            Nuestros fisioterapeutas expertos pueden evaluar tu caso y diseñar un plan de tratamiento personalizado.
+            Nuestros especialistas pueden evaluarte a domicilio o en nuestra sede de {empresaInfo.direccion} y diseñar un plan personalizado.
           </p>
-          <div className="flex justify-center gap-4">
-            <Link href="/citas" className="btn-primary">
+          <div className="flex flex-col sm:flex-row justify-center gap-4">
+            <Link href="/citas" className="btn-primary justify-center">
               Reservar Cita
             </Link>
-            <Link href="/contacto" className="btn-secondary bg-white text-primary-600 border-primary-200">
-              Contactar
-            </Link>
+            <a href={empresaInfo.whatsappLink} target="_blank" rel="noopener noreferrer" className="btn-whatsapp justify-center">
+              WhatsApp
+            </a>
           </div>
         </div>
       </section>

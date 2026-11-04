@@ -64,11 +64,11 @@ export default function BeneficiosSection() {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-4xl font-bold text-gray-900 mb-4"
+            className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4"
           >
             ¿Por qué elegir <span className="text-primary-600">FisioSphere?</span>
           </motion.h2>
-          <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+          <p className="text-lg sm:text-xl text-gray-600 max-w-2xl mx-auto">
             Nos distinguimos por nuestro compromiso con tu salud y bienestar, ofreciendo un servicio de excelencia.
           </p>
         </div>
@@ -81,8 +81,8 @@ export default function BeneficiosSection() {
           className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto"
         >
           {beneficios.map((beneficio, index) => (
-            <motion.div key={index} variants={itemVariants} className="bg-white p-8 rounded-2xl shadow-sm card-hover border border-gray-100">
-              <div className="w-14 h-14 bg-primary-50 text-primary-600 rounded-xl flex items-center justify-center mb-6">
+            <motion.div key={index} variants={itemVariants} className="group bg-white p-8 rounded-2xl shadow-sm card-hover border border-gray-100">
+              <div className="w-14 h-14 bg-primary-50 text-primary-600 rounded-xl flex items-center justify-center mb-6 transition-all duration-300 group-hover:scale-110 group-hover:-rotate-6 group-hover:bg-primary-600 group-hover:text-white">
                 <beneficio.icon size={28} />
               </div>
               <h3 className="text-xl font-bold text-gray-900 mb-3">{beneficio.title}</h3>

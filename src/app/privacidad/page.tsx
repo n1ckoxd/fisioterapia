@@ -3,13 +3,14 @@ import { Breadcrumbs } from '@/components/seo/Breadcrumbs';
 import { empresaInfo } from '@/lib/data';
 
 export const metadata: Metadata = {
-  title: 'Política de Privacidad | Clínica de Fisioterapia',
+  alternates: { canonical: "/privacidad" },
+  title: 'Política de Privacidad',
   description: 'Política de privacidad y protección de datos de nuestra clínica de fisioterapia.',
 };
 
 export default function PrivacidadPage() {
   return (
-    <main className="min-h-screen bg-white pb-20">
+    <div className="min-h-screen bg-white pb-20">
       <div className="pt-24 pb-8 bg-neutral-50 border-b border-neutral-100">
         <div className="container mx-auto px-4 max-w-4xl">
           <Breadcrumbs 
@@ -98,6 +99,6 @@ export default function PrivacidadPage() {
           esta página periódicamente.
         </p>
       </div>
-    </main>
+    </div>
   );
 }

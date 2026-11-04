@@ -1,3 +1,6 @@
+import { articulosEspecialidades } from "./blog-especialidades";
+import { equipo, type MiembroEquipo } from "./data";
+
 /* ===== DATA: Blog Articles ===== */
 
 export interface Articulo {
@@ -12,22 +15,20 @@ export interface Articulo {
   tiempoLectura: string;
   tags: string[];
   publicado: boolean;
+  imagen?: string;
+  servicioRelacionado?: string;
 }
 
 export const categoriasBlog = [
-  "Dolor lumbar",
-  "Rodilla",
-  "Espalda",
-  "Cuello",
-  "Hombro",
-  "Ejercicio",
-  "Lesiones deportivas",
+  "Bebés y estimulación temprana",
+  "Adulto mayor",
+  "Psicología infantil",
+  "Dolor de espalda y cuello",
+  "Lesiones y rehabilitación",
   "Consejos",
-  "Noticias",
-  "Psicopedagogía",
 ];
 
-export const articulos: Articulo[] = [
+const articulosGenerales: Articulo[] = [
   {
     id: 1,
     slug: "ejercicios-para-dolor-lumbar",
@@ -164,9 +165,9 @@ Consulta con un fisioterapeuta si:
 ## Conclusión
 
 El ejercicio terapéutico es la herramienta más efectiva para tratar y prevenir el dolor lumbar. Sin embargo, cada persona es diferente y los ejercicios deben adaptarse a tu situación particular. **Te recomendamos consultar con un fisioterapeuta** para diseñar un programa personalizado.`,
-    autor: "Dr. Alejandro Ruiz",
+    autor: "Equipo FisioSphere",
     fecha: "2024-12-01",
-    categoria: "Dolor lumbar",
+    categoria: "Dolor de espalda y cuello",
     tiempoLectura: "8 min",
     tags: ["dolor lumbar", "ejercicios", "espalda", "fisioterapia"],
     publicado: true,
@@ -254,9 +255,9 @@ Una buena nutrición ayuda a prevenir lesiones:
 ## Conclusión
 
 La prevención de lesiones deportivas requiere un enfoque integral. Si quieres un programa personalizado de prevención, **consulta con un fisioterapeuta deportivo** que evalúe tus factores de riesgo individuales.`,
-    autor: "Dr. Miguel Fernández",
+    autor: "Equipo FisioSphere",
     fecha: "2024-11-25",
-    categoria: "Lesiones deportivas",
+    categoria: "Lesiones y rehabilitación",
     tiempoLectura: "12 min",
     tags: ["lesiones deportivas", "prevención", "deporte", "calentamiento"],
     publicado: true,
@@ -341,7 +342,7 @@ Los efectos secundarios son **leves y temporales**:
 ## Conclusión
 
 La punción seca es una técnica segura y efectiva cuando es realizada por un fisioterapeuta cualificado. Si sufres de dolor muscular crónico o contracturas recurrentes, la punción seca puede ser una excelente opción de tratamiento.`,
-    autor: "Dr. Alejandro Ruiz",
+    autor: "Equipo FisioSphere",
     fecha: "2024-11-18",
     categoria: "Consejos",
     tiempoLectura: "6 min",
@@ -420,9 +421,9 @@ Para desactivar puntos gatillo en trapecio, elevador de la escápula y musculatu
 ## Conclusión
 
 El dolor cervical tiene tratamiento efectivo en fisioterapia. No aceptes el dolor como algo normal. Un fisioterapeuta puede identificar la causa y diseñar un plan de tratamiento personalizado para ti.`,
-    autor: "Dra. Sofía Martínez",
+    autor: "Equipo FisioSphere",
     fecha: "2024-11-10",
-    categoria: "Cuello",
+    categoria: "Dolor de espalda y cuello",
     tiempoLectura: "10 min",
     tags: ["dolor cervical", "cuello", "cervicalgia", "tratamiento"],
     publicado: true,
@@ -509,9 +510,9 @@ La artroplastia total de rodilla es una de las cirugías más frecuentes en trau
 ## Conclusión
 
 La rehabilitación tras una prótesis de rodilla requiere paciencia y constancia. Cada paciente evoluciona a su ritmo, y es fundamental seguir las indicaciones del fisioterapeuta.`,
-    autor: "Dra. Sofía Martínez",
+    autor: "Equipo FisioSphere",
     fecha: "2024-11-02",
-    categoria: "Rodilla",
+    categoria: "Lesiones y rehabilitación",
     tiempoLectura: "15 min",
     tags: ["rodilla", "prótesis", "rehabilitación", "cirugía"],
     publicado: true,
@@ -577,7 +578,7 @@ El uso excesivo del móvil con la cabeza inclinada hacia abajo genera una sobrec
 ## Conclusión
 
 Pequeños ajustes ergonómicos pueden tener un **gran impacto** en tu salud. Si ya tienes molestias, consulta con un fisioterapeuta para una valoración personalizada.`,
-    autor: "Dr. Alejandro Ruiz",
+    autor: "Equipo FisioSphere",
     fecha: "2024-10-28",
     categoria: "Consejos",
     tiempoLectura: "7 min",
@@ -638,7 +639,7 @@ Ponte de puntillas y baja lentamente. 3 series de 15 repeticiones.
 ## Conclusión
 
 La fascitis plantar puede ser muy limitante, pero tiene un buen pronóstico con el tratamiento adecuado. La mayoría de los pacientes mejoran significativamente en 6-12 semanas de tratamiento.`,
-    autor: "Dr. Miguel Fernández",
+    autor: "Equipo FisioSphere",
     fecha: "2024-10-20",
     categoria: "Consejos",
     tiempoLectura: "8 min",
@@ -697,9 +698,9 @@ Con un tratamiento adecuado, la mayoría de las tendinitis del supraespinoso se 
 ## Conclusión
 
 El dolor de hombro por tendinitis del supraespinoso es muy frecuente y tiene buen pronóstico con fisioterapia. No esperes a que empeore, consulta con un profesional.`,
-    autor: "Dra. Sofía Martínez",
+    autor: "Equipo FisioSphere",
     fecha: "2024-10-15",
-    categoria: "Hombro",
+    categoria: "Lesiones y rehabilitación",
     tiempoLectura: "9 min",
     tags: ["hombro", "tendinitis", "supraespinoso", "manguito rotador"],
     publicado: true,
@@ -761,9 +762,9 @@ Un esguince de tobillo es una **lesión de los ligamentos** que estabilizan la a
 ## Conclusión
 
 La rehabilitación del esguince de tobillo es fundamental para prevenir recaídas. El 40% de los esguinces mal tratados desarrollan inestabilidad crónica. Consulta con un fisioterapeuta para una recuperación completa.`,
-    autor: "Dr. Miguel Fernández",
+    autor: "Equipo FisioSphere",
     fecha: "2024-10-08",
-    categoria: "Lesiones deportivas",
+    categoria: "Lesiones y rehabilitación",
     tiempoLectura: "11 min",
     tags: ["tobillo", "esguince", "rehabilitación", "deporte"],
     publicado: true,
@@ -813,9 +814,9 @@ Una hernia discal lumbar se produce cuando el **núcleo pulposo del disco interv
 ## Conclusión
 
 La hernia discal lumbar tiene un excelente pronóstico con tratamiento conservador. La clave es mantenerse activo, hacer ejercicio adaptado y confiar en el proceso de recuperación.`,
-    autor: "Dr. Alejandro Ruiz",
+    autor: "Equipo FisioSphere",
     fecha: "2024-09-30",
-    categoria: "Espalda",
+    categoria: "Dolor de espalda y cuello",
     tiempoLectura: "9 min",
     tags: ["hernia discal", "lumbar", "ciática", "columna"],
     publicado: true,
@@ -855,7 +856,7 @@ Es la **compresión del nervio mediano** a su paso por el túnel carpiano en la 
 ## Conclusión
 
 El tratamiento conservador es efectivo en la mayoría de los casos leves-moderados. Consulta con un fisioterapeuta si tienes síntomas.`,
-    autor: "Dra. Sofía Martínez",
+    autor: "Equipo FisioSphere",
     fecha: "2024-09-22",
     categoria: "Consejos",
     tiempoLectura: "6 min",
@@ -894,9 +895,9 @@ El Pilates terapéutico es una **adaptación del método Pilates** aplicada por 
 ## Conclusión
 
 El Pilates terapéutico es una herramienta excelente cuando es supervisado por un fisioterapeuta. Consulta si puede ser beneficioso para tu caso.`,
-    autor: "Dra. Sofía Martínez",
+    autor: "Equipo FisioSphere",
     fecha: "2024-09-15",
-    categoria: "Ejercicio",
+    categoria: "Consejos",
     tiempoLectura: "5 min",
     tags: ["pilates", "ejercicio", "core", "rehabilitación"],
     publicado: true,
@@ -938,9 +939,9 @@ Los niños ansiosos se benefician enormemente de las rutinas. Saber qué va a pa
 ## ¿Cuándo buscar ayuda profesional?
 
 Si la ansiedad está afectando significativamente la calidad de vida de tu hijo, su rendimiento escolar o sus relaciones familiares, es el momento de consultar con un psicólogo infantil. La terapia (especialmente a través del juego y el enfoque cognitivo-conductual) proporciona herramientas excelentes tanto para el niño como para los padres.`,
-    autor: "Lic. Andrea Ramos",
+    autor: "Equipo FisioSphere",
     fecha: "2024-12-15",
-    categoria: "Psicopedagogía",
+    categoria: "Psicología infantil",
     tiempoLectura: "6 min",
     tags: ["psicología infantil", "ansiedad", "emociones", "padres", "crianza"],
     publicado: true,
@@ -979,11 +980,82 @@ Los niños con TDAH reciben muchas más críticas a lo largo del día que los ni
 El diagnóstico debe ser realizado por profesionales (neurólogo, psiquiatra o psicólogo clínico). Una vez diagnosticado, la terapia psicológica infantil ayuda al niño a desarrollar habilidades de autorregulación emocional, habilidades sociales y autoestima, mientras proporciona psicoeducación y estrategias a los padres.
 
 En FisioSphere, entendemos la importancia de un abordaje integral, apoyando tanto al niño como a su familia en este proceso.`,
-    autor: "Lic. Andrea Ramos",
+    autor: "Equipo FisioSphere",
     fecha: "2024-12-05",
-    categoria: "Psicopedagogía",
+    categoria: "Psicología infantil",
     tiempoLectura: "7 min",
     tags: ["TDAH", "psicología infantil", "atención", "crianza", "desarrollo"],
     publicado: true,
   },
 ];
+
+// Artículos de especialidades primero y luego el resto, del más reciente al más antiguo.
+export const articulos: Articulo[] = [...articulosEspecialidades, ...articulosGenerales].sort(
+  (a, b) => b.fecha.localeCompare(a.fecha)
+);
+
+// Imagen por categoría para los artículos que no tienen una propia.
+export const imagenPorCategoria: Record<string, string> = {
+  "Bebés y estimulación temprana": "/3.png",
+  "Adulto mayor": "/geriatrico.png",
+  "Psicología infantil": "/psicopedagogia.png",
+  "Dolor de espalda y cuello": "/2.png",
+  "Lesiones y rehabilitación": "/traumatologia.png",
+  "Consejos": "/1.png",
+};
+
+export function imagenArticulo(a: Articulo): string {
+  return a.imagen ?? imagenPorCategoria[a.categoria] ?? "/1.png";
+}
+
+// Fecha legible sin desfase de zona horaria ("2026-11-02" → "2 de noviembre de 2026").
+export function formatearFecha(fecha: string) {
+  return new Date(`${fecha}T12:00:00Z`).toLocaleDateString('es-PE', {
+    day: 'numeric',
+    month: 'long',
+    year: 'numeric',
+    timeZone: 'UTC',
+  });
+}
+
+// Especialista del equipo que revisa los artículos de cada categoría.
+const revisorPorCategoria: Record<string, string> = {
+  "Bebés y estimulación temprana": "ivon-serrano",
+  "Dolor de espalda y cuello": "ivon-serrano",
+  "Adulto mayor": "miguel-alvarez",
+  "Lesiones y rehabilitación": "miguel-alvarez",
+  "Consejos": "miguel-alvarez",
+  "Psicología infantil": "shirley-wong",
+};
+
+export function revisorArticulo(a: Articulo): MiembroEquipo | undefined {
+  return equipo.find((m) => m.slug === revisorPorCategoria[a.categoria]);
+}
+
+// Categoría del blog más cercana a cada servicio (para mostrar artículos relacionados).
+const categoriaPorServicio: Record<string, string> = {
+  "fisioterapia-bebes-estimulacion-temprana": "Bebés y estimulación temprana",
+  "fisioterapia-pediatrica": "Bebés y estimulación temprana",
+  "fisioterapia-geriatrica": "Adulto mayor",
+  "terapia-psicopedagogica": "Psicología infantil",
+  "fisioterapia-traumatologica": "Lesiones y rehabilitación",
+  "fisioterapia-neurologica": "Adulto mayor",
+  "fisioterapia-deportiva": "Lesiones y rehabilitación",
+  "rehabilitacion": "Lesiones y rehabilitación",
+  "rehabilitacion-postoperatoria": "Lesiones y rehabilitación",
+  "ejercicio-terapeutico": "Consejos",
+  "dolor-lumbar": "Dolor de espalda y cuello",
+  "dolor-cervical": "Dolor de espalda y cuello",
+  "terapia-manual": "Dolor de espalda y cuello",
+  "masoterapia": "Dolor de espalda y cuello",
+  "puncion-seca": "Consejos",
+  "electroterapia": "Consejos",
+};
+
+// Artículos para la página de un servicio: primero los que lo citan, luego los de su categoría.
+export function articulosDeServicio(slug: string, cantidad = 3): Articulo[] {
+  const categoria = categoriaPorServicio[slug];
+  const directos = articulos.filter((a) => a.servicioRelacionado === slug);
+  const deCategoria = articulos.filter((a) => a.servicioRelacionado !== slug && a.categoria === categoria);
+  return [...directos, ...deCategoria].slice(0, cantidad);
+}

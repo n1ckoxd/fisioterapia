@@ -1,4 +1,5 @@
 import type { MetadataRoute } from "next";
+import { empresaInfo } from "@/lib/data";
 
 export default function robots(): MetadataRoute.Robots {
   return {
@@ -6,9 +7,10 @@ export default function robots(): MetadataRoute.Robots {
       {
         userAgent: "*",
         allow: "/",
-        disallow: ["/admin/", "/api/", "/_next/"],
+        disallow: ["/admin/", "/api/", "/login"],
       },
     ],
-    sitemap: "https://www.fisiosphere.pe/sitemap.xml",
+    sitemap: `${empresaInfo.url}/sitemap.xml`,
+    host: empresaInfo.url,
   };
 }

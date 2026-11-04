@@ -37,14 +37,7 @@ export async function proxy(request: NextRequest) {
 }
 
 export const config = {
-  matcher: [
-    /*
-     * Match all request paths except for the ones starting with:
-     * - _next/static (static files)
-     * - _next/image (image optimization files)
-     * - favicon.ico (favicon file)
-     * Feel free to modify this pattern to include more paths.
-     */
-    '/((?!_next/static|_next/image|favicon.ico|.*\\.(?:svg|png|jpg|jpeg|gif|webp)$).*)',
-  ],
+  // Solo las rutas que necesitan sesión. Las páginas públicas no pasan por aquí,
+  // así no esperan una consulta a Supabase en cada visita (mejor velocidad y SEO).
+  matcher: ['/admin/:path*', '/login'],
 };

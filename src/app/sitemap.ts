@@ -1,96 +1,51 @@
 import type { MetadataRoute } from "next";
-import { servicios, equipo } from "@/lib/data";
-import { articulos } from "@/lib/blog-data";
+import { servicios, equipo, empresaInfo } from "@/lib/data";
+import { articulos, imagenArticulo } from "@/lib/blog-data";
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = "https://www.fisiosphere.pe";
+  const baseUrl = empresaInfo.url;
+  const ahora = new Date();
+  const img = (ruta: string) => `${baseUrl}${ruta}`;
 
   // Páginas estáticas
   const staticPages: MetadataRoute.Sitemap = [
-    {
-      url: baseUrl,
-      lastModified: new Date(),
-      changeFrequency: "weekly",
-      priority: 1,
-    },
-    {
-      url: `${baseUrl}/servicios`,
-      lastModified: new Date(),
-      changeFrequency: "monthly",
-      priority: 0.9,
-    },
-    {
-      url: `${baseUrl}/nosotros`,
-      lastModified: new Date(),
-      changeFrequency: "monthly",
-      priority: 0.7,
-    },
-    {
-      url: `${baseUrl}/contacto`,
-      lastModified: new Date(),
-      changeFrequency: "monthly",
-      priority: 0.8,
-    },
-    {
-      url: `${baseUrl}/citas`,
-      lastModified: new Date(),
-      changeFrequency: "monthly",
-      priority: 0.9,
-    },
-    {
-      url: `${baseUrl}/blog`,
-      lastModified: new Date(),
-      changeFrequency: "weekly",
-      priority: 0.8,
-    },
-    {
-      url: `${baseUrl}/testimonios`,
-      lastModified: new Date(),
-      changeFrequency: "monthly",
-      priority: 0.6,
-    },
-    {
-      url: `${baseUrl}/preguntas-frecuentes`,
-      lastModified: new Date(),
-      changeFrequency: "monthly",
-      priority: 0.6,
-    },
-    {
-      url: `${baseUrl}/privacidad`,
-      lastModified: new Date(),
-      changeFrequency: "yearly",
-      priority: 0.3,
-    },
-    {
-      url: `${baseUrl}/terminos`,
-      lastModified: new Date(),
-      changeFrequency: "yearly",
-      priority: 0.3,
-    },
+    { url: baseUrl, lastModified: ahora, changeFrequency: "weekly", priority: 1, images: [img("/3.png"), img("/1.png")] },
+    { url: `${baseUrl}/servicios`, lastModified: ahora, changeFrequency: "monthly", priority: 0.9 },
+    { url: `${baseUrl}/citas`, lastModified: ahora, changeFrequency: "monthly", priority: 0.9 },
+    { url: `${baseUrl}/blog`, lastModified: ahora, changeFrequency: "weekly", priority: 0.8 },
+    { url: `${baseUrl}/contacto`, lastModified: ahora, changeFrequency: "monthly", priority: 0.8 },
+    { url: `${baseUrl}/nosotros`, lastModified: ahora, changeFrequency: "monthly", priority: 0.7 },
+    { url: `${baseUrl}/preguntas-frecuentes`, lastModified: ahora, changeFrequency: "monthly", priority: 0.7 },
+    { url: `${baseUrl}/testimonios`, lastModified: ahora, changeFrequency: "monthly", priority: 0.6 },
+    { url: `${baseUrl}/privacidad`, lastModified: ahora, changeFrequency: "yearly", priority: 0.2 },
+    { url: `${baseUrl}/terminos`, lastModified: ahora, changeFrequency: "yearly", priority: 0.2 },
   ];
 
-  // Páginas de servicios
+  // Servicios: las especialidades principales tienen más prioridad
   const servicePages: MetadataRoute.Sitemap = servicios.map((servicio) => ({
     url: `${baseUrl}/servicios/${servicio.slug}`,
-    lastModified: new Date(),
+    lastModified: ahora,
     changeFrequency: "monthly" as const,
-    priority: 0.8,
+    priority: servicio.slug === "fisioterapia-bebes-estimulacion-temprana" ? 0.95 : servicio.imagen ? 0.85 : 0.7,
+    ...(servicio.imagen ? { images: [img(servicio.imagen)] } : {}),
   }));
 
-  // Páginas de especialistas
+  // Especialistas
   const equipoPages: MetadataRoute.Sitemap = equipo.map((miembro) => ({
     url: `${baseUrl}/nosotros/${miembro.slug}`,
-    lastModified: new Date(),
+    lastModified: ahora,
     changeFrequency: "monthly" as const,
-    priority: 0.8,
+    priority: 0.7,
+    ...(miembro.foto ? { images: [img(miembro.foto)] } : {}),
   }));
 
   // Artículos del blog
   const blogPages: MetadataRoute.Sitemap = articulos.map((articulo) => ({
     url: `${baseUrl}/blog/${articulo.slug}`,
-    lastModified: new Date(articulo.fecha),
+    lastModified: new Date(`${articulo.fecha}T12:00:00Z`),
     changeFrequency: "monthly" as const,
     priority: 0.7,
+    images: [img(imagenArticulo(articulo))],
   }));
 
   return [...staticPages, ...servicePages, ...equipoPages, ...blogPages];

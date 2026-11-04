@@ -11,10 +11,10 @@ import {
   Shield,
   GraduationCap,
   MessageCircle,
-  Sparkles,
   ArrowRight,
 } from "lucide-react";
 import PageHeaderBanner from "@/components/ui/PageHeaderBanner";
+import AnimatedCounter from "@/components/ui/AnimatedCounter";
 import type { MiembroEquipo } from "@/lib/data";
 
 interface NosotrosContentProps {
@@ -98,7 +98,7 @@ export default function NosotrosContent({
             Conoce a <span className="gradient-text">{empresaInfo.nombre}</span>
           </>
         }
-        subtitle="Somos un equipo multidisciplinario de fisioterapeutas y psicólogos comprometidos con el bienestar de tu familia. Brindamos atención personalizada a domicilio y en consultorios acondicionados en Lima."
+        subtitle="Somos un equipo multidisciplinario de fisioterapeutas y psicólogos comprometidos con el bienestar de tu familia. Brindamos atención personalizada a domicilio en Lima y en nuestra sede de Jesús María."
         breadcrumbs={[
           { label: "Inicio", href: "/" },
           { label: "Nosotros", href: "/nosotros" },
@@ -116,7 +116,7 @@ export default function NosotrosContent({
               Profesionales Comprometidos con tu Recuperación
             </h2>
             <p className="text-neutral-600 max-w-2xl mx-auto text-base sm:text-lg">
-              Conoce a los licenciados que cuidarán de ti y de tus seres queridos con calidez humana y rigor clínico.
+              Conoce a los profesionales colegiados que cuidarán de ti y de tus seres queridos con calidez humana y rigor clínico.
             </p>
           </div>
 
@@ -250,7 +250,7 @@ export default function NosotrosContent({
                   <strong>{empresaInfo.nombreCompleto}</strong> nació con una misión clara: ofrecer fisioterapia y atención psicológica de calidad, personalizada y basada en la evidencia científica.
                 </p>
                 <p>
-                  Sabemos lo complejo que es trasladar a un adulto mayor con dolor o a un niño pequeño por el intenso tráfico de Lima. Por eso desarrollamos nuestro <strong>Servicio a Domicilio VIP</strong> y nuestros <strong>consultorios acondicionados en puntos céntricos</strong> previa cita.
+                  Sabemos lo complejo que es trasladar a un adulto mayor con dolor o a un niño pequeño por el intenso tráfico de Lima. Por eso desarrollamos nuestro <strong>servicio a domicilio</strong> y abrimos nuestra <strong>sede en Av. General Garzón 2318, Jesús María</strong>, con atención previa cita.
                 </p>
                 <p>
                   Nos guiamos por el principio de <em>&ldquo;con amor y ciencia&rdquo;</em>, garantizando que cada sesión sea cercana, motivadora y orientada a resultados reales y duraderos.
@@ -266,19 +266,19 @@ export default function NosotrosContent({
               className="grid grid-cols-2 gap-6"
             >
               <div className="bg-white rounded-3xl p-8 text-center shadow-sm border border-neutral-200">
-                <div className="text-4xl font-bold text-primary-600 mb-2">+2000</div>
+                <div className="text-4xl font-bold text-primary-600 mb-2"><AnimatedCounter valor="+2000" /></div>
                 <div className="text-neutral-600 font-medium">Pacientes Atendidos</div>
               </div>
               <div className="bg-white rounded-3xl p-8 text-center shadow-sm border border-neutral-200">
-                <div className="text-4xl font-bold text-primary-600 mb-2">5</div>
+                <div className="text-4xl font-bold text-primary-600 mb-2"><AnimatedCounter valor="+5" /></div>
                 <div className="text-neutral-600 font-medium">Años de Experiencia</div>
               </div>
               <div className="bg-white rounded-3xl p-8 text-center shadow-sm border border-neutral-200">
-                <div className="text-4xl font-bold text-primary-600 mb-2">98%</div>
+                <div className="text-4xl font-bold text-primary-600 mb-2"><AnimatedCounter valor="98%" /></div>
                 <div className="text-neutral-600 font-medium">Satisfacción</div>
               </div>
               <div className="bg-white rounded-3xl p-8 text-center shadow-sm border border-neutral-200">
-                <div className="text-4xl font-bold text-primary-600 mb-2">3</div>
+                <div className="text-4xl font-bold text-primary-600 mb-2"><AnimatedCounter valor="3" /></div>
                 <div className="text-neutral-600 font-medium">Especialistas Clave</div>
               </div>
             </motion.div>

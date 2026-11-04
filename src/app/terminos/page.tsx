@@ -3,13 +3,14 @@ import { Breadcrumbs } from '@/components/seo/Breadcrumbs';
 import { empresaInfo } from '@/lib/data';
 
 export const metadata: Metadata = {
-  title: 'Términos y Condiciones | Clínica de Fisioterapia',
+  alternates: { canonical: "/terminos" },
+  title: 'Términos y Condiciones',
   description: 'Términos y condiciones de uso de nuestros servicios y sitio web.',
 };
 
 export default function TerminosPage() {
   return (
-    <main className="min-h-screen bg-white pb-20">
+    <div className="min-h-screen bg-white pb-20">
       <div className="pt-24 pb-8 bg-neutral-50 border-b border-neutral-100">
         <div className="container mx-auto px-4 max-w-4xl">
           <Breadcrumbs 
@@ -87,6 +88,6 @@ export default function TerminosPage() {
           Si tiene alguna duda sobre estos términos, por favor contáctenos en {empresaInfo.email}.
         </p>
       </div>
-    </main>
+    </div>
   );
 }

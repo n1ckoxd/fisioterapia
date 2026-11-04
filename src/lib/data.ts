@@ -13,9 +13,63 @@ export interface Servicio {
   faqs: { pregunta: string; respuesta: string }[];
   metaTitle: string;
   metaDescription: string;
+  imagen?: string;
+  imagenAlt?: string;
+  keywords?: string[];
+  /** Condiciones o motivos de consulta que se tratan (lista "¿Qué tratamos?"). */
+  condiciones?: string[];
+  /** Slug del miembro del equipo que atiende principalmente esta especialidad. */
+  especialista?: string;
 }
 
 export const servicios: Servicio[] = [
+  {
+    slug: "fisioterapia-bebes-estimulacion-temprana",
+    condiciones: [
+      "Tortícolis congénita",
+      "Plagiocefalia (cabeza plana)",
+      "Bebés prematuros",
+      "Retraso en el control de cabeza, el sentado o el gateo",
+      "Hipotonía (bebé muy flojito) o rigidez muscular",
+      "Asimetrías y preferencia por un solo lado",
+      "Parálisis braquial obstétrica",
+      "Síndrome de Down y otras condiciones del desarrollo",
+    ],
+    especialista: "ivon-serrano",
+    nombre: "Fisioterapia para Bebés (0 a 12 meses)",
+    descripcionCorta: "Estimulación temprana y neurodesarrollo para bebés de 0 a 12 meses, a domicilio en Lima. Detectamos y tratamos a tiempo retrasos motores, tortícolis y plagiocefalia.",
+    descripcionLarga: "El primer año de vida es la etapa de mayor plasticidad cerebral: lo que el bebé aprende con su cuerpo en estos 12 meses (sostener la cabeza, girar, sentarse, gatear y ponerse de pie) es la base de todo su desarrollo futuro. En FisioSphere somos especialistas en fisioterapia para bebés de 0 a 12 meses. Evaluamos los hitos motores y los reflejos de tu bebé, detectamos a tiempo cualquier retraso o asimetría y diseñamos un plan de estimulación temprana basado en el juego. Atendemos a domicilio en Lima para que tu bebé reciba la terapia en su entorno, sin tráfico ni estrés, y te enseñamos a ti a continuar la estimulación en casa cada día.",
+    icono: "Baby",
+    imagen: "/3.png",
+    imagenAlt: "Fisioterapeuta de FisioSphere realizando estimulación temprana boca abajo (tummy time) con un bebé",
+    keywords: [
+      "fisioterapia para bebés Lima",
+      "estimulación temprana bebés a domicilio",
+      "terapia física para bebés",
+      "neurodesarrollo bebés Lima",
+      "tortícolis congénita bebé",
+      "plagiocefalia bebé fisioterapia",
+    ],
+    beneficios: [
+      "Evaluación de hitos motores y reflejos de 0 a 12 meses",
+      "Detección temprana de retrasos del desarrollo",
+      "Tratamiento de tortícolis congénita y plagiocefalia (cabeza plana)",
+      "Estimulación temprana para bebés prematuros",
+      "Sesiones a domicilio en Lima, sin traslados ni estrés",
+      "Pautas claras para que los padres estimulen en casa"
+    ],
+    tratamiento: "La primera sesión es una evaluación completa del neurodesarrollo: observamos cómo se mueve tu bebé boca arriba y boca abajo, su control de cabeza y tronco, sus reflejos, la simetría de su cuerpo y la forma de su cabeza. A partir de ahí trabajamos con técnicas de neurodesarrollo, tummy time guiado, estimulación sensorial y motora, estiramientos suaves (por ejemplo, en tortícolis) y juegos adaptados a su edad. Cada sesión termina con ejercicios sencillos para que los papás los repitan en casa.",
+    duracion: "Sesiones de 45 minutos, adaptadas al ritmo, sueño y alimentación del bebé. La frecuencia habitual es de 1 a 2 sesiones por semana; en tortícolis o plagiocefalia se suelen ver cambios entre las 4 y 8 semanas.",
+    faqs: [
+      { pregunta: "¿Desde qué edad puede recibir fisioterapia un bebé?", respuesta: "Desde los primeros días de vida. Cuanto antes se detecta una alteración, más rápido responde el bebé, porque su cerebro está en la etapa de mayor plasticidad. En bebés prematuros recomendamos una evaluación en los primeros meses de edad corregida." },
+      { pregunta: "¿Cómo sé si mi bebé necesita estimulación temprana?", respuesta: "Consulta si a los 3-4 meses no sostiene bien la cabeza, si siempre gira la cabeza hacia el mismo lado, si tiene la cabeza aplanada, si a los 6-7 meses no se gira o no se sienta con apoyo, si a los 9-10 meses no gatea ni se arrastra, o si notas que usa más un lado del cuerpo que el otro." },
+      { pregunta: "¿La fisioterapia para bebés duele?", respuesta: "No. Son sesiones suaves basadas en el juego, el contacto y el movimiento. Respetamos los tiempos del bebé: si tiene sueño o hambre, pausamos. La mayoría de bebés disfruta la sesión." },
+      { pregunta: "¿Atienden a domicilio?", respuesta: "Sí. La mayoría de nuestras sesiones con bebés son a domicilio en Lima (Jesús María, San Isidro, Miraflores, Surco, San Borja, La Molina, Magdalena, Lince, San Miguel, Pueblo Libre y más). Llevamos todo el material necesario." },
+      { pregunta: "¿Tratan tortícolis congénita y plagiocefalia?", respuesta: "Sí, son de las consultas más frecuentes. La tortícolis congénita responde muy bien a la fisioterapia cuando se trata pronto, y corregir la postura y el posicionamiento ayuda a mejorar la forma de la cabeza en la plagiocefalia postural." }
+    ],
+    metaTitle: "Fisioterapia para Bebés y Estimulación Temprana a Domicilio en Lima (0-12 meses)",
+    metaDescription: "Fisioterapia y estimulación temprana para bebés de 0 a 12 meses a domicilio en Lima. Tortícolis, plagiocefalia, prematuros y retraso motor. Evaluación del neurodesarrollo. Reserva por WhatsApp."
+  },
   {
     slug: "fisioterapia-deportiva",
     nombre: "Fisioterapia Deportiva",
@@ -35,7 +89,7 @@ export const servicios: Servicio[] = [
     faqs: [
       { pregunta: "¿Puedo seguir entrenando durante el tratamiento?", respuesta: "Dependiendo de la lesión, adaptaremos tu entrenamiento para que puedas mantener tu forma física sin agravar la lesión. Te daremos pautas específicas." },
       { pregunta: "¿Cuánto tarda la recuperación de una lesión deportiva?", respuesta: "El tiempo de recuperación varía según el tipo y gravedad de la lesión. En general, las lesiones musculares leves se recuperan en 2-4 semanas, mientras que las más graves pueden requerir 2-3 meses." },
-      { pregunta: "¿Trabajáis con equipos deportivos?", respuesta: "Sí, colaboramos con varios equipos deportivos locales y ofrecemos programas de prevención y tratamiento grupal." }
+      { pregunta: "¿Trabajan con equipos deportivos?", respuesta: "Sí, colaboramos con varios equipos deportivos locales y ofrecemos programas de prevención y tratamiento grupal." }
     ],
     metaTitle: "Fisioterapia Deportiva | Clínica FisioSphere - Recuperación de Lesiones",
     metaDescription: "Servicio especializado de fisioterapia deportiva. Recuperación de lesiones, prevención y mejora del rendimiento deportivo con técnicas avanzadas. Pide tu cita."
@@ -66,6 +120,7 @@ export const servicios: Servicio[] = [
   },
   {
     slug: "dolor-lumbar",
+    especialista: "miguel-alvarez",
     nombre: "Dolor Lumbar",
     descripcionCorta: "Tratamiento especializado para el dolor de espalda baja. Alivia tu dolor lumbar con técnicas manuales y ejercicio terapéutico.",
     descripcionLarga: "El dolor lumbar es una de las dolencias más comunes que afecta al 80% de la población en algún momento de su vida. En nuestra clínica, abordamos el dolor lumbar desde un enfoque multidisciplinar, identificando la causa raíz del problema y no solo tratando los síntomas. Utilizamos técnicas de terapia manual, ejercicio terapéutico, educación al paciente y neurodinámica para conseguir resultados duraderos.",
@@ -90,6 +145,7 @@ export const servicios: Servicio[] = [
   },
   {
     slug: "dolor-cervical",
+    especialista: "ivon-serrano",
     nombre: "Dolor Cervical",
     descripcionCorta: "Tratamiento eficaz para dolor de cuello, tortícolis y cervicalgias. Recupera tu movilidad cervical sin dolor.",
     descripcionLarga: "El dolor cervical afecta a millones de personas y puede ser causado por malas posturas, estrés, uso prolongado de dispositivos electrónicos o lesiones. Nuestro equipo especializado en patología cervical utiliza técnicas manuales avanzadas, ejercicio terapéutico específico y educación postural para resolver tu dolor cervical de forma efectiva y duradera.",
@@ -107,7 +163,7 @@ export const servicios: Servicio[] = [
     faqs: [
       { pregunta: "¿El dolor cervical puede causar mareos?", respuesta: "Sí, el dolor cervical puede causar mareos de origen cervicogénico. Nuestros fisioterapeutas están formados para identificar y tratar esta condición." },
       { pregunta: "¿Las almohadas influyen en el dolor cervical?", respuesta: "Sí, la almohada adecuada es importante. Te asesoraremos sobre la mejor opción según tu postura al dormir." },
-      { pregunta: "¿Debo dejar de usar el ordenador?", respuesta: "No, pero es importante mantener una ergonomía correcta. Te enseñaremos la postura ideal y pausas activas para prevenir el dolor." }
+      { pregunta: "¿Debo dejar de usar la computadora?", respuesta: "No, pero es importante mantener una ergonomía correcta. Te enseñaremos la postura ideal y pausas activas para prevenir el dolor." }
     ],
     metaTitle: "Tratamiento Dolor Cervical | Clínica FisioSphere - Alivio de Cervicalgias",
     metaDescription: "Especialistas en dolor cervical y tortícolis. Técnicas manuales avanzadas y ejercicio terapéutico. Recupera la movilidad de tu cuello. Pide cita ahora."
@@ -210,6 +266,7 @@ export const servicios: Servicio[] = [
   },
   {
     slug: "rehabilitacion-postoperatoria",
+    especialista: "miguel-alvarez",
     nombre: "Rehabilitación Postoperatoria",
     descripcionCorta: "Recuperación óptima después de cirugías ortopédicas con programas de rehabilitación basados en evidencia.",
     descripcionLarga: "La rehabilitación postoperatoria es fundamental para garantizar una recuperación completa tras una intervención quirúrgica. Nuestros programas están diseñados siguiendo los protocolos más actualizados y basados en la evidencia científica. Trabajamos en coordinación con los cirujanos para ofrecer una recuperación segura y eficaz, respetando los tiempos biológicos de curación.",
@@ -258,6 +315,17 @@ export const servicios: Servicio[] = [
   },
   {
     slug: "fisioterapia-pediatrica",
+    condiciones: [
+      "Retraso en la marcha",
+      "Marcha en puntas de pie",
+      "Pie plano infantil",
+      "Escoliosis y alteraciones posturales",
+      "Problemas de equilibrio y coordinación",
+      "Parálisis cerebral infantil",
+      "Hipotonía",
+      "Fisioterapia respiratoria infantil",
+    ],
+    especialista: "ivon-serrano",
     nombre: "Fisioterapia Pediátrica",
     descripcionCorta: "Atención especializada para el desarrollo psicomotor, tratamiento de patologías infantiles y estimulación temprana.",
     descripcionLarga: "La fisioterapia pediátrica se enfoca en el tratamiento y cuidado de bebés, niños y adolescentes con alteraciones en su desarrollo motor o condiciones neurológicas, ortopédicas y respiratorias. A través del juego y técnicas especializadas, ayudamos a los más pequeños a alcanzar su máximo potencial funcional, promoviendo su independencia y mejorando su calidad de vida y la de sus familias.",
@@ -277,11 +345,24 @@ export const servicios: Servicio[] = [
       { pregunta: "¿Los padres pueden estar presentes en la sesión?", respuesta: "No solo pueden, sino que es muy recomendable. Es fundamental que los padres aprendan las pautas y ejercicios para continuar el estímulo en casa." },
       { pregunta: "¿Tratan problemas respiratorios como bronquiolitis?", respuesta: "Sí, la fisioterapia respiratoria pediátrica es muy efectiva para ayudar a los niños a eliminar secreciones y mejorar su función respiratoria." }
     ],
-    metaTitle: "Fisioterapia Pediátrica | Clínica FisioSphere - Especialistas en Niños",
-    metaDescription: "Fisioterapia especializada para bebés y niños. Estimulación temprana, neurodesarrollo y fisioterapia respiratoria infantil. Pide tu cita."
+    metaTitle: "Fisioterapia Pediátrica a Domicilio en Lima | Niños y Bebés - FisioSphere",
+    metaDescription: "Fisioterapia pediátrica a domicilio en Lima: estimulación temprana, neurodesarrollo, pie plano, marcha en puntas y corrección postural en niños. Pide tu cita.",
+    imagen: "/pediatrico.png",
+    imagenAlt: "Fisioterapeuta pediátrica de FisioSphere trabajando con un bebé sobre colchoneta"
   },
   {
     slug: "terapia-psicopedagogica",
+    condiciones: [
+      "Dificultades de lectura y escritura",
+      "Dificultades en matemáticas",
+      "TDAH y problemas de atención",
+      "Ansiedad infantil y miedos",
+      "Rabietas y desregulación emocional",
+      "Baja autoestima e inseguridad",
+      "Habilidades sociales y adaptación escolar",
+      "Orientación y pautas para padres",
+    ],
+    especialista: "shirley-wong",
     nombre: "Terapia Psicopedagógica",
     descripcionCorta: "Apoyo especializado en dificultades de aprendizaje, desarrollo cognitivo y conductual para niños y adolescentes.",
     descripcionLarga: "Nuestro servicio de terapia psicopedagógica está diseñado para niños y adolescentes que presentan dificultades en su proceso de aprendizaje, desarrollo cognitivo o conducta. A través de evaluaciones integrales y planes de intervención personalizados, ayudamos a identificar las barreras que impiden el desarrollo óptimo del niño. Trabajamos en estrecha colaboración con los padres y el entorno escolar para garantizar un abordaje integral que potencie las fortalezas de cada niño.",
@@ -301,11 +382,24 @@ export const servicios: Servicio[] = [
       { pregunta: "¿Qué incluye la evaluación inicial?", respuesta: "La evaluación incluye entrevista con los padres, pruebas estandarizadas de aprendizaje y desarrollo cognitivo, observación del niño y, si es necesario, coordinación con el colegio para obtener una visión completa." },
       { pregunta: "¿A partir de qué edad se puede iniciar la terapia?", respuesta: "Generalmente a partir de los 3-4 años, cuando ya se pueden evaluar hitos del desarrollo. Sin embargo, la detección temprana es clave para mejores resultados." }
     ],
-    metaTitle: "Terapia Psicopedagógica | Clínica FisioSphere - Apoyo en Aprendizaje Infantil",
-    metaDescription: "Terapia psicopedagógica para niños y adolescentes. Dificultades de aprendizaje, TDAH, desarrollo cognitivo y conductual. Evaluación integral. Reserva ahora."
+    metaTitle: "Terapia Psicopedagógica y Psicología Infantil en Lima | FisioSphere",
+    metaDescription: "Terapia psicopedagógica y psicología clínica para niños y adolescentes en Lima. Dificultades de aprendizaje, TDAH, ansiedad y conducta. Presencial, a domicilio u online.",
+    imagen: "/psicopedagogia.png",
+    imagenAlt: "Terapia psicopedagógica infantil con actividades de aprendizaje"
   },
   {
     slug: "fisioterapia-geriatrica",
+    condiciones: [
+      "Artrosis de rodilla, cadera y columna",
+      "Osteoporosis",
+      "Riesgo de caídas y pérdida de equilibrio",
+      "Debilidad muscular y pérdida de movilidad",
+      "Recuperación tras una hospitalización",
+      "Prótesis de cadera o rodilla",
+      "Dolor lumbar crónico",
+      "Alzheimer y demencia (estimulación motora)",
+    ],
+    especialista: "miguel-alvarez",
     nombre: "Fisioterapia Geriátrica",
     descripcionCorta: "Tratamientos diseñados para adultos mayores, enfocados en mantener la movilidad, prevenir caídas y aliviar dolores articulares.",
     descripcionLarga: "La fisioterapia geriátrica está especializada en las necesidades del adulto mayor. Con el paso de los años, es común experimentar pérdida de masa muscular, rigidez articular y problemas de equilibrio. Nuestro objetivo es promover un envejecimiento activo, aliviar dolores crónicos como la artrosis, mejorar la movilidad y el equilibrio para prevenir caídas, permitiendo a nuestros mayores mantener su independencia y disfrutar de una excelente calidad de vida.",
@@ -325,8 +419,79 @@ export const servicios: Servicio[] = [
       { pregunta: "¿Tratan a pacientes con Alzheimer o demencia?", respuesta: "Sí, adaptamos nuestras terapias para pacientes con deterioro cognitivo, enfocándonos en estímulos motores y rutinas que les ayuden a mantener su funcionalidad." },
       { pregunta: "¿Ayuda para el dolor de artrosis?", respuesta: "Sí, la fisioterapia no cura la artrosis pero es altamente efectiva para reducir el dolor, la inflamación y mejorar la movilidad de las articulaciones afectadas." }
     ],
-    metaTitle: "Fisioterapia Geriátrica | Clínica FisioSphere - Calidad de Vida para Mayores",
-    metaDescription: "Fisioterapia para adultos mayores. Tratamiento de artrosis, prevención de caídas y mantenimiento de la movilidad. Envejecimiento activo y sin dolor."
+    metaTitle: "Fisioterapia Geriátrica a Domicilio en Lima | Adulto Mayor - FisioSphere",
+    metaDescription: "Fisioterapia para adultos mayores a domicilio en Lima. Tratamiento de artrosis, prevención de caídas y mantenimiento de la movilidad. Envejecimiento activo y sin dolor.",
+    imagen: "/geriatrico.png",
+    imagenAlt: "Fisioterapia geriátrica a domicilio con un adulto mayor en Lima"
+  },
+  {
+    slug: "fisioterapia-traumatologica",
+    condiciones: [
+      "Fracturas (después del yeso o la cirugía)",
+      "Esguinces de tobillo y rodilla",
+      "Lesiones de ligamentos y meniscos",
+      "Tendinitis y tendinopatías",
+      "Luxaciones de hombro",
+      "Prótesis y artroscopias",
+    ],
+    especialista: "miguel-alvarez",
+    nombre: "Fisioterapia Traumatológica",
+    descripcionCorta: "Recuperación de fracturas, esguinces, lesiones de ligamentos y tendones, y rehabilitación después de una cirugía.",
+    descripcionLarga: "La fisioterapia traumatológica se ocupa de las lesiones del sistema musculoesquelético: fracturas, esguinces, luxaciones, roturas de ligamentos, tendinopatías y la recuperación tras cirugías ortopédicas como prótesis o artroscopias. Nuestro objetivo es que recuperes la movilidad, la fuerza y la confianza para volver a tus actividades, ya sea en casa, en el trabajo o en el deporte, con un plan progresivo y seguro.",
+    icono: "Activity",
+    imagen: "/traumatologia.png",
+    imagenAlt: "Fisioterapia traumatológica para recuperación de lesiones y fracturas",
+    beneficios: [
+      "Recuperación de fracturas y esguinces",
+      "Rehabilitación tras cirugía de rodilla, cadera y hombro",
+      "Reducción del dolor y la inflamación",
+      "Recuperación del rango de movimiento",
+      "Fortalecimiento progresivo y seguro",
+      "Atención a domicilio cuando cuesta desplazarse"
+    ],
+    tratamiento: "Tras una valoración de la lesión y de tus informes médicos, combinamos terapia manual, ejercicio terapéutico progresivo, movilización articular, electroterapia cuando está indicada y reeducación de la marcha. Coordinamos con tu traumatólogo y respetamos los tiempos de consolidación de cada lesión.",
+    duracion: "Sesiones de 45 a 60 minutos. Un esguince leve puede requerir de 4 a 6 sesiones; una fractura o una cirugía, entre 2 y 4 meses de tratamiento.",
+    faqs: [
+      { pregunta: "¿Cuándo empiezo la fisioterapia después de quitar el yeso?", respuesta: "Lo ideal es empezar en la primera semana después de retirar la inmovilización, para recuperar la movilidad y la fuerza cuanto antes." },
+      { pregunta: "¿Atienden a domicilio después de una operación?", respuesta: "Sí. En el postoperatorio inmediato muchas veces es más cómodo y seguro empezar en casa. Llevamos el material necesario." },
+      { pregunta: "¿Necesito orden del traumatólogo?", respuesta: "No es obligatoria, pero si tienes informe o indicaciones del cirujano nos ayuda a ajustar el plan." }
+    ],
+    metaTitle: "Fisioterapia Traumatológica en Lima | Fracturas, Esguinces y Postoperatorio",
+    metaDescription: "Fisioterapia traumatológica en Lima: recuperación de fracturas, esguinces, lesiones de ligamentos y rehabilitación después de una cirugía. Atención a domicilio o en sede."
+  },
+  {
+    slug: "fisioterapia-neurologica",
+    condiciones: [
+      "Secuelas de ACV (derrame cerebral)",
+      "Enfermedad de Parkinson",
+      "Esclerosis múltiple",
+      "Neuropatías periféricas",
+      "Lesión medular",
+      "Trastornos del equilibrio y de la marcha",
+    ],
+    nombre: "Fisioterapia Neurológica",
+    descripcionCorta: "Rehabilitación tras un ACV, Parkinson, neuropatías y otras condiciones neurológicas para recuperar movilidad e independencia.",
+    descripcionLarga: "La fisioterapia neurológica trabaja con personas que tienen alteraciones del sistema nervioso: secuelas de un accidente cerebrovascular (ACV o derrame), enfermedad de Parkinson, esclerosis múltiple, neuropatías, lesiones medulares y otras. Aprovechamos la neuroplasticidad para reentrenar el movimiento, el equilibrio y la marcha, y buscamos la mayor independencia posible en la vida diaria del paciente y de su familia.",
+    icono: "Brain",
+    imagen: "/neurologico.png",
+    imagenAlt: "Fisioterapia neurológica para rehabilitación tras ACV y Parkinson",
+    beneficios: [
+      "Rehabilitación tras ACV (derrame cerebral)",
+      "Mejora del equilibrio y la marcha en Parkinson",
+      "Prevención de caídas",
+      "Recuperación de la funcionalidad del brazo y la mano",
+      "Mayor independencia en las actividades diarias",
+      "Orientación a cuidadores y familiares"
+    ],
+    tratamiento: "Evaluamos la fuerza, el tono, el equilibrio, la coordinación y la marcha. El tratamiento incluye ejercicios de control motor, entrenamiento de tareas funcionales (levantarse, caminar, vestirse), trabajo de equilibrio, estiramientos y pautas para la familia. La atención a domicilio permite entrenar en el entorno real del paciente.",
+    duracion: "Sesiones de 45 a 60 minutos, de 2 a 3 veces por semana. Son tratamientos de mediano y largo plazo que se ajustan a la evolución.",
+    faqs: [
+      { pregunta: "¿Cuándo empezar la fisioterapia después de un ACV?", respuesta: "Lo antes posible, en cuanto el médico lo autorice. Los primeros meses son clave para la recuperación." },
+      { pregunta: "¿La fisioterapia ayuda en el Parkinson?", respuesta: "Sí. El ejercicio dirigido mejora el equilibrio, la marcha, la postura y reduce el riesgo de caídas." },
+      { pregunta: "¿Pueden atender en casa a un paciente que no puede salir?", respuesta: "Sí, es una de nuestras modalidades principales. Trabajamos en el domicilio con el paciente y su cuidador." }
+    ],
+    metaTitle: "Fisioterapia Neurológica a Domicilio en Lima | ACV, Parkinson - FisioSphere",
+    metaDescription: "Fisioterapia neurológica a domicilio en Lima. Rehabilitación tras ACV, Parkinson, neuropatías y lesiones neurológicas. Recupera movilidad, equilibrio e independencia."
   }
 ];
 
@@ -401,7 +566,7 @@ export const testimonios: Testimonio[] = [
     nombre: "Carmen Villanueva",
     edad: 34,
     servicio: "Terapia Psicopedagógica",
-    texto: "Llevamos a nuestro hijo de 8 años con la Lic. Laura porque tenía mucha ansiedad escolar. El cambio ha sido maravilloso. La terapia basada en juegos le encantó y a nosotros nos dieron herramientas de crianza invaluables. ¡Totalmente recomendada!",
+    texto: "Llevamos a nuestro hijo de 8 años con la Lic. Shirley porque tenía mucha ansiedad escolar. El cambio ha sido maravilloso. La terapia basada en juegos le encantó y a nosotros nos dieron herramientas de crianza invaluables. ¡Totalmente recomendada!",
     estrellas: 5,
     fecha: "2024-12-10"
   },
@@ -424,6 +589,10 @@ export interface FAQ {
 
 export const faqsGenerales: FAQ[] = [
   {
+    pregunta: "¿Atienden a bebés de 0 a 12 meses?",
+    respuesta: "Sí, es nuestra especialidad. Realizamos fisioterapia y estimulación temprana para bebés de 0 a 12 meses a domicilio en Lima: evaluación del neurodesarrollo, tortícolis congénita, plagiocefalia, bebés prematuros y retrasos en el gateo o la marcha."
+  },
+  {
     pregunta: "¿Necesito cita previa?",
     respuesta: "Sí, trabajamos con cita previa para garantizar la atención personalizada de cada paciente. Puedes reservar tu cita a través de nuestra web, por teléfono o por WhatsApp."
   },
@@ -444,8 +613,8 @@ export const faqsGenerales: FAQ[] = [
     respuesta: "El número de sesiones depende de cada caso particular. En la primera valoración, te daremos una estimación del número de sesiones recomendadas y los objetivos de tratamiento."
   },
   {
-    pregunta: "¿Ofrecéis fisioterapia a domicilio?",
-    respuesta: "Sí, ofrecemos servicio de fisioterapia a domicilio para pacientes que no pueden desplazarse a la clínica. Consulta disponibilidad y tarifas."
+    pregunta: "¿Ofrecen fisioterapia a domicilio?",
+    respuesta: "Sí, es nuestra modalidad más solicitada. Atendemos a domicilio en Jesús María, San Isidro, Miraflores, Surco, San Borja, La Molina, Magdalena, Lince, San Miguel, Pueblo Libre y Barranco. También puedes venir a nuestra sede en Av. General Garzón 2318, Jesús María."
   },
   {
     pregunta: "¿Qué debo llevar a mi primera cita?",
@@ -589,15 +758,33 @@ export const empresaInfo = {
   eslogan: "Tu bienestar, nuestra prioridad",
   telefono: "+51 950 332 639",
   telefonoDisplay: "950 332 639",
+  telefonoTel: "+51950332639",
   email: "info@fisiosphere.pe",
-  direccion: "Atención a domicilio y consultorios acondicionados previa cita",
-  ciudad: "Lima Metropolitana",
-  cp: "15036",
+  direccion: "Av. General Garzón 2318, Jesús María",
+  calle: "Av. General Garzón 2318",
+  distrito: "Jesús María",
+  ciudad: "Lima",
+  region: "Lima",
+  cp: "15072",
   pais: "Perú",
   horario: "Lunes a Viernes: 8:00 - 21:00 | Sábados: 9:00 - 14:00",
   whatsapp: "51950332639",
   whatsappLink: "https://wa.me/51950332639?text=Hola%2C%20me%20gustar%C3%ADa%20pedir%20una%20cita",
-  googleMapsEmbed: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d124857.26084128038!2d-77.08502573212891!3d-12.083398939634935!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9105c8651a54fb1d%3A0x33446bfd92d4f24d!2sSan%20Isidro%2C%20Per%C3%BA!5e0!3m2!1ses!2spe!4v1700000000000",
+  googleMapsEmbed: "https://www.google.com/maps?q=Av.+General+Garz%C3%B3n+2318,+Jes%C3%BAs+Mar%C3%ADa,+Lima,+Per%C3%BA&output=embed",
+  googleMapsLink: "https://www.google.com/maps/search/?api=1&query=Av.+General+Garz%C3%B3n+2318,+Jes%C3%BAs+Mar%C3%ADa,+Lima",
+  distritosCobertura: [
+    "Jesús María",
+    "San Isidro",
+    "Miraflores",
+    "Santiago de Surco",
+    "San Borja",
+    "La Molina",
+    "Magdalena del Mar",
+    "Lince",
+    "San Miguel",
+    "Pueblo Libre",
+    "Barranco",
+  ],
   redesSociales: {
     instagram: "https://instagram.com/fisiosphere.peru",
     facebook: "https://www.facebook.com/profile.php?id=61578955297624",
@@ -605,5 +792,6 @@ export const empresaInfo = {
     linkedin: "https://linkedin.com/company/fisiosphere",
     youtube: "https://youtube.com/@fisiosphere"
   },
-  url: "https://www.fisiosphere.pe"
+  // Dominio principal: todo el SEO (canonical, sitemap, schema) apunta aquí.
+  url: "https://fisiosphereperu.com.pe"
 };

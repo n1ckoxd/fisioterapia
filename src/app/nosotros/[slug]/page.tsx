@@ -15,8 +15,11 @@ import {
   Calendar,
   ArrowRight,
 } from 'lucide-react';
-import { equipo } from '@/lib/data';
+import { equipo, servicios } from '@/lib/data';
+import { Reveal } from '@/components/ui/Reveal';
 import { Breadcrumbs } from '@/components/seo/Breadcrumbs';
+import { PersonSchema } from '@/components/seo/JsonLd';
+import { articulos, revisorArticulo, imagenArticulo } from '@/lib/blog-data';
 
 type Props = {
   params: Promise<{ slug: string }>;
@@ -37,8 +40,9 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   }
 
   return {
-    title: `${miembro.nombre} - ${miembro.cargo} | FisioSphere Lima`,
+    title: { absolute: `${miembro.nombre} | ${miembro.tituloProfesional} en Lima - FisioSphere` },
     description: `${miembro.nombre}, ${miembro.cargo} en FisioSphere Lima. ${miembro.descripcion} Atención a domicilio VIP y en consultorios acondicionados.`,
+    alternates: { canonical: `/nosotros/${miembro.slug}` },
     openGraph: {
       title: `${miembro.nombre} | FisioSphere`,
       description: miembro.descripcion,
@@ -54,6 +58,12 @@ export default async function EspecialistaPage({ params }: Props) {
   if (!miembro) {
     notFound();
   }
+
+  // Servicios de los que este especialista es responsable
+  const serviciosQueAtiende = servicios.filter((s) => s.especialista === miembro.slug);
+
+  // Artículos del blog que revisa este especialista
+  const articulosRevisados = articulos.filter((a) => revisorArticulo(a)?.slug === miembro.slug).slice(0, 6);
 
   // Colegas del equipo
   const otrosEspecialistas = equipo.filter((m) => m.slug !== slug);
@@ -99,6 +109,7 @@ export default async function EspecialistaPage({ params }: Props) {
 
   return (
     <div className="min-h-screen bg-neutral-50 pb-20">
+      <PersonSchema miembro={miembro} />
       {/* Breadcrumbs */}
       <Breadcrumbs
         items={[
@@ -131,7 +142,7 @@ export default async function EspecialistaPage({ params }: Props) {
 
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
             {/* Foto Oficial del Especialista */}
-            <div className="lg:col-span-5">
+            <Reveal className="lg:col-span-5" direccion="right" escala={0.94}>
               <div className="relative w-full aspect-[3/4] max-w-md mx-auto rounded-3xl overflow-hidden shadow-2xl border-4 border-white">
                 {miembro.foto ? (
                   <Image
@@ -159,11 +170,11 @@ export default async function EspecialistaPage({ params }: Props) {
                   ))}
                 </div>
               </div>
-            </div>
+            </Reveal>
 
             {/* Datos y Presentación */}
-            <div className="lg:col-span-7 space-y-6 text-center lg:text-left">
-              <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs font-bold border shadow-sm mx-auto lg:mx-0 ${themeStyles.badgeBg}">
+            <Reveal className="lg:col-span-7 space-y-6 text-center lg:text-left" direccion="left" delay={0.1}>
+              <div className={`inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs font-bold border shadow-sm mx-auto lg:mx-0 ${themeStyles.badgeBg}`}>
                 <Sparkles size={14} />
                 <span>{miembro.tituloProfesional}</span>
               </div>
@@ -205,7 +216,7 @@ export default async function EspecialistaPage({ params }: Props) {
                   Pedir Informes
                 </Link>
               </div>
-            </div>
+            </Reveal>
           </div>
         </div>
       </section>
@@ -213,7 +224,7 @@ export default async function EspecialistaPage({ params }: Props) {
       {/* Secciones de Contenido Detallado */}
       <div className="container mx-auto px-4 max-w-6xl mt-16 space-y-16">
         {/* Grid de Áreas de Tratamiento y Por Qué Elegirme */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
+        <Reveal className="grid grid-cols-1 md:grid-cols-2 gap-10">
           {/* Tarjeta 1: Áreas de Tratamiento */}
           <div className="bg-white rounded-3xl p-8 shadow-sm border border-neutral-200/80">
             <div className="flex items-center gap-3 mb-6">
@@ -265,10 +276,40 @@ export default async function EspecialistaPage({ params }: Props) {
               ))}
             </ul>
           </div>
-        </div>
+        </Reveal>
+
+        {/* Servicios que atiende */}
+        {serviciosQueAtiende.length > 0 && (
+          <Reveal>
+            <h2 className="text-2xl font-bold text-neutral-900 mb-6 text-center">
+              Servicios que atiende {miembro.nombre}
+            </h2>
+            <div className="flex flex-wrap justify-center gap-4">
+              {serviciosQueAtiende.map((s) => (
+                <Link
+                  key={s.slug}
+                  href={`/servicios/${s.slug}`}
+                  className="group flex items-center gap-3 pl-2 pr-5 py-2 rounded-full bg-white border border-neutral-200 shadow-sm hover:border-primary-300 hover:bg-primary-50 hover:-translate-y-0.5 transition-all"
+                >
+                  {s.imagen ? (
+                    <span className="relative w-10 h-10 rounded-full overflow-hidden">
+                      <Image src={s.imagen} alt="" fill sizes="40px" className="object-cover" />
+                    </span>
+                  ) : (
+                    <span className="w-10 h-10 rounded-full bg-primary-50 text-primary-600 flex items-center justify-center">
+                      <CheckCircle2 size={18} />
+                    </span>
+                  )}
+                  <span className="text-sm font-semibold text-neutral-800 group-hover:text-primary-700">{s.nombre}</span>
+                  <ArrowRight size={14} className="text-primary-600 group-hover:translate-x-1 transition-transform" />
+                </Link>
+              ))}
+            </div>
+          </Reveal>
+        )}
 
         {/* Modalidades de Atención Explicadas */}
-        <div className="bg-white rounded-3xl p-8 sm:p-10 shadow-sm border border-neutral-200/80">
+        <Reveal className="bg-white rounded-3xl p-8 sm:p-10 shadow-sm border border-neutral-200/80">
           <div className="text-center max-w-2xl mx-auto mb-10">
             <span className="text-primary-600 font-bold text-xs uppercase tracking-wider block mb-1">
               Flexibilidad y Comodidad
@@ -298,7 +339,7 @@ export default async function EspecialistaPage({ params }: Props) {
               </div>
               <h3 className="font-bold text-neutral-900 mb-2">En Sede (Consultorios)</h3>
               <p className="text-xs text-neutral-600 leading-relaxed">
-                Espacios modernos, seguros y equipados en puntos céntricos de Lima para quienes prefieren una sesión en clínica previa coordinación.
+                Consultorio equipado en nuestra sede de Av. General Garzón 2318, Jesús María, para quienes prefieren venir, previa cita.
               </p>
             </div>
 
@@ -312,7 +353,33 @@ export default async function EspecialistaPage({ params }: Props) {
               </p>
             </div>
           </div>
-        </div>
+        </Reveal>
+
+        {/* Artículos revisados por el especialista */}
+        {articulosRevisados.length > 0 && (
+          <div>
+            <h2 className="text-2xl font-bold text-neutral-900 mb-6 text-center">
+              Artículos revisados por {miembro.nombre}
+            </h2>
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+              {articulosRevisados.map((a) => (
+                <Link
+                  key={a.slug}
+                  href={`/blog/${a.slug}`}
+                  className="group bg-white rounded-2xl overflow-hidden border border-neutral-200/80 shadow-sm card-hover"
+                >
+                  <div className="relative h-36 overflow-hidden">
+                    <Image src={imagenArticulo(a)} alt="" fill sizes="(max-width: 640px) 100vw, 33vw" className="object-cover transition-transform duration-700 group-hover:scale-110" />
+                  </div>
+                  <div className="p-4">
+                    <span className="text-xs font-semibold text-primary-600">{a.categoria}</span>
+                    <h3 className="font-bold text-neutral-800 text-sm mt-1 line-clamp-2 group-hover:text-primary-600 transition-colors">{a.titulo}</h3>
+                  </div>
+                </Link>
+              ))}
+            </div>
+          </div>
+        )}
 
         {/* Banner CTA directo con el Especialista */}
         <div className="bg-gradient-to-r from-primary-600 to-primary-700 rounded-3xl p-8 sm:p-12 text-white text-center shadow-xl">

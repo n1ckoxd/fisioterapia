@@ -4,8 +4,8 @@ import React, { useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { z } from 'zod';
-import { motion } from 'framer-motion';
-import { MapPin, Phone, Mail, Clock, CheckCircle } from 'lucide-react';
+import { motion, AnimatePresence } from 'framer-motion';
+import { MapPin, Phone, Mail, Clock, CheckCircle, Navigation } from 'lucide-react';
 import { empresaInfo } from '@/lib/data';
 
 const contactSchema = z.object({
@@ -69,17 +69,27 @@ export default function ContactoContent() {
         transition={{ duration: 0.5 }}
       >
         <div className="bg-white p-8 rounded-2xl shadow-sm border border-neutral-100 h-full">
-          <h2 className="text-2xl font-bold text-neutral-900 mb-6">Información de la Clínica</h2>
-          
+          <h2 className="text-2xl font-bold text-neutral-900 mb-6">Información de contacto</h2>
+
           <div className="space-y-6">
             <div className="flex items-start space-x-4">
               <div className="bg-primary-50 p-3 rounded-full text-primary-600">
                 <MapPin className="w-6 h-6" />
               </div>
               <div>
-                <h3 className="font-semibold text-neutral-900">Modalidad de Atención</h3>
-                <p className="text-neutral-700 font-medium">{empresaInfo.direccion}</p>
-                <p className="text-neutral-500 text-sm mt-0.5">Cobertura en distritos de {empresaInfo.ciudad}</p>
+                <h3 className="font-semibold text-neutral-900">Sede y atención a domicilio</h3>
+                <address className="not-italic text-neutral-700 font-medium">
+                  {empresaInfo.calle}, {empresaInfo.distrito}, Lima
+                </address>
+                <p className="text-neutral-500 text-sm mt-0.5">También vamos a tu casa en {empresaInfo.distritosCobertura.length} distritos de Lima.</p>
+                <a
+                  href={empresaInfo.googleMapsLink}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-1.5 text-sm font-semibold text-primary-600 hover:text-primary-700 mt-2"
+                >
+                  <Navigation className="w-4 h-4" /> Cómo llegar
+                </a>
               </div>
             </div>
 
@@ -89,7 +99,9 @@ export default function ContactoContent() {
               </div>
               <div>
                 <h3 className="font-semibold text-neutral-900">Teléfono / WhatsApp</h3>
-                <p className="text-neutral-600">{empresaInfo.telefonoDisplay}</p>
+                <a href={`tel:${empresaInfo.telefonoTel}`} className="text-neutral-600 hover:text-primary-600">
+                  {empresaInfo.telefonoDisplay}
+                </a>
               </div>
             </div>
 
@@ -99,7 +111,9 @@ export default function ContactoContent() {
               </div>
               <div>
                 <h3 className="font-semibold text-neutral-900">Email</h3>
-                <p className="text-neutral-600">{empresaInfo.email}</p>
+                <a href={`mailto:${empresaInfo.email}`} className="text-neutral-600 hover:text-primary-600 break-all">
+                  {empresaInfo.email}
+                </a>
               </div>
             </div>
 
@@ -111,6 +125,18 @@ export default function ContactoContent() {
                 <h3 className="font-semibold text-neutral-900">Horario</h3>
                 <p className="text-neutral-600">{empresaInfo.horario}</p>
               </div>
+            </div>
+
+            <div className="rounded-2xl overflow-hidden border border-neutral-200 h-56">
+              <iframe
+                src={empresaInfo.googleMapsEmbed}
+                width="100%"
+                height="100%"
+                style={{ border: 0 }}
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+                title={`Mapa de la sede de FisioSphere en ${empresaInfo.direccion}`}
+              />
             </div>
 
             <div className="pt-4 border-t border-neutral-100">
@@ -136,14 +162,34 @@ export default function ContactoContent() {
         <div className="bg-white p-8 rounded-2xl shadow-sm border border-neutral-100">
           <h2 className="text-2xl font-bold text-neutral-900 mb-6">Envíanos un mensaje</h2>
 
+          <AnimatePresence mode="wait">
           {isSuccess ? (
-            <div className="flex flex-col items-center justify-center py-12 text-center h-full">
-              <CheckCircle className="w-16 h-16 text-success mb-4" />
+            <motion.div
+              key="exito"
+              initial={{ opacity: 0, scale: 0.9 }}
+              animate={{ opacity: 1, scale: 1 }}
+              exit={{ opacity: 0 }}
+              className="flex flex-col items-center justify-center py-12 text-center h-full"
+            >
+              <motion.span
+                initial={{ scale: 0, rotate: -45 }}
+                animate={{ scale: 1, rotate: 0 }}
+                transition={{ type: 'spring', stiffness: 260, damping: 14, delay: 0.1 }}
+              >
+                <CheckCircle className="w-16 h-16 text-success mb-4" />
+              </motion.span>
               <h3 className="text-xl font-bold text-neutral-900 mb-2">¡Mensaje enviado con éxito!</h3>
               <p className="text-neutral-600">Nos pondremos en contacto contigo lo antes posible.</p>
-            </div>
+            </motion.div>
           ) : (
-            <form onSubmit={handleSubmit(onSubmit)} className="space-y-4">
+            <motion.form
+              key="formulario"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              onSubmit={handleSubmit(onSubmit)}
+              className="space-y-4"
+            >
               <div>
                 <label htmlFor="nombre" className="block text-sm font-medium text-neutral-700 mb-1">
                   Nombre completo
@@ -216,20 +262,29 @@ export default function ContactoContent() {
                 )}
               </div>
 
-              {submitError && (
-                <div className="bg-red-50 text-red-600 p-3 rounded-xl text-sm mb-4">
-                  {submitError}
-                </div>
-              )}
+              <AnimatePresence>
+                {submitError && (
+                  <motion.div
+                    initial={{ opacity: 0, height: 0 }}
+                    animate={{ opacity: 1, height: 'auto' }}
+                    exit={{ opacity: 0, height: 0 }}
+                    role="alert"
+                    className="bg-red-50 text-red-600 p-3 rounded-xl text-sm"
+                  >
+                    {submitError}
+                  </motion.div>
+                )}
+              </AnimatePresence>
               <button
                 type="submit"
                 disabled={isSubmitting}
-                className="w-full btn-primary px-6 py-3 rounded-xl font-semibold text-white bg-primary-600 hover:bg-primary-700 transition-colors shadow-sm disabled:opacity-50 disabled:cursor-not-allowed"
+                className="w-full btn-primary justify-center px-6 py-3 rounded-xl font-semibold shadow-sm disabled:opacity-50 disabled:cursor-not-allowed"
               >
                 {isSubmitting ? 'Enviando...' : 'Enviar Mensaje'}
               </button>
-            </form>
+            </motion.form>
           )}
+          </AnimatePresence>
         </div>
       </motion.div>
     </div>

@@ -1,18 +1,21 @@
 import Link from 'next/link';
+import Image from 'next/image';
 import { Metadata } from 'next';
 
 // Forzamos los metadatos con la dirección URL directa y completa de la imagen
 export const metadata: Metadata = {
-  title: 'FisioSphere | Reserva tu cita',
+  title: { absolute: 'FisioSphere | Reserva tu cita' },
   description: 'Atención en consultorio y a domicilio. Fisioterapia y Rehabilitación.',
+  alternates: { canonical: '/links' },
+  robots: { index: false, follow: true },
   openGraph: {
     title: 'FisioSphere | Reserva tu cita',
     description: 'Atención en consultorio y a domicilio. Fisioterapia y Rehabilitación.',
-    url: 'https://fisiosphere.netlify.app/links',
+    url: '/links',
     siteName: 'FisioSphere',
     images: [
       {
-        url: 'https://fisiosphere.netlify.app/1200.png', // URL absoluta directa
+        url: '/1200.png',
         width: 1200,
         height: 630,
         alt: 'FisioSphere Portada',
@@ -35,19 +38,24 @@ export default function LinksPage() {
           
           {/* Portada */}
           <div className="relative w-full h-44 rounded-2xl overflow-hidden bg-zinc-800 border border-zinc-800">
-            <img 
-              src="/portadalinks.png" 
-              alt="FisioSphere Portada" 
-              className="w-full h-full object-cover"
+            <Image
+              src="/portadalinks.png"
+              alt="FisioSphere Portada"
+              fill
+              priority
+              sizes="448px"
+              className="object-cover"
             />
           </div>
 
           {/* Logo */}
           <div className="-mt-12 mb-4 flex justify-center relative z-10">
             <div className="w-24 h-24 rounded-full border-4 border-black overflow-hidden bg-zinc-900 shadow-xl">
-              <img 
-                src="/perfillinks.jpg" 
-                alt="FisioSphere Logo" 
+              <Image
+                src="/perfillinks.jpg"
+                alt="FisioSphere Logo"
+                width={96}
+                height={96}
                 className="w-full h-full object-cover"
               />
             </div>

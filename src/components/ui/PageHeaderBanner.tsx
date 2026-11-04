@@ -5,6 +5,8 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { ChevronRight } from 'lucide-react';
 import { motion } from 'framer-motion';
+import { empresaInfo } from '@/lib/data';
+import { BreadcrumbSchema } from '@/components/seo/JsonLd';
 
 export interface BreadcrumbItem {
   label: string;
@@ -34,7 +36,12 @@ export default function PageHeaderBanner({
           1. IMAGEN DE FONDO
           La imagen cubre todo el fondo de forma panorámica y adaptable sin deformarse
          ========================================================================= */}
-      <div className="absolute inset-0 z-0">
+      <motion.div
+        className="absolute inset-0 z-0"
+        initial={{ scale: 1.1 }}
+        animate={{ scale: 1 }}
+        transition={{ duration: 1.8, ease: [0.22, 1, 0.36, 1] }}
+      >
         <Image
           src={bannerImage}
           alt="FisioSphere Centro Integral - Fisioterapia en Lima"
@@ -48,7 +55,7 @@ export default function PageHeaderBanner({
             Oscurece la imagen para que el texto blanco, badges y gradientes resalten
            ========================================================================= */}
         <div className="absolute inset-0 bg-slate-950/75 bg-gradient-to-t from-slate-950/95 via-slate-950/70 to-slate-950/80 backdrop-blur-[1px]" />
-      </div>
+      </motion.div>
 
       {/* =========================================================================
           3. CONTENIDO SUPERPUESTO (ENCIMA DE LA CAPA OSCURA)
@@ -56,6 +63,9 @@ export default function PageHeaderBanner({
          ========================================================================= */}
       <div className="relative z-10 w-full max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center flex flex-col items-center justify-center">
         {/* Migas de pan (Breadcrumbs) en píldora de cristal */}
+        <BreadcrumbSchema
+          items={breadcrumbs.map((item) => ({ name: item.label, url: `${empresaInfo.url}${item.href === '/' ? '' : item.href}` }))}
+        />
         <nav aria-label="Breadcrumb" className="mb-5">
           <ol className="inline-flex items-center flex-wrap justify-center gap-1.5 sm:gap-2 text-xs sm:text-sm text-neutral-300 bg-white/10 backdrop-blur-md px-4 py-1.5 rounded-full border border-white/20 shadow-sm">
             {breadcrumbs.map((item, index) => {
