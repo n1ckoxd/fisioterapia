@@ -42,7 +42,8 @@ export default function LinksPage() {
               src="/portadalinks.png"
               alt="FisioSphere Portada"
               fill
-              priority
+              loading="eager"
+              fetchPriority="high"
               sizes="448px"
               className="object-cover"
             />

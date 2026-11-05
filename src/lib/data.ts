@@ -26,35 +26,36 @@ export const servicios: Servicio[] = [
   {
     slug: "fisioterapia-bebes-estimulacion-temprana",
     condiciones: [
+      "Retraso en el desarrollo motor (control de cabeza, sentado, gateo)",
       "Tortícolis congénita",
       "Plagiocefalia (cabeza plana)",
+      "Displasia de cadera",
       "Bebés prematuros",
-      "Retraso en el control de cabeza, el sentado o el gateo",
       "Hipotonía (bebé muy flojito) o rigidez muscular",
       "Asimetrías y preferencia por un solo lado",
-      "Parálisis braquial obstétrica",
       "Síndrome de Down y otras condiciones del desarrollo",
     ],
     especialista: "ivon-serrano",
-    nombre: "Fisioterapia para Bebés (0 a 12 meses)",
-    descripcionCorta: "Estimulación temprana y neurodesarrollo para bebés de 0 a 12 meses, a domicilio en Lima. Detectamos y tratamos a tiempo retrasos motores, tortícolis y plagiocefalia.",
-    descripcionLarga: "El primer año de vida es la etapa de mayor plasticidad cerebral: lo que el bebé aprende con su cuerpo en estos 12 meses (sostener la cabeza, girar, sentarse, gatear y ponerse de pie) es la base de todo su desarrollo futuro. En FisioSphere somos especialistas en fisioterapia para bebés de 0 a 12 meses. Evaluamos los hitos motores y los reflejos de tu bebé, detectamos a tiempo cualquier retraso o asimetría y diseñamos un plan de estimulación temprana basado en el juego. Atendemos a domicilio en Lima para que tu bebé reciba la terapia en su entorno, sin tráfico ni estrés, y te enseñamos a ti a continuar la estimulación en casa cada día.",
+    nombre: "Desarrollo Motor y Atención Temprana (0 a 12 meses)",
+    descripcionCorta: "Fisioterapia para el desarrollo motor y atención temprana de bebés de 0 a 12 meses, a domicilio en Lima. Detectamos y tratamos a tiempo retrasos motores, tortícolis, plagiocefalia y displasia de cadera.",
+    descripcionLarga: "El primer año de vida es la etapa de mayor plasticidad cerebral: lo que el bebé aprende con su cuerpo en estos 12 meses (sostener la cabeza, girar, sentarse, gatear y ponerse de pie) es la base de todo su desarrollo futuro. En FisioSphere somos especialistas en fisioterapia del desarrollo motor y atención temprana para bebés de 0 a 12 meses. Evaluamos los hitos motores y los reflejos de tu bebé, detectamos a tiempo cualquier retraso o asimetría y diseñamos un plan de estimulación temprana basado en el juego. Atendemos a domicilio en Lima para que tu bebé reciba la terapia en su entorno, sin tráfico ni estrés, y te enseñamos a ti a continuar la estimulación en casa cada día.",
     icono: "Baby",
-    imagen: "/3.png",
-    imagenAlt: "Fisioterapeuta de FisioSphere realizando estimulación temprana boca abajo (tummy time) con un bebé",
+    imagen: "/bebe-desarrollo-motor-0-12-meses.jpg",
+    imagenAlt: "Fisioterapeuta de FisioSphere sonriendo a un bebé sentado durante una sesión de desarrollo motor y atención temprana",
     keywords: [
       "fisioterapia para bebés Lima",
+      "desarrollo motor bebé",
+      "atención temprana bebés Lima",
       "estimulación temprana bebés a domicilio",
-      "terapia física para bebés",
-      "neurodesarrollo bebés Lima",
+      "displasia de cadera bebé fisioterapia",
       "tortícolis congénita bebé",
       "plagiocefalia bebé fisioterapia",
     ],
     beneficios: [
       "Evaluación de hitos motores y reflejos de 0 a 12 meses",
-      "Detección temprana de retrasos del desarrollo",
-      "Tratamiento de tortícolis congénita y plagiocefalia (cabeza plana)",
-      "Estimulación temprana para bebés prematuros",
+      "Detección temprana de retrasos del desarrollo motor",
+      "Tortícolis congénita, plagiocefalia y displasia de cadera",
+      "Atención temprana para bebés prematuros",
       "Sesiones a domicilio en Lima, sin traslados ni estrés",
       "Pautas claras para que los padres estimulen en casa"
     ],
@@ -65,10 +66,11 @@ export const servicios: Servicio[] = [
       { pregunta: "¿Cómo sé si mi bebé necesita estimulación temprana?", respuesta: "Consulta si a los 3-4 meses no sostiene bien la cabeza, si siempre gira la cabeza hacia el mismo lado, si tiene la cabeza aplanada, si a los 6-7 meses no se gira o no se sienta con apoyo, si a los 9-10 meses no gatea ni se arrastra, o si notas que usa más un lado del cuerpo que el otro." },
       { pregunta: "¿La fisioterapia para bebés duele?", respuesta: "No. Son sesiones suaves basadas en el juego, el contacto y el movimiento. Respetamos los tiempos del bebé: si tiene sueño o hambre, pausamos. La mayoría de bebés disfruta la sesión." },
       { pregunta: "¿Atienden a domicilio?", respuesta: "Sí. La mayoría de nuestras sesiones con bebés son a domicilio en Lima (Jesús María, San Isidro, Miraflores, Surco, San Borja, La Molina, Magdalena, Lince, San Miguel, Pueblo Libre y más). Llevamos todo el material necesario." },
-      { pregunta: "¿Tratan tortícolis congénita y plagiocefalia?", respuesta: "Sí, son de las consultas más frecuentes. La tortícolis congénita responde muy bien a la fisioterapia cuando se trata pronto, y corregir la postura y el posicionamiento ayuda a mejorar la forma de la cabeza en la plagiocefalia postural." }
+      { pregunta: "¿Tratan tortícolis congénita y plagiocefalia?", respuesta: "Sí, son de las consultas más frecuentes. La tortícolis congénita responde muy bien a la fisioterapia cuando se trata pronto, y corregir la postura y el posicionamiento ayuda a mejorar la forma de la cabeza en la plagiocefalia postural." },
+      { pregunta: "¿Atienden bebés con displasia de cadera?", respuesta: "Sí. Acompañamos el tratamiento que indica el traumatólogo pediátrico (por ejemplo, el arnés de Pavlik): cuidamos el desarrollo motor del bebé durante y después del tratamiento, con posturas, cargas y ejercicios seguros para su cadera, y enseñamos a los papás cómo cargarlo y estimularlo en casa." }
     ],
-    metaTitle: "Fisioterapia para Bebés y Estimulación Temprana a Domicilio en Lima (0-12 meses)",
-    metaDescription: "Fisioterapia y estimulación temprana para bebés de 0 a 12 meses a domicilio en Lima. Tortícolis, plagiocefalia, prematuros y retraso motor. Evaluación del neurodesarrollo. Reserva por WhatsApp."
+    metaTitle: "Fisioterapia para Bebés: Desarrollo Motor y Atención Temprana en Lima (0-12 meses)",
+    metaDescription: "Fisioterapia del desarrollo motor y atención temprana para bebés de 0 a 12 meses, a domicilio en Lima. Tortícolis, plagiocefalia, displasia de cadera, prematuros y retraso motor. Reserva por WhatsApp."
   },
   {
     slug: "fisioterapia-deportiva",
@@ -316,39 +318,49 @@ export const servicios: Servicio[] = [
   {
     slug: "fisioterapia-pediatrica",
     condiciones: [
-      "Retraso en la marcha",
-      "Marcha en puntas de pie",
-      "Pie plano infantil",
-      "Escoliosis y alteraciones posturales",
+      "Parálisis cerebral infantil (PCI)",
+      "Trastorno del espectro autista (TEA / autismo)",
+      "Retraso del desarrollo psicomotor",
+      "Displasia de cadera",
+      "Hipotonía y síndrome de Down",
+      "Marcha en puntas de pie y retraso en la marcha",
       "Problemas de equilibrio y coordinación",
-      "Parálisis cerebral infantil",
-      "Hipotonía",
-      "Fisioterapia respiratoria infantil",
+      "Pie plano, escoliosis y alteraciones posturales",
     ],
     especialista: "ivon-serrano",
-    nombre: "Fisioterapia Pediátrica",
-    descripcionCorta: "Atención especializada para el desarrollo psicomotor, tratamiento de patologías infantiles y estimulación temprana.",
-    descripcionLarga: "La fisioterapia pediátrica se enfoca en el tratamiento y cuidado de bebés, niños y adolescentes con alteraciones en su desarrollo motor o condiciones neurológicas, ortopédicas y respiratorias. A través del juego y técnicas especializadas, ayudamos a los más pequeños a alcanzar su máximo potencial funcional, promoviendo su independencia y mejorando su calidad de vida y la de sus familias.",
-    icono: "Baby",
-    beneficios: [
-      "Mejora del desarrollo psicomotor",
-      "Tratamiento de alteraciones posturales",
-      "Atención temprana y estimulación",
-      "Rehabilitación neurológica infantil",
-      "Fisioterapia respiratoria para niños",
-      "Acompañamiento a las familias"
+    nombre: "Fisioterapia Neurológica Pediátrica (0 a 14 años)",
+    descripcionCorta: "Fisioterapia neurológica para niños de 0 a 14 años: parálisis cerebral infantil (PCI), autismo (TEA), retraso del desarrollo, displasia de cadera y trastornos de la marcha.",
+    descripcionLarga: "La fisioterapia neurológica pediátrica acompaña a niños de 0 a 14 años cuyo desarrollo motor se ve afectado por una condición neurológica o del neurodesarrollo, como la parálisis cerebral infantil (PCI), el trastorno del espectro autista (TEA), el síndrome de Down o un retraso del desarrollo psicomotor. También tratamos alteraciones ortopédicas como la displasia de cadera, el pie plano o la marcha en puntas. A través del juego y de técnicas de neurodesarrollo trabajamos el control postural, el equilibrio, la coordinación, la marcha y la integración sensorial, para que cada niño gane autonomía en casa y en el colegio.",
+    icono: "Brain",
+    keywords: [
+      "fisioterapia neurológica pediátrica Lima",
+      "terapia física niños a domicilio Lima",
+      "fisioterapia parálisis cerebral infantil",
+      "fisioterapia autismo Lima",
+      "displasia de cadera fisioterapia niños",
+      "retraso del desarrollo psicomotor",
     ],
-    tratamiento: "El tratamiento se realiza siempre a través del juego para asegurar la colaboración y motivación del niño. Utilizamos técnicas de neurodesarrollo, terapia manual adaptada, ejercicios terapéuticos lúdicos y proporcionamos pautas esenciales para que los padres continúen el trabajo en casa.",
-    duracion: "Las sesiones duran entre 45 y 60 minutos, adaptándonos siempre al ritmo, la tolerancia y el estado de ánimo del niño.",
+    beneficios: [
+      "Mejor control postural, equilibrio y coordinación",
+      "Avances en la marcha y la autonomía diaria",
+      "Plan adaptado a PCI, autismo y otras condiciones",
+      "Integración sensorial a través del juego",
+      "Coordinación con el colegio y otros terapeutas",
+      "Pautas y acompañamiento a la familia"
+    ],
+    tratamiento: "Tras una evaluación del desarrollo motor, el tono muscular, el equilibrio y la marcha, diseñamos un plan basado en el juego para asegurar la motivación del niño. Usamos técnicas de neurodesarrollo, ejercicio terapéutico adaptado, entrenamiento del equilibrio y la marcha, e integración sensorial cuando el niño lo necesita (por ejemplo, en autismo). Damos a los padres pautas claras para continuar el trabajo en casa.",
+    duracion: "Las sesiones duran entre 45 y 60 minutos, adaptándonos siempre al ritmo, la tolerancia y el estado de ánimo del niño. En condiciones como la PCI o el autismo el acompañamiento suele ser continuo, con objetivos que revisamos cada pocas semanas.",
     faqs: [
-      { pregunta: "¿A qué edad puede empezar un niño la fisioterapia?", respuesta: "Desde los primeros días de vida. La intervención temprana es fundamental, especialmente en bebés prematuros o con riesgo de alteraciones en el desarrollo." },
+      { pregunta: "¿Hasta qué edad atienden?", respuesta: "Atendemos a niños de 0 a 14 años. Para bebés de 0 a 12 meses tenemos un programa específico de desarrollo motor y atención temprana." },
+      { pregunta: "¿Atienden a niños con parálisis cerebral infantil (PCI)?", respuesta: "Sí. Trabajamos el control postural, la movilidad, la marcha y la prevención de acortamientos musculares, en coordinación con su neurólogo y otros terapeutas. El objetivo es la mayor autonomía posible en su día a día." },
+      { pregunta: "¿La fisioterapia ayuda a niños con autismo (TEA)?", respuesta: "Sí. Muchos niños con TEA tienen dificultades de coordinación, equilibrio, tono muscular o procesamiento sensorial. Con sesiones lúdicas y predecibles trabajamos estas áreas, como parte de un abordaje junto a su psicólogo y otros terapeutas." },
       { pregunta: "¿Los padres pueden estar presentes en la sesión?", respuesta: "No solo pueden, sino que es muy recomendable. Es fundamental que los padres aprendan las pautas y ejercicios para continuar el estímulo en casa." },
       { pregunta: "¿Tratan problemas respiratorios como bronquiolitis?", respuesta: "Sí, la fisioterapia respiratoria pediátrica es muy efectiva para ayudar a los niños a eliminar secreciones y mejorar su función respiratoria." }
     ],
-    metaTitle: "Fisioterapia Pediátrica a Domicilio en Lima | Niños y Bebés - FisioSphere",
-    metaDescription: "Fisioterapia pediátrica a domicilio en Lima: estimulación temprana, neurodesarrollo, pie plano, marcha en puntas y corrección postural en niños. Pide tu cita.",
+    metaTitle: "Fisioterapia Neurológica Pediátrica en Lima (0-14 años) | PCI y Autismo - FisioSphere",
+    metaDescription: "Fisioterapia neurológica pediátrica para niños de 0 a 14 años, a domicilio en Lima: parálisis cerebral infantil (PCI), autismo (TEA), retraso del desarrollo, displasia de cadera y marcha en puntas.",
     imagen: "/pediatrico.png",
-    imagenAlt: "Fisioterapeuta pediátrica de FisioSphere trabajando con un bebé sobre colchoneta"
+    imagenAlt: "Fisioterapeuta pediátrica de FisioSphere trabajando el desarrollo motor de un niño sobre colchoneta"
   },
   {
     slug: "terapia-psicopedagogica",
@@ -421,7 +433,7 @@ export const servicios: Servicio[] = [
     ],
     metaTitle: "Fisioterapia Geriátrica a Domicilio en Lima | Adulto Mayor - FisioSphere",
     metaDescription: "Fisioterapia para adultos mayores a domicilio en Lima. Tratamiento de artrosis, prevención de caídas y mantenimiento de la movilidad. Envejecimiento activo y sin dolor.",
-    imagen: "/geriatrico.png",
+    imagen: "/geriatrico_nuevo.png",
     imagenAlt: "Fisioterapia geriátrica a domicilio con un adulto mayor en Lima"
   },
   {
@@ -469,7 +481,7 @@ export const servicios: Servicio[] = [
       "Lesión medular",
       "Trastornos del equilibrio y de la marcha",
     ],
-    nombre: "Fisioterapia Neurológica",
+    nombre: "Fisioterapia Neurológica en Adultos",
     descripcionCorta: "Rehabilitación tras un ACV, Parkinson, neuropatías y otras condiciones neurológicas para recuperar movilidad e independencia.",
     descripcionLarga: "La fisioterapia neurológica trabaja con personas que tienen alteraciones del sistema nervioso: secuelas de un accidente cerebrovascular (ACV o derrame), enfermedad de Parkinson, esclerosis múltiple, neuropatías, lesiones medulares y otras. Aprovechamos la neuroplasticidad para reentrenar el movimiento, el equilibrio y la marcha, y buscamos la mayor independencia posible en la vida diaria del paciente y de su familia.",
     icono: "Brain",
@@ -490,7 +502,7 @@ export const servicios: Servicio[] = [
       { pregunta: "¿La fisioterapia ayuda en el Parkinson?", respuesta: "Sí. El ejercicio dirigido mejora el equilibrio, la marcha, la postura y reduce el riesgo de caídas." },
       { pregunta: "¿Pueden atender en casa a un paciente que no puede salir?", respuesta: "Sí, es una de nuestras modalidades principales. Trabajamos en el domicilio con el paciente y su cuidador." }
     ],
-    metaTitle: "Fisioterapia Neurológica a Domicilio en Lima | ACV, Parkinson - FisioSphere",
+    metaTitle: "Fisioterapia Neurológica para Adultos a Domicilio en Lima | ACV y Parkinson - FisioSphere",
     metaDescription: "Fisioterapia neurológica a domicilio en Lima. Rehabilitación tras ACV, Parkinson, neuropatías y lesiones neurológicas. Recupera movilidad, equilibrio e independencia."
   }
 ];
@@ -590,7 +602,15 @@ export interface FAQ {
 export const faqsGenerales: FAQ[] = [
   {
     pregunta: "¿Atienden a bebés de 0 a 12 meses?",
-    respuesta: "Sí, es nuestra especialidad. Realizamos fisioterapia y estimulación temprana para bebés de 0 a 12 meses a domicilio en Lima: evaluación del neurodesarrollo, tortícolis congénita, plagiocefalia, bebés prematuros y retrasos en el gateo o la marcha."
+    respuesta: "Sí, es nuestra especialidad. Realizamos fisioterapia del desarrollo motor y atención temprana para bebés de 0 a 12 meses a domicilio en Lima: evaluación del neurodesarrollo, tortícolis congénita, plagiocefalia, displasia de cadera, bebés prematuros y retrasos en el gateo o la marcha."
+  },
+  {
+    pregunta: "¿Atienden a niños con PCI o autismo?",
+    respuesta: "Sí. Con nuestra fisioterapia neurológica pediátrica atendemos a niños de 0 a 14 años con parálisis cerebral infantil (PCI), trastorno del espectro autista (TEA), síndrome de Down, retraso del desarrollo psicomotor y displasia de cadera, a domicilio en Lima o en nuestra sede de Jesús María."
+  },
+  {
+    pregunta: "¿Quiénes son los fisioterapeutas?",
+    respuesta: "Nuestro equipo está formado por licenciados en Terapia Física y Rehabilitación, profesionales universitarios con 5 años de formación, y por una psicóloga clínica colegiada."
   },
   {
     pregunta: "¿Necesito cita previa?",
@@ -644,22 +664,22 @@ export interface MiembroEquipo {
 export const equipo: MiembroEquipo[] = [
   {
     slug: "ivon-serrano",
-    nombre: "TF. Ivon Serrano",
-    tituloProfesional: "Fisioterapeuta Colegiada",
-    cargo: "Especialista en Fisioterapia Pediátrica y Terapia Física Integral",
+    nombre: "Lic. Ivon Serrano",
+    tituloProfesional: "Licenciada en Terapia Física y Rehabilitación",
+    cargo: "Especialista en Desarrollo Motor, Atención Temprana y Fisioterapia Neurológica Pediátrica",
     frase: "Tu bienestar, nuestro propósito",
-    descripcion: "Fisioterapeuta especializada en estimulación temprana, neurodesarrollo infantil, corrección postural y rehabilitación física integral. Brinda un acompañamiento empático y lúdico para que los niños crezcan fuertes y seguros.",
+    descripcion: "Licenciada en Terapia Física y Rehabilitación, con formación universitaria de 5 años, especializada en desarrollo motor y atención temprana de bebés de 0 a 12 meses y en fisioterapia neurológica pediátrica para niños de 0 a 14 años (PCI, autismo y displasia de cadera). Brinda un acompañamiento empático y lúdico para que los niños crezcan fuertes y seguros.",
     enfoqueLargo: "Cada niño se comunica y aprende a través del movimiento. En nuestras sesiones combinamos el juego estructurado y la estimulación sensorimotora para que los pequeños alcancen sus hitos del desarrollo sin miedo ni frustración. Además, brindamos pautas claras a los padres para continuar el estímulo en casa, ofreciendo la máxima comodidad con nuestro servicio a domicilio en Lima.",
-    publicoObjetivo: "Bebés, Niños, Adolescentes y Adultos con Dolor Muscular",
+    publicoObjetivo: "Bebés de 0 a 12 meses, Niños de 0 a 14 años y Adultos con Dolor Muscular",
     colorTema: "rosa",
     bgPattern: "infantil",
     especialidades: [
-      "Fisioterapia Pediátrica",
-      "Estimulación Temprana",
-      "Neurodesarrollo Infantil",
+      "Desarrollo Motor y Atención Temprana",
+      "Fisioterapia Neurológica Pediátrica",
+      "PCI y Autismo (TEA)",
+      "Displasia de Cadera",
       "Corrección Postural",
-      "Dolor de Espalda",
-      "Rehabilitación Motora"
+      "Dolor de Espalda"
     ],
     razonesParaElegir: [
       "Terapia lúdica y sin dolor adaptada a la edad del niño",
@@ -668,11 +688,11 @@ export const equipo: MiembroEquipo[] = [
       "Atención a domicilio para evitar el tráfico y estrés del pequeño"
     ],
     areasTratamiento: [
-      "Retraso en el gateo o marcha independiente",
-      "Estimulación temprana para bebés y prematuros",
-      "Caminata de puntitas y alteraciones del equilibrio",
-      "Pie plano, escoliosis y vicios posturales",
-      "Rehabilitación motora y fortalecimiento",
+      "Retraso en el desarrollo motor, el gateo o la marcha",
+      "Atención temprana para bebés y prematuros",
+      "Parálisis cerebral infantil (PCI) y autismo (TEA)",
+      "Displasia de cadera, tortícolis y plagiocefalia",
+      "Caminata de puntitas, pie plano y alteraciones posturales",
       "Dolor de espalda y cuello en adultos"
     ],
     foto: "/equipo/ivon-serrano.png",
@@ -680,11 +700,11 @@ export const equipo: MiembroEquipo[] = [
   },
   {
     slug: "miguel-alvarez",
-    nombre: "TF. Miguel Alvarez",
-    tituloProfesional: "Fisioterapeuta Colegiado",
+    nombre: "Lic. Miguel Alvarez",
+    tituloProfesional: "Licenciado en Terapia Física y Rehabilitación",
     cargo: "Especialista en Fisioterapia Geriátrica y Rehabilitación Funcional",
     frase: "Movimiento que transforma, bienestar que perdura",
-    descripcion: "Fisioterapeuta dedicado a devolver la movilidad, independencia y alivio del dolor a los adultos mayores y pacientes en recuperación de lesiones o cirugías. Trato respetuoso, cálido y paciente.",
+    descripcion: "Licenciado en Terapia Física y Rehabilitación, con formación universitaria de 5 años, dedicado a devolver la movilidad, independencia y alivio del dolor a los adultos mayores y pacientes en recuperación de lesiones o cirugías. Trato respetuoso, cálido y paciente.",
     enfoqueLargo: "Envejecer no debe ser sinónimo de dolor o pérdida de independencia. Mi método de trabajo se basa en ejercicios terapéuticos suaves, progresivos y adaptados a la condición de cada adulto mayor. Nos enfocamos en fortalecer las piernas, recuperar el equilibrio para evitar caídas y aliviar los dolores de artrosis, llevando toda la atención a la comodidad del hogar del paciente.",
     publicoObjetivo: "Adultos Mayores, Personas con Artrosis y Pacientes Postoperados",
     colorTema: "verde",

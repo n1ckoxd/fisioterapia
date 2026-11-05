@@ -8,7 +8,7 @@ export const metadata: Metadata = {
   alternates: { canonical: "/preguntas-frecuentes" },
   title: 'Preguntas Frecuentes sobre Fisioterapia a Domicilio',
   description:
-    'Respuestas sobre fisioterapia para bebés de 0 a 12 meses, niños, adulto mayor y psicología infantil: citas, sesiones a domicilio en Lima, duración, precios y más.',
+    'Respuestas sobre desarrollo motor y atención temprana de 0 a 12 meses, fisioterapia neurológica pediátrica (PCI, autismo), adulto mayor y psicología infantil: citas a domicilio en Lima, duración, precios y más.',
 };
 
 const faqsDe = (...slugs: string[]) =>
@@ -20,13 +20,13 @@ const categorias: CategoriaFAQ[] = [
     id: 'bebes',
     nombre: 'Bebés 0-12 meses',
     faqs: faqsDe('fisioterapia-bebes-estimulacion-temprana'),
-    enlace: { href: '/servicios/fisioterapia-bebes-estimulacion-temprana', texto: 'Ver fisioterapia para bebés' },
+    enlace: { href: '/servicios/fisioterapia-bebes-estimulacion-temprana', texto: 'Ver desarrollo motor y atención temprana' },
   },
   {
     id: 'ninos',
-    nombre: 'Niños y aprendizaje',
+    nombre: 'Niños 0-14 años',
     faqs: faqsDe('fisioterapia-pediatrica', 'terapia-psicopedagogica'),
-    enlace: { href: '/servicios/terapia-psicopedagogica', texto: 'Ver psicología infantil y psicopedagogía' },
+    enlace: { href: '/servicios/fisioterapia-pediatrica', texto: 'Ver fisioterapia neurológica pediátrica' },
   },
   {
     id: 'adulto-mayor',

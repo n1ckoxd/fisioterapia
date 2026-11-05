@@ -2,7 +2,10 @@ import { MapPin, Baby, HeartHandshake, Brain, PersonStanding } from 'lucide-reac
 import { empresaInfo } from '@/lib/data';
 
 const destacados = [
-  { icon: Baby, texto: 'Bebés de 0 a 12 meses' },
+  { icon: Baby, texto: 'Desarrollo motor 0 a 12 meses' },
+  { icon: Brain, texto: 'Neurológica pediátrica 0 a 14 años' },
+  { icon: HeartHandshake, texto: 'PCI y autismo' },
+  { icon: Baby, texto: 'Displasia de cadera' },
   { icon: HeartHandshake, texto: 'Fisioterapia a domicilio' },
   { icon: PersonStanding, texto: 'Adulto mayor' },
   { icon: Brain, texto: 'Psicología infantil' },

@@ -5,7 +5,7 @@ import TestimoniosContent from '@/components/testimonios/TestimoniosContent';
 export const metadata: Metadata = {
   alternates: { canonical: "/testimonios" },
   title: 'Testimonios de Pacientes y Familias',
-  description: 'Opiniones de familias que confiaron en FisioSphere: fisioterapia para bebés, niños, adulto mayor y psicología infantil a domicilio en Lima.',
+  description: 'Opiniones de familias que confiaron en FisioSphere: desarrollo motor de bebés, fisioterapia neurológica pediátrica, adulto mayor y psicología infantil a domicilio en Lima.',
 };
 
 export default function TestimoniosPage() {

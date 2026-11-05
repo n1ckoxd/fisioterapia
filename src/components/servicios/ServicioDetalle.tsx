@@ -134,7 +134,8 @@ export default function ServicioDetalle({ servicio, especialista, articulos, otr
                     src={servicio.imagen}
                     alt={servicio.imagenAlt ?? servicio.nombre}
                     fill
-                    priority
+                    loading="eager"
+                    fetchPriority="high"
                     sizes="(max-width: 1024px) 100vw, 50vw"
                     className="object-cover"
                   />

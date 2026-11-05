@@ -46,7 +46,8 @@ export default function PageHeaderBanner({
           src={bannerImage}
           alt="FisioSphere Centro Integral - Fisioterapia en Lima"
           fill
-          priority
+          loading="eager"
+          fetchPriority="high"
           sizes="100vw"
           className="w-full h-full object-cover object-center"
         />

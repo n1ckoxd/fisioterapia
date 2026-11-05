@@ -89,7 +89,8 @@ export default function HeroSection() {
                 src={image.url}
                 alt={image.alt}
                 fill
-                priority={index === 0}
+                loading={index === 0 ? 'eager' : 'lazy'}
+                fetchPriority={index === 0 ? 'high' : 'auto'}
                 className="object-cover object-center"
                 sizes="100vw"
               />
@@ -153,8 +154,8 @@ export default function HeroSection() {
             className="text-base sm:text-lg md:text-xl text-neutral-200 mb-10 max-w-3xl mx-auto leading-relaxed font-normal"
           >
             Especialistas en{' '}
-            <strong className="text-white font-semibold">estimulación temprana para bebés de 0 a 12 meses</strong>,
-            fisioterapia pediátrica, geriátrica y psicología infantil. Llevamos la terapia a tu hogar para
+            <strong className="text-white font-semibold">desarrollo motor y atención temprana para bebés de 0 a 12 meses</strong>,
+            fisioterapia neurológica pediátrica (0 a 14 años), geriátrica y psicología infantil. Llevamos la terapia a tu hogar para
             evitarte el tráfico y el estrés de Lima, o te atendemos en nuestra sede, previa cita.
           </motion.p>
 

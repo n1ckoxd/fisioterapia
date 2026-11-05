@@ -100,13 +100,13 @@ export default function BebesSection() {
             transition={{ duration: 0.7 }}
             className="lg:col-span-5 relative"
           >
-            <div className="relative aspect-[4/5] sm:aspect-[4/3] lg:aspect-[4/5] rounded-[2rem] overflow-hidden shadow-2xl shadow-primary-900/20 ring-8 ring-white">
+            <div className="relative aspect-square sm:aspect-[4/3] lg:aspect-square rounded-[2rem] overflow-hidden shadow-2xl shadow-primary-900/20 ring-8 ring-white">
               <Image
-                src="/3.png"
-                alt="Fisioterapeuta de FisioSphere haciendo tummy time con un bebé en una sesión de estimulación temprana"
+                src="/bebe-desarrollo-motor-0-12-meses.jpg"
+                alt="Fisioterapeuta de FisioSphere sonriendo a un bebé sentado durante una sesión de desarrollo motor y atención temprana"
                 fill
                 sizes="(max-width: 1024px) 100vw, 40vw"
-                className="object-cover object-[60%_center]"
+                className="object-cover object-[center_30%]"
               />
             </div>
 
@@ -131,7 +131,7 @@ export default function BebesSection() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.6, duration: 0.5 }}
-              className="absolute -top-4 right-4 sm:right-6 bg-white rounded-2xl shadow-xl px-4 py-3 flex items-center gap-3 animate-float [animation-delay:1s]"
+              className="absolute -top-6 left-1/2 -translate-x-1/2 whitespace-nowrap bg-white rounded-2xl shadow-xl px-4 py-3 flex items-center gap-3 animate-float [animation-delay:1s]"
             >
               <span className="w-10 h-10 rounded-xl bg-teal-100 text-teal-600 flex items-center justify-center">
                 <Baby className="w-5 h-5" />
@@ -161,7 +161,7 @@ export default function BebesSection() {
               transition={{ delay: 0.1 }}
               className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-neutral-900 tracking-tight leading-tight mb-4"
             >
-              Fisioterapia y estimulación temprana para{' '}
+              Desarrollo motor y atención temprana para{' '}
               <span className="gradient-text">bebés de 0 a 12 meses</span>
             </motion.h2>
             <motion.p
@@ -265,7 +265,7 @@ export default function BebesSection() {
                 href="/servicios/fisioterapia-bebes-estimulacion-temprana"
                 className="btn-primary justify-center"
               >
-                Ver fisioterapia para bebés <ArrowRight className="w-4 h-4" />
+                Ver desarrollo motor y atención temprana <ArrowRight className="w-4 h-4" />
               </Link>
               <a
                 href={`https://wa.me/${empresaInfo.whatsapp}?text=${encodeURIComponent('Hola, quiero una evaluación de estimulación temprana para mi bebé')}`}

@@ -16,15 +16,15 @@ interface EspecialidadItem {
 
 const especialidades: EspecialidadItem[] = [
   {
-    titulo: 'Bebés de 0 a 12 meses',
-    subtitulo: 'Estimulación temprana, tortícolis, plagiocefalia y prematuros',
-    imagen: '/3.png',
+    titulo: 'Desarrollo Motor y Atención Temprana',
+    subtitulo: 'Bebés de 0 a 12 meses: tortícolis, plagiocefalia, displasia de cadera y prematuros',
+    imagen: '/bebe-desarrollo-motor-0-12-meses.jpg',
     link: '/servicios/fisioterapia-bebes-estimulacion-temprana',
     slug: 'fisioterapia-bebes-estimulacion-temprana',
   },
   {
-    titulo: 'Fisioterapia Pediátrica',
-    subtitulo: 'Neurodesarrollo, estimulación temprana y psicomotricidad',
+    titulo: 'Fisioterapia Neurológica Pediátrica',
+    subtitulo: 'Niños de 0 a 14 años: PCI, autismo (TEA), displasia de cadera y retraso motor',
     imagen: '/pediatrico.png',
     link: '/servicios/fisioterapia-pediatrica',
     slug: 'fisioterapia-pediatrica',
@@ -32,7 +32,7 @@ const especialidades: EspecialidadItem[] = [
   {
     titulo: 'Fisioterapia Geriátrica',
     subtitulo: 'Movilidad, equilibrio y prevención de caídas en el adulto mayor',
-    imagen: '/geriatrico.png',
+    imagen: '/geriatrico_nuevo.png',
     link: '/servicios/fisioterapia-geriatrica',
     slug: 'fisioterapia-geriatrica',
   },
@@ -51,7 +51,7 @@ const especialidades: EspecialidadItem[] = [
     slug: 'fisioterapia-traumatologica',
   },
   {
-    titulo: 'Fisioterapia Neurológica',
+    titulo: 'Fisioterapia Neurológica en Adultos',
     subtitulo: 'Rehabilitación tras ACV, Parkinson, neuropatías y movilidad',
     imagen: '/neurologico.png',
     link: '/servicios/fisioterapia-neurologica',

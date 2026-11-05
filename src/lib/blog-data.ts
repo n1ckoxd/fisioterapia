@@ -997,7 +997,7 @@ export const articulos: Articulo[] = [...articulosEspecialidades, ...articulosGe
 // Imagen por categoría para los artículos que no tienen una propia.
 export const imagenPorCategoria: Record<string, string> = {
   "Bebés y estimulación temprana": "/3.png",
-  "Adulto mayor": "/geriatrico.png",
+  "Adulto mayor": "/geriatrico_nuevo.png",
   "Psicología infantil": "/psicopedagogia.png",
   "Dolor de espalda y cuello": "/2.png",
   "Lesiones y rehabilitación": "/traumatologia.png",

@@ -18,11 +18,11 @@ import WelcomeFlyerModal from '@/components/ui/WelcomeFlyerModal';
 
 export const metadata: Metadata = {
   title: { absolute: 'Fisioterapia para Bebés a Domicilio en Lima | Estimulación Temprana - FisioSphere' },
-  description: 'Fisioterapia y estimulación temprana para bebés de 0 a 12 meses a domicilio en Lima. Tortícolis, plagiocefalia y retraso motor. También fisioterapia geriátrica, neurológica y psicología infantil.',
+  description: 'Fisioterapia del desarrollo motor y atención temprana para bebés de 0 a 12 meses a domicilio en Lima. Fisioterapia neurológica pediátrica (0 a 14 años): PCI, autismo y displasia de cadera. También geriatría y psicología infantil.',
   alternates: { canonical: '/' },
   openGraph: {
     title: 'Fisioterapia para Bebés a Domicilio en Lima | FisioSphere',
-    description: 'Estimulación temprana y neurodesarrollo para bebés de 0 a 12 meses, fisioterapia pediátrica, geriátrica y psicología infantil a domicilio en Lima.',
+    description: 'Desarrollo motor y atención temprana para bebés de 0 a 12 meses, fisioterapia neurológica pediátrica (0 a 14 años), geriátrica y psicología infantil a domicilio en Lima.',
     type: 'website',
     locale: 'es_PE',
     url: '/'
@@ -30,7 +30,7 @@ export const metadata: Metadata = {
   twitter: {
     card: 'summary_large_image',
     title: 'Fisioterapia para Bebés a Domicilio en Lima | FisioSphere',
-    description: 'Estimulación temprana para bebés de 0 a 12 meses, fisioterapia pediátrica, geriátrica y psicología infantil.'
+    description: 'Desarrollo motor y atención temprana para bebés, fisioterapia neurológica pediátrica, geriátrica y psicología infantil.'
   }
 };
 

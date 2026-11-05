@@ -149,7 +149,8 @@ export default async function BlogPostPage(props: PageProps<"/blog/[slug]">) {
               src={imagen}
               alt={articulo.titulo}
               fill
-              priority
+              loading="eager"
+              fetchPriority="high"
               sizes="(max-width: 896px) 100vw, 896px"
               className="object-cover"
             />

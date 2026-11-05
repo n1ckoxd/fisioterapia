@@ -336,7 +336,7 @@ Trabajar en la propia casa permite entrenar en el entorno real: las escaleras, e
     tiempoLectura: "6 min",
     tags: ["prevención de caídas", "adulto mayor", "equilibrio", "fisioterapia geriátrica"],
     publicado: true,
-    imagen: "/geriatrico.png",
+    imagen: "/geriatrico_nuevo.png",
     servicioRelacionado: "fisioterapia-geriatrica",
   },
   {

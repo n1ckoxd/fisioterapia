@@ -72,7 +72,7 @@ export default function TerminosPage() {
 
         <h2>6. Limitación de Responsabilidad</h2>
         <p>
-          Nuestros tratamientos son aplicados por fisioterapeutas colegiados. Sin embargo, los resultados pueden 
+          Nuestros tratamientos son aplicados por licenciados en Terapia Física y Rehabilitación. Sin embargo, los resultados pueden 
           variar dependiendo del estado previo de cada paciente y de su seguimiento de las pautas recomendadas en casa. 
           {empresaInfo.nombre} no se hace responsable de complicaciones derivadas de información médica ocultada o 
           falseada por el paciente durante la anamnesis.

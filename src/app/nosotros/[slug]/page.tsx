@@ -150,7 +150,8 @@ export default async function EspecialistaPage({ params }: Props) {
                     alt={miembro.nombre}
                     fill
                     className="object-cover object-top"
-                    priority
+                    loading="eager"
+                    fetchPriority="high"
                   />
                 ) : (
                   <div className="w-full h-full flex items-center justify-center bg-primary-100 text-primary-600 text-5xl font-bold">

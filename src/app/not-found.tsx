@@ -10,7 +10,7 @@ export const metadata: Metadata = {
 };
 
 const atajos = [
-  { href: "/servicios/fisioterapia-bebes-estimulacion-temprana", label: "Fisioterapia para bebés", icon: Baby },
+  { href: "/servicios/fisioterapia-bebes-estimulacion-temprana", label: "Desarrollo motor 0-12 meses", icon: Baby },
   { href: "/servicios/fisioterapia-geriatrica", label: "Adulto mayor", icon: PersonStanding },
   { href: "/blog", label: "Guías del blog", icon: BookOpen },
   { href: "/", label: "Inicio", icon: Home },

@@ -100,7 +100,7 @@ export default function Header() {
               alt="FisioSphere Centro Integral - Fisioterapia en Lima"
               width={180}
               height={50}
-              priority
+              loading="eager"
               className="h-10 sm:h-12 w-auto object-contain"
             />
           </Link>

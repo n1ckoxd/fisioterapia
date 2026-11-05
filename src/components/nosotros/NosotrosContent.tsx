@@ -116,7 +116,7 @@ export default function NosotrosContent({
               Profesionales Comprometidos con tu Recuperación
             </h2>
             <p className="text-neutral-600 max-w-2xl mx-auto text-base sm:text-lg">
-              Conoce a los profesionales colegiados que cuidarán de ti y de tus seres queridos con calidez humana y rigor clínico.
+              Licenciados en Terapia Física y Rehabilitación, con 5 años de formación universitaria, y psicóloga clínica colegiada: conoce a quienes cuidarán de ti y de tus seres queridos con calidez humana y rigor clínico.
             </p>
           </div>
 

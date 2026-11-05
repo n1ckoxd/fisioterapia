@@ -30,7 +30,7 @@ export default function Footer() {
               />
             </Link>
             <p className="mb-6 leading-relaxed text-neutral-400 text-sm">
-              Fisioterapia a domicilio en Lima y sede en {empresaInfo.distrito}. Especialistas en estimulación temprana para bebés de 0 a 12 meses, fisioterapia pediátrica, geriátrica y psicología infantil.
+              Fisioterapia a domicilio en Lima y sede en {empresaInfo.distrito}. Especialistas en desarrollo motor y atención temprana para bebés de 0 a 12 meses, fisioterapia neurológica pediátrica (0 a 14 años), geriátrica y psicología infantil.
             </p>
             <div className="flex space-x-4">
               {empresaInfo.redesSociales?.facebook && (

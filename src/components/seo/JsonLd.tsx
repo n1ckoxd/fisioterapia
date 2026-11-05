@@ -58,7 +58,7 @@ export function LocalBusinessSchema() {
     "name": empresaInfo.nombreCompleto,
     "alternateName": empresaInfo.nombre,
     "description":
-      "Fisioterapia a domicilio en Lima especializada en bebés de 0 a 12 meses (estimulación temprana y neurodesarrollo), niños, adultos mayores y psicología clínica infantil.",
+      "Fisioterapia a domicilio en Lima: desarrollo motor y atención temprana para bebés de 0 a 12 meses, fisioterapia neurológica pediátrica para niños de 0 a 14 años (PCI, autismo, displasia de cadera), adulto mayor y psicología clínica infantil.",
     "image": [`${empresaInfo.url}/3.png`, `${empresaInfo.url}/1.png`],
     "logo": LOGO_URL,
     "@id": `${empresaInfo.url}/#clinica`,

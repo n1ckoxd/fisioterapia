@@ -89,7 +89,6 @@ export default function WelcomeFlyerModal() {
               alt="Neurodesarrollo y Estimulación Infantil FisioSphere"
               fill
               className="object-contain"
-              priority
               sizes="(max-width: 768px) 100vw, 55vw"
             />
             {/* Overlay sutil al pasar el mouse */}
