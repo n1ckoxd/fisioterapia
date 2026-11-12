@@ -39,3 +39,7 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# avatares (herramientas y videos locales; no forman parte de la web)
+/avatar-ivon/
+/avatar-miguel/
