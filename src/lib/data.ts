@@ -69,8 +69,8 @@ export const servicios: Servicio[] = [
       { pregunta: "¿Tratan tortícolis congénita y plagiocefalia?", respuesta: "Sí, son de las consultas más frecuentes. La tortícolis congénita responde muy bien a la fisioterapia cuando se trata pronto, y corregir la postura y el posicionamiento ayuda a mejorar la forma de la cabeza en la plagiocefalia postural." },
       { pregunta: "¿Atienden bebés con displasia de cadera?", respuesta: "Sí. Acompañamos el tratamiento que indica el traumatólogo pediátrico (por ejemplo, el arnés de Pavlik): cuidamos el desarrollo motor del bebé durante y después del tratamiento, con posturas, cargas y ejercicios seguros para su cadera, y enseñamos a los papás cómo cargarlo y estimularlo en casa." }
     ],
-    metaTitle: "Fisioterapia para Bebés: Desarrollo Motor y Atención Temprana en Lima (0-12 meses)",
-    metaDescription: "Fisioterapia del desarrollo motor y atención temprana para bebés de 0 a 12 meses, a domicilio en Lima. Tortícolis, plagiocefalia, displasia de cadera, prematuros y retraso motor. Reserva por WhatsApp."
+    metaTitle: "Fisioterapia para Bebés en Lima | Desarrollo Motor 0-12 meses",
+    metaDescription: "Fisioterapia del desarrollo motor y atención temprana para bebés de 0 a 12 meses a domicilio en Lima: tortícolis, plagiocefalia y displasia de cadera."
   },
   {
     slug: "fisioterapia-deportiva",
@@ -93,7 +93,7 @@ export const servicios: Servicio[] = [
       { pregunta: "¿Cuánto tarda la recuperación de una lesión deportiva?", respuesta: "El tiempo de recuperación varía según el tipo y gravedad de la lesión. En general, las lesiones musculares leves se recuperan en 2-4 semanas, mientras que las más graves pueden requerir 2-3 meses." },
       { pregunta: "¿Trabajan con equipos deportivos?", respuesta: "Sí, colaboramos con varios equipos deportivos locales y ofrecemos programas de prevención y tratamiento grupal." }
     ],
-    metaTitle: "Fisioterapia Deportiva | Clínica FisioSphere - Recuperación de Lesiones",
+    metaTitle: "Fisioterapia Deportiva en Lima | FisioSphere",
     metaDescription: "Servicio especializado de fisioterapia deportiva. Recuperación de lesiones, prevención y mejora del rendimiento deportivo con técnicas avanzadas. Pide tu cita."
   },
   {
@@ -117,7 +117,7 @@ export const servicios: Servicio[] = [
       { pregunta: "¿Necesito una prescripción médica?", respuesta: "No es necesaria una prescripción médica para acudir a fisioterapia, aunque si tienes un informe médico nos ayudará a personalizar mejor tu tratamiento." },
       { pregunta: "¿Cuántas sesiones necesitaré?", respuesta: "El número de sesiones varía según cada caso. Tras la valoración inicial, te daremos una estimación del número de sesiones recomendadas." }
     ],
-    metaTitle: "Rehabilitación Física | Clínica FisioSphere - Recupera tu Movilidad",
+    metaTitle: "Rehabilitación Física en Lima | FisioSphere",
     metaDescription: "Servicio de rehabilitación personalizada. Recupera tu movilidad y calidad de vida tras lesiones o cirugías. Programas adaptados a tus necesidades. Consulta ahora."
   },
   {
@@ -142,7 +142,7 @@ export const servicios: Servicio[] = [
       { pregunta: "¿Debo hacer reposo si me duele la espalda?", respuesta: "No, el reposo prolongado suele empeorar el dolor lumbar. Lo recomendable es mantenerse activo con actividad adaptada y seguir las pautas de tu fisioterapeuta." },
       { pregunta: "¿Puedo ir al gimnasio con dolor lumbar?", respuesta: "Sí, pero es importante adaptar los ejercicios. Te daremos pautas específicas para que puedas entrenar de forma segura." }
     ],
-    metaTitle: "Tratamiento Dolor Lumbar | Clínica FisioSphere - Alivio del Dolor de Espalda",
+    metaTitle: "Tratamiento del Dolor Lumbar en Lima | FisioSphere",
     metaDescription: "Especialistas en dolor lumbar. Tratamiento integral con terapia manual y ejercicio terapéutico. Identifica la causa y elimina el dolor. Reserva tu cita hoy."
   },
   {
@@ -167,7 +167,7 @@ export const servicios: Servicio[] = [
       { pregunta: "¿Las almohadas influyen en el dolor cervical?", respuesta: "Sí, la almohada adecuada es importante. Te asesoraremos sobre la mejor opción según tu postura al dormir." },
       { pregunta: "¿Debo dejar de usar la computadora?", respuesta: "No, pero es importante mantener una ergonomía correcta. Te enseñaremos la postura ideal y pausas activas para prevenir el dolor." }
     ],
-    metaTitle: "Tratamiento Dolor Cervical | Clínica FisioSphere - Alivio de Cervicalgias",
+    metaTitle: "Tratamiento del Dolor Cervical en Lima | FisioSphere",
     metaDescription: "Especialistas en dolor cervical y tortícolis. Técnicas manuales avanzadas y ejercicio terapéutico. Recupera la movilidad de tu cuello. Pide cita ahora."
   },
   {
@@ -191,7 +191,7 @@ export const servicios: Servicio[] = [
       { pregunta: "¿Es lo mismo que acupuntura?", respuesta: "No, aunque se utilizan agujas similares, la punción seca se basa en la anatomía y fisiología occidental, mientras que la acupuntura se basa en la medicina tradicional china." },
       { pregunta: "¿Tiene efectos secundarios?", respuesta: "Los efectos secundarios son leves y temporales: dolor local post-punción durante 24-48 horas y ocasionalmente un pequeño hematoma." }
     ],
-    metaTitle: "Punción Seca | Clínica FisioSphere - Tratamiento de Puntos Gatillo",
+    metaTitle: "Punción Seca en Lima | FisioSphere",
     metaDescription: "Punción seca profesional para eliminar puntos gatillo y dolor muscular. Técnica segura y efectiva con resultados desde la primera sesión. Reserva tu cita."
   },
   {
@@ -215,7 +215,7 @@ export const servicios: Servicio[] = [
       { pregunta: "¿El masaje terapéutico es doloroso?", respuesta: "Puede generar cierta molestia en las zonas más contracturadas, pero siempre dentro de la tolerancia del paciente. Nunca debe ser insoportable." },
       { pregunta: "¿Puedo recibir masoterapia si tengo una lesión aguda?", respuesta: "Depende del tipo de lesión. Tu fisioterapeuta evaluará si la masoterapia es indicada o si hay que esperar." }
     ],
-    metaTitle: "Masoterapia | Clínica FisioSphere - Masaje Terapéutico Profesional",
+    metaTitle: "Masoterapia y Masaje Terapéutico en Lima | FisioSphere",
     metaDescription: "Masoterapia profesional para aliviar contracturas, tensiones y dolor muscular. Masaje terapéutico personalizado con fisioterapeutas especializados. Pide cita."
   },
   {
@@ -239,7 +239,7 @@ export const servicios: Servicio[] = [
       { pregunta: "¿Se siente dolor durante la electroterapia?", respuesta: "No, la sensación es de hormigueo o vibración. La intensidad se ajusta siempre a la tolerancia del paciente." },
       { pregunta: "¿Cuántas sesiones de electroterapia necesito?", respuesta: "Normalmente se recomiendan entre 8 y 12 sesiones, dependiendo de la patología y la evolución." }
     ],
-    metaTitle: "Electroterapia | Clínica FisioSphere - Tecnología Avanzada en Rehabilitación",
+    metaTitle: "Electroterapia en Lima | FisioSphere",
     metaDescription: "Electroterapia avanzada para aliviar el dolor y acelerar la recuperación. TENS, ultrasonidos y estimulación muscular con equipos de última generación."
   },
   {
@@ -263,7 +263,7 @@ export const servicios: Servicio[] = [
       { pregunta: "¿Puede sonar algo durante la manipulación?", respuesta: "Sí, es normal escuchar un chasquido articular durante algunas técnicas de manipulación. Es un fenómeno fisiológico normal y no indica daño." },
       { pregunta: "¿Es segura la terapia manual?", respuesta: "Sí, cuando es realizada por un fisioterapeuta cualificado. Realizamos una evaluación previa para descartar cualquier contraindicación." }
     ],
-    metaTitle: "Terapia Manual | Clínica FisioSphere - Fisioterapia Manual Ortopédica",
+    metaTitle: "Terapia Manual Ortopédica en Lima | FisioSphere",
     metaDescription: "Terapia manual ortopédica especializada. Movilización articular, liberación miofascial y técnicas avanzadas para restaurar tu movilidad. Consulta ahora."
   },
   {
@@ -288,7 +288,7 @@ export const servicios: Servicio[] = [
       { pregunta: "¿Cuánto tiempo tardaré en recuperarme?", respuesta: "Depende del tipo de cirugía y de factores individuales. Una artroscopia puede requerir 6-8 semanas, mientras que una prótesis de rodilla puede necesitar 3-6 meses." },
       { pregunta: "¿La rehabilitación postoperatoria es dolorosa?", respuesta: "Puede haber molestias, especialmente al principio, pero trabajamos siempre dentro de la tolerancia del paciente. El dolor se gestiona con diferentes técnicas." }
     ],
-    metaTitle: "Rehabilitación Postoperatoria | Clínica FisioSphere - Recuperación tras Cirugía",
+    metaTitle: "Rehabilitación Postoperatoria en Lima | FisioSphere",
     metaDescription: "Rehabilitación postoperatoria especializada. Recuperación óptima tras cirugías de rodilla, cadera, hombro y columna. Protocolos basados en evidencia. Pide cita."
   },
   {
@@ -312,7 +312,7 @@ export const servicios: Servicio[] = [
       { pregunta: "¿Puedo hacer los ejercicios en casa?", respuesta: "Sí, además de las sesiones supervisadas, te proporcionamos un programa de ejercicios para realizar en casa con vídeos explicativos." },
       { pregunta: "¿El ejercicio terapéutico es para todas las edades?", respuesta: "Sí, adaptamos los ejercicios a cada persona independientemente de su edad o condición física. Desde niños hasta personas mayores." }
     ],
-    metaTitle: "Ejercicio Terapéutico | Clínica FisioSphere - Programas Personalizados",
+    metaTitle: "Ejercicio Terapéutico en Lima | FisioSphere",
     metaDescription: "Ejercicio terapéutico supervisado por fisioterapeutas. Programas personalizados para prevenir y tratar lesiones. Basado en evidencia científica. Reserva tu cita."
   },
   {
@@ -357,8 +357,8 @@ export const servicios: Servicio[] = [
       { pregunta: "¿Los padres pueden estar presentes en la sesión?", respuesta: "No solo pueden, sino que es muy recomendable. Es fundamental que los padres aprendan las pautas y ejercicios para continuar el estímulo en casa." },
       { pregunta: "¿Tratan problemas respiratorios como bronquiolitis?", respuesta: "Sí, la fisioterapia respiratoria pediátrica es muy efectiva para ayudar a los niños a eliminar secreciones y mejorar su función respiratoria." }
     ],
-    metaTitle: "Fisioterapia Neurológica Pediátrica en Lima (0-14 años) | PCI y Autismo - FisioSphere",
-    metaDescription: "Fisioterapia neurológica pediátrica para niños de 0 a 14 años, a domicilio en Lima: parálisis cerebral infantil (PCI), autismo (TEA), retraso del desarrollo, displasia de cadera y marcha en puntas.",
+    metaTitle: "Fisioterapia Neurológica Pediátrica en Lima | PCI y Autismo",
+    metaDescription: "Fisioterapia neurológica pediátrica para niños de 0 a 14 años a domicilio en Lima: parálisis cerebral infantil (PCI), autismo y displasia de cadera.",
     imagen: "/pediatrico.png",
     imagenAlt: "Fisioterapeuta pediátrica de FisioSphere trabajando el desarrollo motor de un niño sobre colchoneta"
   },
@@ -394,8 +394,8 @@ export const servicios: Servicio[] = [
       { pregunta: "¿Qué incluye la evaluación inicial?", respuesta: "La evaluación incluye entrevista con los padres, pruebas estandarizadas de aprendizaje y desarrollo cognitivo, observación del niño y, si es necesario, coordinación con el colegio para obtener una visión completa." },
       { pregunta: "¿A partir de qué edad se puede iniciar la terapia?", respuesta: "Generalmente a partir de los 3-4 años, cuando ya se pueden evaluar hitos del desarrollo. Sin embargo, la detección temprana es clave para mejores resultados." }
     ],
-    metaTitle: "Terapia Psicopedagógica y Psicología Infantil en Lima | FisioSphere",
-    metaDescription: "Terapia psicopedagógica y psicología clínica para niños y adolescentes en Lima. Dificultades de aprendizaje, TDAH, ansiedad y conducta. Presencial, a domicilio u online.",
+    metaTitle: "Psicología Infantil y Psicopedagogía en Lima | FisioSphere",
+    metaDescription: "Psicología infantil y terapia psicopedagógica en Lima: aprendizaje, TDAH, ansiedad y conducta. Atención presencial, a domicilio u online.",
     imagen: "/psicopedagogia.png",
     imagenAlt: "Terapia psicopedagógica infantil con actividades de aprendizaje"
   },
@@ -431,8 +431,8 @@ export const servicios: Servicio[] = [
       { pregunta: "¿Tratan a pacientes con Alzheimer o demencia?", respuesta: "Sí, adaptamos nuestras terapias para pacientes con deterioro cognitivo, enfocándonos en estímulos motores y rutinas que les ayuden a mantener su funcionalidad." },
       { pregunta: "¿Ayuda para el dolor de artrosis?", respuesta: "Sí, la fisioterapia no cura la artrosis pero es altamente efectiva para reducir el dolor, la inflamación y mejorar la movilidad de las articulaciones afectadas." }
     ],
-    metaTitle: "Fisioterapia Geriátrica a Domicilio en Lima | Adulto Mayor - FisioSphere",
-    metaDescription: "Fisioterapia para adultos mayores a domicilio en Lima. Tratamiento de artrosis, prevención de caídas y mantenimiento de la movilidad. Envejecimiento activo y sin dolor.",
+    metaTitle: "Fisioterapia Geriátrica a Domicilio en Lima | FisioSphere",
+    metaDescription: "Fisioterapia para adultos mayores a domicilio en Lima: artrosis, prevención de caídas y movilidad. Envejecimiento activo y sin dolor.",
     imagen: "/geriatrico_nuevo.png",
     imagenAlt: "Fisioterapia geriátrica a domicilio con un adulto mayor en Lima"
   },
@@ -468,8 +468,8 @@ export const servicios: Servicio[] = [
       { pregunta: "¿Atienden a domicilio después de una operación?", respuesta: "Sí. En el postoperatorio inmediato muchas veces es más cómodo y seguro empezar en casa. Llevamos el material necesario." },
       { pregunta: "¿Necesito orden del traumatólogo?", respuesta: "No es obligatoria, pero si tienes informe o indicaciones del cirujano nos ayuda a ajustar el plan." }
     ],
-    metaTitle: "Fisioterapia Traumatológica en Lima | Fracturas, Esguinces y Postoperatorio",
-    metaDescription: "Fisioterapia traumatológica en Lima: recuperación de fracturas, esguinces, lesiones de ligamentos y rehabilitación después de una cirugía. Atención a domicilio o en sede."
+    metaTitle: "Fisioterapia Traumatológica en Lima | Fracturas y Esguinces",
+    metaDescription: "Fisioterapia traumatológica en Lima: recuperación de fracturas, esguinces, lesiones de ligamentos y postoperatorios. A domicilio o en sede."
   },
   {
     slug: "fisioterapia-neurologica",
@@ -502,8 +502,8 @@ export const servicios: Servicio[] = [
       { pregunta: "¿La fisioterapia ayuda en el Parkinson?", respuesta: "Sí. El ejercicio dirigido mejora el equilibrio, la marcha, la postura y reduce el riesgo de caídas." },
       { pregunta: "¿Pueden atender en casa a un paciente que no puede salir?", respuesta: "Sí, es una de nuestras modalidades principales. Trabajamos en el domicilio con el paciente y su cuidador." }
     ],
-    metaTitle: "Fisioterapia Neurológica para Adultos a Domicilio en Lima | ACV y Parkinson - FisioSphere",
-    metaDescription: "Fisioterapia neurológica a domicilio en Lima. Rehabilitación tras ACV, Parkinson, neuropatías y lesiones neurológicas. Recupera movilidad, equilibrio e independencia."
+    metaTitle: "Fisioterapia Neurológica en Lima | ACV y Parkinson",
+    metaDescription: "Fisioterapia neurológica a domicilio en Lima para adultos: rehabilitación tras ACV, Parkinson y neuropatías. Recupera movilidad y equilibrio."
   }
 ];
 

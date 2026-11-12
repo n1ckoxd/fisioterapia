@@ -17,6 +17,7 @@ import {
 } from 'lucide-react';
 import { equipo, servicios } from '@/lib/data';
 import { Reveal } from '@/components/ui/Reveal';
+import { recortarDescripcion } from '@/lib/seo';
 import { Breadcrumbs } from '@/components/seo/Breadcrumbs';
 import { PersonSchema } from '@/components/seo/JsonLd';
 import { articulos, revisorArticulo, imagenArticulo } from '@/lib/blog-data';
@@ -40,8 +41,8 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   }
 
   return {
-    title: { absolute: `${miembro.nombre} | ${miembro.tituloProfesional} en Lima - FisioSphere` },
-    description: `${miembro.nombre}, ${miembro.cargo} en FisioSphere Lima. ${miembro.descripcion} Atención a domicilio VIP y en consultorios acondicionados.`,
+    title: { absolute: `${miembro.nombre} | ${miembro.tituloProfesional.includes('Psicóloga') ? 'Psicóloga Clínica' : 'Fisioterapeuta'} en Lima - FisioSphere` },
+    description: recortarDescripcion(`${miembro.nombre}, ${miembro.cargo.charAt(0).toLowerCase()}${miembro.cargo.slice(1)} en FisioSphere. Atención a domicilio en Lima y en nuestra sede de Jesús María.`),
     alternates: { canonical: `/nosotros/${miembro.slug}` },
     openGraph: {
       title: `${miembro.nombre} | FisioSphere`,

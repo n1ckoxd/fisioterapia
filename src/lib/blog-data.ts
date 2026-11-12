@@ -175,7 +175,7 @@ El ejercicio terapéutico es la herramienta más efectiva para tratar y prevenir
   {
     id: 2,
     slug: "como-prevenir-lesiones-deportivas",
-    titulo: "Cómo Prevenir Lesiones Deportivas: Guía Completa 2024",
+    titulo: "Cómo Prevenir Lesiones Deportivas: Guía Completa",
     descripcion:
       "Aprende las mejores estrategias para prevenir lesiones deportivas. Calentamiento, estiramiento, nutrición y hábitos para deportistas.",
     contenido: `## Introducción

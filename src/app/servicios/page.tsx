@@ -8,7 +8,7 @@ export const metadata: Metadata = {
   alternates: { canonical: "/servicios" },
   title: "Servicios de Fisioterapia a Domicilio en Lima",
   description:
-    "Servicios de fisioterapia a domicilio en Lima: desarrollo motor y atención temprana para bebés de 0 a 12 meses, fisioterapia neurológica pediátrica (PCI, autismo), geriátrica, neurológica, traumatológica, psicología infantil y más.",
+    "Fisioterapia a domicilio en Lima: bebés de 0 a 12 meses, neurológica pediátrica (PCI, autismo), geriátrica, traumatológica y psicología infantil.",
   openGraph: {
     title: "Servicios de Fisioterapia a Domicilio en Lima | FisioSphere",
     description:

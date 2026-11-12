@@ -24,11 +24,11 @@ const outfit = Outfit({
 export const metadata: Metadata = {
   metadataBase: new URL(empresaInfo.url),
   title: {
-    default: "FisioSphere | Fisioterapia a Domicilio en Lima para Bebés, Niños y Adultos Mayores",
-    template: "%s | Clínica FisioSphere",
+    default: "FisioSphere | Fisioterapia a Domicilio en Lima",
+    template: "%s | FisioSphere",
   },
   description:
-    "Fisioterapia a domicilio en Lima: desarrollo motor y atención temprana para bebés de 0 a 12 meses, fisioterapia neurológica pediátrica de 0 a 14 años (PCI, autismo, displasia de cadera), geriátrica y psicología infantil. Sede en Jesús María.",
+    "Fisioterapia a domicilio en Lima: desarrollo motor para bebés de 0 a 12 meses, niños con PCI o autismo y adultos mayores. Sede en Jesús María.",
   keywords: [
     "fisioterapia para bebés Lima",
     "estimulación temprana a domicilio Lima",

@@ -12,6 +12,9 @@ const eslintConfig = defineConfig([
     "out/**",
     "build/**",
     "next-env.d.ts",
+    // Avatar 3D (herramienta aparte, no es parte de la web)
+    "avatar-miguel/**",
+    "avatar-ivon/**",
   ]),
 ]);
 

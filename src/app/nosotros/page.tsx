@@ -4,9 +4,9 @@ import NosotrosContent from "@/components/nosotros/NosotrosContent";
 
 export const metadata: Metadata = {
   alternates: { canonical: "/nosotros" },
-  title: "Nuestro Equipo de Fisioterapeutas y Psicóloga en Lima",
+  title: "Equipo de Fisioterapeutas y Psicóloga en Lima",
   description:
-    "Conoce al equipo de FisioSphere: licenciados en Terapia Física y Rehabilitación (5 años de formación universitaria) especialistas en bebés, niños de 0 a 14 años y adulto mayor, y psicóloga clínica infantil. Atención a domicilio en Lima y sede en Jesús María.",
+    "Conoce al equipo de FisioSphere: licenciados en Terapia Física y Rehabilitación y psicóloga clínica. A domicilio en Lima y sede en Jesús María.",
   openGraph: {
     title: "Sobre Nosotros | Clínica FisioSphere",
     description:

@@ -17,8 +17,8 @@ import BlogPreviewSection from '@/components/home/BlogPreviewSection';
 import WelcomeFlyerModal from '@/components/ui/WelcomeFlyerModal';
 
 export const metadata: Metadata = {
-  title: { absolute: 'Fisioterapia para Bebés a Domicilio en Lima | Estimulación Temprana - FisioSphere' },
-  description: 'Fisioterapia del desarrollo motor y atención temprana para bebés de 0 a 12 meses a domicilio en Lima. Fisioterapia neurológica pediátrica (0 a 14 años): PCI, autismo y displasia de cadera. También geriatría y psicología infantil.',
+  title: { absolute: 'Fisioterapia para Bebés a Domicilio en Lima | FisioSphere' },
+  description: 'Fisioterapia a domicilio en Lima: desarrollo motor para bebés de 0 a 12 meses, niños con PCI o autismo y adultos mayores. Sede en Jesús María.',
   alternates: { canonical: '/' },
   openGraph: {
     title: 'Fisioterapia para Bebés a Domicilio en Lima | FisioSphere',

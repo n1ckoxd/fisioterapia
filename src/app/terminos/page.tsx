@@ -5,7 +5,7 @@ import { empresaInfo } from '@/lib/data';
 export const metadata: Metadata = {
   alternates: { canonical: "/terminos" },
   title: 'Términos y Condiciones',
-  description: 'Términos y condiciones de uso de nuestros servicios y sitio web.',
+  description: 'Términos y condiciones de uso del sitio web y de los servicios de fisioterapia a domicilio y en sede de FisioSphere en Lima.',
 };
 
 export default function TerminosPage() {

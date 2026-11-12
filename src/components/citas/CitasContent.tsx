@@ -7,6 +7,7 @@ import { z } from 'zod';
 import { motion, AnimatePresence } from 'framer-motion';
 import { CheckCircle, MessageCircle, Info, Home as HomeIcon, Building2, Video } from 'lucide-react';
 import { servicios, empresaInfo } from '@/lib/data';
+import { registrarEvento } from '@/lib/analytics';
 
 // Fecha local de hoy en formato AAAA-MM-DD (para no permitir fechas pasadas).
 const hoyISO = () => {
@@ -116,6 +117,7 @@ export default function CitasContent() {
         setSubmitError('No pudimos registrar tu solicitud. Inténtalo de nuevo o escríbenos por WhatsApp.');
       } else {
         setEnviada(data);
+        registrarEvento('generate_lead', { formulario: 'cita', servicio: data.servicio, modalidad: data.modalidad });
         reset({ modalidad: 'Domicilio' });
       }
     } catch {

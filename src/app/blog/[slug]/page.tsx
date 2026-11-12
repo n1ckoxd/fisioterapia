@@ -10,6 +10,7 @@ import { ArticleSchema } from "@/components/seo/JsonLd";
 import MarkdownContent, { indiceArticulo } from "@/components/blog/MarkdownContent";
 import ReadingProgress from "@/components/blog/ReadingProgress";
 import { Reveal } from "@/components/ui/Reveal";
+import { recortarDescripcion, tituloConMarca } from "@/lib/seo";
 
 // Generar rutas estáticas en build time (SSG)
 export async function generateStaticParams() {
@@ -34,8 +35,8 @@ export async function generateMetadata(
   const imagen = imagenArticulo(articulo);
 
   return {
-    title: articulo.titulo,
-    description: articulo.descripcion,
+    title: tituloConMarca(articulo.titulo),
+    description: recortarDescripcion(articulo.descripcion),
     keywords: articulo.tags,
     alternates: {
       canonical: `/blog/${articulo.slug}`,

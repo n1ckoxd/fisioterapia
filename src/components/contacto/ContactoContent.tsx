@@ -7,6 +7,7 @@ import { z } from 'zod';
 import { motion, AnimatePresence } from 'framer-motion';
 import { MapPin, Phone, Mail, Clock, CheckCircle, Navigation } from 'lucide-react';
 import { empresaInfo } from '@/lib/data';
+import { registrarEvento } from '@/lib/analytics';
 
 const contactSchema = z.object({
   nombre: z.string().min(2, { message: 'El nombre debe tener al menos 2 caracteres' }),
@@ -50,6 +51,7 @@ export default function ContactoContent() {
         setSubmitError(result.error);
       } else {
         setIsSuccess(true);
+        registrarEvento('generate_lead', { formulario: 'contacto' });
         reset();
         setTimeout(() => setIsSuccess(false), 5000);
       }

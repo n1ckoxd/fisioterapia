@@ -1,4 +1,5 @@
 import { GoogleAnalytics, GoogleTagManager } from '@next/third-parties/google';
+import ConversionTracker from './ConversionTracker';
 
 export function Analytics() {
   const gaMeasurementId = process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID;
@@ -8,6 +9,7 @@ export function Analytics() {
     <>
       {/* Solo se inyectarán si las variables de entorno están definidas */}
       {gaMeasurementId && <GoogleAnalytics gaId={gaMeasurementId} />}
+      {gaMeasurementId && <ConversionTracker />}
       {gtmId && <GoogleTagManager gtmId={gtmId} />}
     </>
   );

@@ -6,6 +6,18 @@
       "runtimeExecutable": "npm",
       "runtimeArgs": ["run", "dev"],
       "port": 3000
+    },
+    {
+      "name": "avatar-galeria",
+      "runtimeExecutable": "python",
+      "runtimeArgs": ["-m", "http.server", "8777", "--bind", "127.0.0.1", "--directory", "C:/Users/n1cko/OneDrive/Desktop/fisioterapia/avatar-miguel/salida"],
+      "port": 8777
+    },
+    {
+      "name": "avatar-ivon",
+      "runtimeExecutable": "python",
+      "runtimeArgs": ["-m", "http.server", "8778", "--bind", "127.0.0.1", "--directory", "C:/Users/n1cko/OneDrive/Desktop/fisioterapia/avatar-ivon"],
+      "port": 8778
     }
   ]
 }

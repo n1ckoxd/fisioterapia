@@ -5,6 +5,7 @@ import { articulosDeServicio, imagenArticulo } from "@/lib/blog-data";
 import { Breadcrumbs } from "@/components/seo/Breadcrumbs";
 import { FAQSchema, ServiceSchema } from "@/components/seo/JsonLd";
 import ServicioDetalle from "@/components/servicios/ServicioDetalle";
+import { recortarDescripcion } from "@/lib/seo";
 
 export async function generateStaticParams() {
   return servicios.map((servicio) => ({
@@ -24,7 +25,7 @@ export async function generateMetadata(
 
   return {
     title: { absolute: servicio.metaTitle },
-    description: servicio.metaDescription,
+    description: recortarDescripcion(servicio.metaDescription),
     keywords: servicio.keywords,
     openGraph: {
       title: servicio.metaTitle,

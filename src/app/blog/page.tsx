@@ -7,7 +7,7 @@ import { empresaInfo } from "@/lib/data";
 export const metadata: Metadata = {
   title: "Blog de Fisioterapia, Bebés y Adulto Mayor",
   description:
-    "Guías prácticas sobre el desarrollo del bebé de 0 a 12 meses, estimulación temprana, tortícolis, plagiocefalia, adulto mayor, psicología infantil y dolor de espalda. Escrito por el equipo de FisioSphere.",
+    "Guías del equipo FisioSphere sobre el desarrollo del bebé, tortícolis, plagiocefalia, adulto mayor, psicología infantil y dolor de espalda.",
   alternates: { canonical: "/blog" },
   openGraph: {
     title: "Blog de Fisioterapia | Clínica FisioSphere",

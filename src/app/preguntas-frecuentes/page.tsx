@@ -6,9 +6,9 @@ import PageHeaderBanner from '@/components/ui/PageHeaderBanner';
 
 export const metadata: Metadata = {
   alternates: { canonical: "/preguntas-frecuentes" },
-  title: 'Preguntas Frecuentes sobre Fisioterapia a Domicilio',
+  title: 'Preguntas Frecuentes: Fisioterapia a Domicilio',
   description:
-    'Respuestas sobre desarrollo motor y atención temprana de 0 a 12 meses, fisioterapia neurológica pediátrica (PCI, autismo), adulto mayor y psicología infantil: citas a domicilio en Lima, duración, precios y más.',
+    'Respuestas sobre fisioterapia para bebés, niños con PCI o autismo, adulto mayor y psicología infantil: citas a domicilio en Lima, sesiones y precios.',
 };
 
 const faqsDe = (...slugs: string[]) =>
